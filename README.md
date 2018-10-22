@@ -1,4 +1,4 @@
-# Nutition-XR
+# Nutrition-XR
 
 The ultimate idea is to inform the general public about nutrition. Our goal is to create a VR and AR application that will allow users to be introduced to the various food groups, learn more about what they eat and thus adopt healthier ways of meal planning through interactive games. The VR application will allow the user to prepare meals while informing them about the nutritional value of they have prepared. The AR application will allow the user to compare portion sizes and receive real time feedback about the food with nutritional information. We want the user to be more aware of the nutritional value of food. This application will also create a way for the user to experiment with meals to create a healthy meal plan.
 
