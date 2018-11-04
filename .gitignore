@@ -1,12 +1,3 @@
-# Ignore everything
-/*
-/*/
-
-# Inverse ignore some stuff
-!/Assets/
-!/ProjectSettings/
-!.gitignore
-
 # OS Stuff
 .DS_Store
 ._*
