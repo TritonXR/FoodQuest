@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class NumPad : MonoBehaviour {
+public class NumPad1 : MonoBehaviour {
 
     //[SerializeField]
     public Text inputFieldWeight;
