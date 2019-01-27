@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FxTemporaire
+  - projectile
+  - TeleportIgnore
+  - accept
+  - decline
+  - Bun
+  - Beef Patty
+  - Tomato
+  - Lettuce
+  - Apple
   layers:
   - Default
   - TransparentFX
