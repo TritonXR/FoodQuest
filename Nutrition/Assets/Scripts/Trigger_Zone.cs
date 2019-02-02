@@ -5,7 +5,7 @@ using System.Linq;
 
 public class Trigger_Zone : MonoBehaviour {
 
-    public int count;
+    public float count = 0;
 
     Dictionary<string, int> dict = new Dictionary<string, int>()
     {
@@ -19,7 +19,7 @@ public class Trigger_Zone : MonoBehaviour {
 
     void Start()
     {
-        count = 0;
+     
     }
 
     void OnTriggerEnter(Collider other)
