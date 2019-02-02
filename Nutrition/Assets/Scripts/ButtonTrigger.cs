@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class ButtonTrigger : MonoBehaviour {
 
- 
+    public float count = 0;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
-        //    count = Trigger_Zone.instance.count;
-        public float count;
+     
 	}
 	
 	// Update is called once per frame
@@ -22,7 +21,7 @@ public class ButtonTrigger : MonoBehaviour {
     {
         if (other.tag == "Button")
         {
-            float count = Trigger_Zone.instance.count;
+            count = Trigger_Zone.instance.count;
             Debug.Log(count);
         }
     }
