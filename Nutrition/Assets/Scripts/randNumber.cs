@@ -5,30 +5,27 @@ using UnityEngine.UI;
 
 public class randNumber : MonoBehaviour
 {
-
+    //make the class inheritable as an instance
+    public static randNumber instanceNum;
+    //text needs to be global 
+    //random number needs to be global so the button trigger can compare the two numbers and append the text. 
     public Text calorieMax;
     int randomInt = 0;
 
     // Use this for initialization
     void Start()
     {
-
+        instanceNum = this;
+        //this is now accesible as an instance from other scripts! 
         calorieMax = GetComponent<Text>();
-        randomInt = Random.Range(100, 2400);
-        calorieMax.text = randomInt.ToString();
-        // calorieMax.text = "" + randomInt;
+        randomInt = Random.Range(200, 2000);
+        calorieMax.text = "Your goal is: " + randomInt.ToString();       
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        /* if(Input.GetKey(KeyCode.Space))
-         {
-             randomInt = Random.Range(0, 2000);
-             calorieMax.text = randomInt.ToString();
-             }
-        */
-        // calorieMax.text = "" + randomInt;
+ 
     }
 }
