@@ -12,9 +12,9 @@ public class Hand : MonoBehaviour
 
     void Start()
     {
-        simulator = new GameObject().AddComponent<Rigidbody>();
-        simulator.name = "simulator";
-        simulator.transform.parent = transform.parent;
+        //simulator = new GameObject().AddComponent<Rigidbody>();
+        //simulator.name = "simulator";
+        //simulator.transform.parent = transform.parent;
 
         controller = GetComponent<Controller>();
     }
@@ -23,12 +23,12 @@ public class Hand : MonoBehaviour
     {
         if (heldObject)
         {
-            simulator.velocity = (transform.position - simulator.position) * 50f;
+            //simulator.velocity = (transform.position - simulator.position) * 50f;
             if (controller.controller.GetPressUp(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger))
             {
                 heldObject.transform.parent = null;
                 heldObject.GetComponent<Rigidbody>().isKinematic = false;
-                heldObject.GetComponent<Rigidbody>().velocity = simulator.velocity;
+                //heldObject.GetComponent<Rigidbody>().velocity = simulator.velocity;
                 heldObject.GetComponent<HeldObject>().parent = null;
                 heldObject = null;
 
