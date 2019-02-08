@@ -7,18 +7,21 @@ public class randNumber : MonoBehaviour
 {
     //make the class inheritable as an instance
     public static randNumber instanceNum;
-    //text needs to be global 
-    //random number needs to be global so the button trigger can compare the two numbers and append the text. 
+
+    //the goal calories of the user
     public Text calorieMax;
-    int randomInt = 0;
+
+    public float randomInt = 0;
 
     // Use this for initialization
     void Start()
-    {
-        instanceNum = this;
+    {       
         //this is now accesible as an instance from other scripts! 
+        instanceNum = this;
+
         calorieMax = GetComponent<Text>();
         randomInt = Random.Range(200, 2000);
+        //give the user their random number of calories goal
         calorieMax.text = "Your goal is: " + randomInt.ToString();       
 
     }
