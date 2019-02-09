@@ -29,17 +29,17 @@ public class Monster_Behavior : MonoBehaviour {
         Quaternion rot = Quaternion.LookRotation(relativePos, Vector3.up);
         transform.rotation = rot;
         //transform.LookAt(player.transform);
-        /*if(Time.time >= currTime)
+        if(Time.time >= currTime)
         {
             Vector3 direction = transform.forward;
-            //rb.velocity = new Vector3(0, jumpHeight, 0);
-            //rb.velocity = new Vector3(direction.x, jumpHeight, direction.z);
+            rb.velocity = new Vector3(0, jumpHeight, 0);
+            rb.velocity = new Vector3(direction.x, jumpHeight, direction.z);
             currTime += waitTime;
             if(Time.time >= currTime)
             {
                 currTime = Time.time + waitTime;
             }
         }
-        */
+        
     }
 }
