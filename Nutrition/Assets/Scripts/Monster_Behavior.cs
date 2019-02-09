@@ -24,9 +24,10 @@ public class Monster_Behavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-        Vector3 relativePos = player.position - transform.position;
+        
+        Vector3 relativePos = player.transform.position - transform.position;
         Quaternion rot = Quaternion.LookRotation(relativePos, Vector3.up);
-        transform.rotation = rotation;
+        transform.rotation = rot;
         //transform.LookAt(player.transform);
         /*if(Time.time >= currTime)
         {
