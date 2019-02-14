@@ -15,6 +15,7 @@ TagManager:
   - Lettuce
   - Apple
   - Button
+  - Weapon
   layers:
   - Default
   - TransparentFX
