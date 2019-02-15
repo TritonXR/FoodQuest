@@ -16,6 +16,8 @@ TagManager:
   - Apple
   - Button
   - Weapon
+  - Shield
+  - Enemy
   layers:
   - Default
   - TransparentFX
