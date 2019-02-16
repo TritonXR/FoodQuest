@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class NumPad : MonoBehaviour {
 
     //[SerializeField]
+    public Text BMIText;
     public Text inputFieldWeight;
     public Text inputFieldHeight;
     public Text inputFieldHeightFt;
@@ -21,6 +22,10 @@ public class NumPad : MonoBehaviour {
     public Button buttonKg;
     public Button buttonM;
     public Button buttonLbs;
+    public static bool kgIsClicked = false;
+    public static bool lbsIsClicked = false;
+    public static bool mIsClicked = false;
+    public static bool ftInIsClicked = false;
 
     string inputStringW;
     int valueW;
@@ -70,6 +75,7 @@ public class NumPad : MonoBehaviour {
                     valueW = int.Parse(inputStringW);
                 }
                 Debug.Log(valueW); // value of weight (might be in kg or lbs)
+                outPutBMI(ftInIsClicked, mIsClicked, kgIsClicked, lbsIsClicked);
             }
             else
             {
@@ -107,6 +113,7 @@ public class NumPad : MonoBehaviour {
                     valueH = int.Parse(inputStringH);
                 }
                 Debug.Log(valueH); // value of height (in m);
+                outPutBMI(ftInIsClicked, mIsClicked, kgIsClicked, lbsIsClicked);
             }
             else
             {
@@ -143,7 +150,8 @@ public class NumPad : MonoBehaviour {
                 {
                     valueHFt = int.Parse(inputStringHFt);
                 }
-                Debug.Log(valueHFt); // value of height (the part in ft) 
+                Debug.Log(valueHFt); // value of height (the part in ft)
+                outPutBMI(ftInIsClicked, mIsClicked, kgIsClicked, lbsIsClicked);
             }
             else
             {
@@ -180,7 +188,8 @@ public class NumPad : MonoBehaviour {
                 {
                     valueHIn = int.Parse(inputStringHIn);
                 }
-                Debug.Log(valueHIn); // value of height (the part in in) 
+                Debug.Log(valueHIn); // value of height (the part in in)
+                outPutBMI(ftInIsClicked, mIsClicked, kgIsClicked, lbsIsClicked);
             }
             else
             {
@@ -228,11 +237,14 @@ public class NumPad : MonoBehaviour {
         buttonFt.interactable = true;
         buttonIn.interactable = true;
         buttonInputHeight.gameObject.SetActive(false);
-    }
+
+        mIsClicked = false;
+        ftInIsClicked = true;
+}
 
     public void ftClicked()
     {
-        if(buttonInputWeight.interactable == false)
+        if (buttonInputWeight.interactable == false)
         {
             buttonInputFt.interactable = true;
             buttonInputIn.interactable = false;
@@ -257,17 +269,61 @@ public class NumPad : MonoBehaviour {
         buttonFt.interactable = false;
         buttonIn.interactable = false;
         buttonInputHeight.gameObject.SetActive(true);
+
+        mIsClicked = true;
+        ftInIsClicked = false;
     }
 
     public void kgClicked()
     {
+        kgIsClicked = true;
+        lbsIsClicked = false;
     }
 
-    public void lbsClicked()
+    public  void lbsClicked()
     {
+        kgIsClicked = false;
+        lbsIsClicked = true;
     }
 
     public void SetText(Text textField, string input) {
         textField.text = input;
+    }
+
+    public void outPutBMI(bool ftInIsClicked, bool mIsClicked, bool kgIsClicked, bool lbsIsClicked) {
+        float valBMI = 0f;
+        if(ftInIsClicked && lbsIsClicked)
+        {
+            if(valueHFt != 0 || valueHIn != 0)
+            {
+                valBMI = valueW / ((valueHFt * 12 + valueHIn) * (valueHFt * 12 + valueHIn)) * 703; // English BMI conversion
+            }
+            SetText(BMIText, "BMI value:" + valBMI.ToString());
+        }
+        if (mIsClicked && kgIsClicked)
+        {
+            if (valueH != 0)
+            {
+                valBMI = valueW / (valueH * valueH); // Metric BMI conversion
+            }
+            SetText(BMIText, "BMI value:" + valBMI.ToString());
+        }
+        if (ftInIsClicked && kgIsClicked)
+        {
+            if (valueHFt != 0 || valueHIn != 0)
+            {
+                valBMI = valueW * 2.2046f / ((valueHFt * 12 + valueHIn) * (valueHFt * 12 + valueHIn)) * 703; // English BMI conversion
+            }
+            SetText(BMIText, "BMI value:" + valBMI.ToString());
+        }
+        if (mIsClicked && lbsIsClicked)
+        {
+            if (valueH != 0)
+            {
+                valBMI = valueW * 0.4536f / (valueH * valueH); // Metric BMI conversion
+            }
+            SetText(BMIText, "BMI value:" + valBMI.ToString());
+        }
+
     }
 }
