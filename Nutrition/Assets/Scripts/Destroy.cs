@@ -5,11 +5,11 @@ using UnityEngine;
 public class Destroy : MonoBehaviour {
 
     public int Enemy_Health;
-
+    public int Fireball_Health;
 
     void Start()
     {
-        Enemy_Health = 100; 
+        Enemy_Health = 100;
     }
     void OnCollisionEnter(Collision otherObj)
     {
@@ -17,6 +17,12 @@ public class Destroy : MonoBehaviour {
         {
             Enemy_Health = Enemy_Health - 50;
             Debug.Log("Enemy has been damaged");
+        }
+
+        if (otherObj.gameObject.tag == "Fireball")
+        {
+            Enemy_Health = Enemy_Health - 50;
+            Destroy(otherObj.gameObject);
         }
     }
 
@@ -27,5 +33,8 @@ public class Destroy : MonoBehaviour {
             Destroy(gameObject);
             Debug.Log("Enemy has been slayed");
         }
+
+       
+
     }
 }

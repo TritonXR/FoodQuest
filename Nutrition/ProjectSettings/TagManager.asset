@@ -18,6 +18,7 @@ TagManager:
   - Weapon
   - Shield
   - Enemy
+  - Fireball
   layers:
   - Default
   - TransparentFX
