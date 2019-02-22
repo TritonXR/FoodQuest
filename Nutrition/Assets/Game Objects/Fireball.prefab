@@ -144,6 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy_Health: 0
   Fireball_Health: 0
+  food: {fileID: 0}
 --- !u!135 &135149191398698308
 SphereCollider:
   m_ObjectHideFlags: 1

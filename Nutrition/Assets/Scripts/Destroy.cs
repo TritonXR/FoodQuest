@@ -6,6 +6,7 @@ public class Destroy : MonoBehaviour {
 
     public int Enemy_Health;
     public int Fireball_Health;
+    public GameObject food;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class Destroy : MonoBehaviour {
        if (Enemy_Health <= 0)
         {
             Destroy(gameObject);
+            Instantiate(food, transform.position, food.transform.rotation);
             Debug.Log("Enemy has been slayed");
         }
 

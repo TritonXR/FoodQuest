@@ -19,6 +19,8 @@ TagManager:
   - Shield
   - Enemy
   - Fireball
+  - Pick Up
+  - Hand
   layers:
   - Default
   - TransparentFX
