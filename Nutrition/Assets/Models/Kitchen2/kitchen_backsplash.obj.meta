@@ -1,16 +1,34 @@
 fileFormatVersion: 2
-guid: 80087378f775d5546a7daa70cfa48a45
+guid: c5f1c21873db51c4dbdfea9a5bf864fd
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: polySurface234
+    100002: polySurface193
+    100004: polySurface194_polySurface144
+    100006: polySurface252_polySurface195
+    100008: polySurface267
     400000: //RootNode
-    400002: polySurface234
-    2100000: polySurface234Mat
-    2300000: polySurface234
-    3300000: polySurface234
-    4300000: polySurface234
+    400002: polySurface193
+    400004: polySurface194_polySurface144
+    400006: polySurface252_polySurface195
+    400008: polySurface267
+    2100000: polySurface193Mat
+    2100002: polySurface194_polySurface144Mat
+    2100004: polySurface252_polySurface195Mat
+    2100006: polySurface267Mat
+    2300000: polySurface193
+    2300002: polySurface194_polySurface144
+    2300004: polySurface252_polySurface195
+    2300006: polySurface267
+    3300000: polySurface193
+    3300002: polySurface194_polySurface144
+    3300004: polySurface252_polySurface195
+    3300006: polySurface267
+    4300000: polySurface193
+    4300002: polySurface194_polySurface144
+    4300004: polySurface252_polySurface195
+    4300006: polySurface267
   externalObjects: {}
   materials:
     importMaterials: 1
