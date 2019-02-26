@@ -22,12 +22,9 @@ public class Spawner : MonoBehaviour {
         {
             GameObject fireball = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
             Rigidbody rb = fireball.GetComponent<Rigidbody>();
-            rb.velocity = transform.TransformDirection(Vector3.forward * 20);
-        }
+            rb.velocity = transform.TransformDirection(Vector3.forward * 15);
+            Destroy(fireball, 1);
 
-        //if (mDevice.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
-        //{
-            //print("Trigger Up");
-        //}
+        }      
     }
 }
