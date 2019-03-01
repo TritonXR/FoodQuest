@@ -21,6 +21,7 @@ TagManager:
   - Fireball
   - Pick Up
   - Hand
+  - food
   layers:
   - Default
   - TransparentFX

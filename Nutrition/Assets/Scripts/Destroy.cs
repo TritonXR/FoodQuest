@@ -25,6 +25,8 @@ public class Destroy : MonoBehaviour {
             Enemy_Health = Enemy_Health - 50;
             Destroy(otherObj.gameObject);
         }
+
+
     }
 
     void Update()
@@ -33,6 +35,7 @@ public class Destroy : MonoBehaviour {
         {
             Destroy(gameObject);
             Instantiate(food, transform.position, food.transform.rotation);
+            //send to inventory
             Debug.Log("Enemy has been slayed");
         }
 

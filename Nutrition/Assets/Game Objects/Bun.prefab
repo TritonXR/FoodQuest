@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54786679997671052}
   - component: {fileID: 114165628237340578}
   m_Layer: 0
-  m_Name: Food
+  m_Name: Bun
   m_TagString: Pick Up
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f41ab92e8f885442b55ad76c5c6eada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: 0
+  food: {fileID: 0}
 --- !u!135 &135586394119540282
 SphereCollider:
   m_ObjectHideFlags: 1
