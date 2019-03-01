@@ -8,6 +8,8 @@ public class VRUIInput : MonoBehaviour
 {
     private SteamVR_LaserPointer laserPointer;
     private SteamVR_TrackedController trackedController;
+    RaycastHit rayHit;
+    Button buttonHit;
 
     private void OnEnable()
     {
@@ -31,11 +33,20 @@ public class VRUIInput : MonoBehaviour
         //Ray cast here then call this line after returning raycast
         //if( raycast return has button compenet)
         //button.onClick.Invoke();
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out rayHit))
+        {
+            buttonHit = rayHit.collider.GetComponent<Button>();
+            if (buttonHit != null)
+            {
+                buttonHit.onClick.Invoke();
+            }
+        }
 
         if (EventSystem.current.currentSelectedGameObject != null)
         {
             ExecuteEvents.Execute(EventSystem.current.currentSelectedGameObject, new PointerEventData(EventSystem.current), ExecuteEvents.submitHandler);
         }
+  
     }
 
 
