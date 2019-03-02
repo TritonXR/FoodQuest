@@ -15,6 +15,13 @@ TagManager:
   - Lettuce
   - Apple
   - Button
+  - Weapon
+  - Shield
+  - Enemy
+  - Fireball
+  - Pick Up
+  - Hand
+  - food
   layers:
   - Default
   - TransparentFX
@@ -24,8 +31,13 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
   - Floor
   - Walls
+=======
+  - Ground
+  - Wall
+>>>>>>> b1468c2f4eff200b96847f2dcb35eaba86f56db4
   - 
   - 
   - 
