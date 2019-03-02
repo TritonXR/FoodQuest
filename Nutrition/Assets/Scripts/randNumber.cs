@@ -15,22 +15,14 @@ public class randNumber : MonoBehaviour
 
     // Use this for initialization
     void Start()
-<<<<<<< HEAD
-    {       
-=======
     {
->>>>>>> b1468c2f4eff200b96847f2dcb35eaba86f56db4
         //this is now accesible as an instance from other scripts! 
         instanceNum = this;
 
         calorieMax = GetComponent<Text>();
         randomInt = Random.Range(200, 2000);
         //give the user their random number of calories goal
-<<<<<<< HEAD
-        calorieMax.text = "Your goal is: " + randomInt.ToString();       
-=======
         calorieMax.text = "Your goal is: " + randomInt.ToString();
->>>>>>> b1468c2f4eff200b96847f2dcb35eaba86f56db4
 
     }
 
