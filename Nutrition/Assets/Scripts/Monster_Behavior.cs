@@ -15,7 +15,7 @@ public class Monster_Behavior : MonoBehaviour {
 	void Start() {
         moveSpeed = 1.0f;
         waitTime = 2.0f;
-        jumpHeight = 3.0f;
+        jumpHeight = 5.0f;
         currTime = Time.time;
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindWithTag("Player");
@@ -24,10 +24,15 @@ public class Monster_Behavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
-        transform.LookAt(player.transform);
+        
+        Vector3 relativePos = player.transform.position - transform.position;
+        Quaternion rot = Quaternion.LookRotation(relativePos, Vector3.up);
+        transform.rotation = rot;
+        //transform.LookAt(player.transform);
         if(Time.time >= currTime)
         {
             Vector3 direction = transform.forward;
+            rb.velocity = new Vector3(0, jumpHeight, 0);
             rb.velocity = new Vector3(direction.x, jumpHeight, direction.z);
             currTime += waitTime;
             if(Time.time >= currTime)
@@ -35,11 +40,6 @@ public class Monster_Behavior : MonoBehaviour {
                 currTime = Time.time + waitTime;
             }
         }
-    }
-
-    IEnumerator Jump(float time)
-    {
-        yield return new WaitForSeconds(time);
-        transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+        
     }
 }
