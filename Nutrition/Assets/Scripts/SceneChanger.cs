@@ -3,78 +3,78 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class sceneChanger : MonoBehaviour {
+public class sceneChanger : MonoBehaviour
+{
 
-    
-    private int sceneNUmber = 0;
+    // next or previous scene
+    private int option;
 
     // gets all the scenes in the build
     private static int sceneCount = SceneManager.sceneCountInBuildSettings;
 
     // uses the scenceCount to create a list of each scene in order
     private string[] sceneStages = new string[sceneCount];
+
+    // not used yet for implementing saving scene when switching scenes
     private string[] locations;
     private float[] position;
 
-	// Use this for initialization
-	void Start () {
+    void Start()
+    {
 
-        for(int i = 0; i < sceneCount; i++)
+        for (int i = 0; i < sceneCount; i++)
         {
             sceneStages[i] = System.IO.Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(i));
         }
         /*foreach (GameObject fooObj in GameObject.FindGameObjectsWithTag("enemies"))
         {
-           
+           // for saving object locations
         }*/
     }
 
     void getScene()
     {
-        Scene currentScene = Scene.GetActiveScene();
+        Scene currentScene = SceneManager.GetActiveScene();
         string currentName = currentScene.name;
-        int buildIndex = scene.buildIndex;
+        int buildIndex = currentScene.buildIndex;
 
-        if(next)
+        if (option == 1)
         {
             Load_NextScene();
         }
-        else if (previous)
+        else if (option == 0)
         {
             Load_PrevScene();
         }
         else
         {
             Load_Specific(name);
-        } 
+        }
     }
 
-    void Load_Specific (string sceneName) {
+    void Load_Specific(string sceneName)
+    {
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 
-    void Load_NextScene ()
+    void Load_NextScene()
     {
-        Scene currentScene = Scene.GetActiveScene();
-        int buildIndex = scene.buildIndex;
+        Scene currentScene = SceneManager.GetActiveScene();
+        int buildIndex = currentScene.buildIndex;
 
         buildIndex++;
-        
-        SceneManager.LoadScene(sceneStages[buildIndex], LoadSceneMode.Single); */
+
+        SceneManager.LoadScene(sceneStages[buildIndex], LoadSceneMode.Single);
     }
 
     void Load_PrevScene()
     {
-        Scene currentScene = Scene.GetActiveScene();
-        int buildIndex = scene.buildIndex;
+        Scene currentScene = SceneManager.GetActiveScene();
+        int buildIndex = currentScene.buildIndex;
 
         buildIndex--;
 
         SceneManager.LoadScene(sceneStages[buildIndex], LoadSceneMode.Single);
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }

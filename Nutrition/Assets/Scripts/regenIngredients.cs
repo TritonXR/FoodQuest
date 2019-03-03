@@ -5,18 +5,12 @@ using System.Linq;
 
 public class regenIngredients : MonoBehaviour {
 
-
-    // Use this for initialization
-    void Start () {
-        Debug.Log("start");
-    }
-
     void OnTriggerEnter(Collider other)
     {
         string name = other.gameObject.tag;
         Debug.Log(name);
         Debug.Log("entered");
-
+        
     }
 
     private void OnTriggerExit(Collider other)
@@ -25,7 +19,7 @@ public class regenIngredients : MonoBehaviour {
         Debug.Log("exitted");
         Debug.Log(name);
 
-        if (name == "item1")
+        if (other.gameObject.tag == "ingredients")
         {
             Instantiate(other.gameObject, gameObject.transform.position, gameObject.transform.rotation);
             

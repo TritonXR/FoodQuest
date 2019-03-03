@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Pick Up
   - Fireball
+  - ExcludeTeleport
+  - TeleportIgnore
+  - ingredients
   layers:
   - Default
   - TransparentFX
