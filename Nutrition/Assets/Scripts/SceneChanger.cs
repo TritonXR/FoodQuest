@@ -5,23 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class sceneChanger : MonoBehaviour {
 
-    private string[] sceneStages = ["scene1", "scene2", "scene3"];
+    
     private int sceneNUmber = 0;
+
+    // gets all the scenes in the build
+    private static int sceneCount = SceneManager.sceneCountInBuildSettings;
+
+    // uses the scenceCount to create a list of each scene in order
+    private string[] sceneStages = new string[sceneCount];
     private string[] locations;
     private float[] position;
 
 	// Use this for initialization
 	void Start () {
-        foreach (GameObject fooObj in GameObject.FindGameObjectsWithTag("enemies"))
+
+        for(int i = 0; i < sceneCount; i++)
+        {
+            sceneStages[i] = System.IO.Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(i));
+        }
+        /*foreach (GameObject fooObj in GameObject.FindGameObjectsWithTag("enemies"))
         {
            
-        }
+        }*/
     }
 
     void getScene()
     {
         Scene currentScene = Scene.GetActiveScene();
-        String currentName = currentScene.name;
+        string currentName = currentScene.name;
         int buildIndex = scene.buildIndex;
 
         if(next)
@@ -35,7 +46,7 @@ public class sceneChanger : MonoBehaviour {
         else
         {
             Load_Specific(name);
-        }
+        } 
     }
 
     void Load_Specific (string sceneName) {
@@ -49,7 +60,7 @@ public class sceneChanger : MonoBehaviour {
 
         buildIndex++;
         
-        SceneManager.LoadScene(sceneStages[buildIndex], LoadSceneMode.Single);
+        SceneManager.LoadScene(sceneStages[buildIndex], LoadSceneMode.Single); */
     }
 
     void Load_PrevScene()
