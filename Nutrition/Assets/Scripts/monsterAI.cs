@@ -21,6 +21,10 @@ public class monsterAI : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
+        else
+        {
+            health -= collisionForce;
+        }
     }
 
     private float GetCollisionForce(Collision collision)
@@ -33,7 +37,12 @@ public class monsterAI : MonoBehaviour {
         if (collision.collider.name.Contains("Arrow"))
         {
             Debug.Log("Arrow hit!");
-            return 500f;
+            return 50f;
+        }
+
+        if (collision.collider.name.Contains("Bow"))
+        {
+            return 25f;
         }
 
         return 0f;
