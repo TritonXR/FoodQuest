@@ -2976,6 +2976,7 @@ Prefab:
       value: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       objectReference: {fileID: 938762085}
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -2988,6 +2989,13 @@ Prefab:
       value: 
       objectReference: {fileID: 1951713624}
 >>>>>>> 6ebf9fc42c9b5ef1056f2a996a8a81c3383369b2
+=======
+      objectReference: {fileID: 1182209838}
+    - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 1834642974}
+>>>>>>> parent of 6ebf9fc... added textures to the 4 breads in Kitchen Model
 =======
       objectReference: {fileID: 1182209838}
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
@@ -4526,6 +4534,7 @@ Rigidbody:
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &717410705
+<<<<<<< HEAD
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100200, guid: ba1539932bd82e54e952f337817d347f, type: 3}
@@ -4555,6 +4564,8 @@ Transform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &746734443
+=======
+>>>>>>> parent of 6ebf9fc... added textures to the 4 breads in Kitchen Model
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -8065,6 +8076,7 @@ Prefab:
       objectReference: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 54349314097165620, guid: dc5b6d8fa67bd934598d5828257546ab,
         type: 2}
       propertyPath: m_IsKinematic
@@ -8115,6 +8127,8 @@ Prefab:
       value: 
       objectReference: {fileID: 2100000, guid: 61c7b5d65d0616e4284415a6ebd48d3b, type: 2}
 >>>>>>> 6ebf9fc42c9b5ef1056f2a996a8a81c3383369b2
+=======
+>>>>>>> parent of 6ebf9fc... added textures to the 4 breads in Kitchen Model
 =======
 >>>>>>> parent of 6ebf9fc... added textures to the 4 breads in Kitchen Model
     m_RemovedComponents: []
@@ -13283,6 +13297,7 @@ Prefab:
       objectReference: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 54912220194964460, guid: 3e18db9262ad504428a3e54aa1f47feb,
         type: 2}
       propertyPath: m_IsKinematic
@@ -13329,6 +13344,8 @@ Prefab:
       value: 
       objectReference: {fileID: 2100000, guid: 3f921123a4c1c3447a7613bb68443733, type: 2}
 >>>>>>> 6ebf9fc42c9b5ef1056f2a996a8a81c3383369b2
+=======
+>>>>>>> parent of 6ebf9fc... added textures to the 4 breads in Kitchen Model
 =======
 >>>>>>> parent of 6ebf9fc... added textures to the 4 breads in Kitchen Model
     m_RemovedComponents: []
@@ -13464,6 +13481,7 @@ Prefab:
       objectReference: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 4717830697234336, guid: d8f4e129408b80948b65e94be2e54116, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
@@ -13499,6 +13517,8 @@ Prefab:
       value: 
       objectReference: {fileID: 2100000, guid: 2385ceda4cabe2a4595a4ddb936ae3e6, type: 2}
 >>>>>>> 6ebf9fc42c9b5ef1056f2a996a8a81c3383369b2
+=======
+>>>>>>> parent of 6ebf9fc... added textures to the 4 breads in Kitchen Model
 =======
 >>>>>>> parent of 6ebf9fc... added textures to the 4 breads in Kitchen Model
     m_RemovedComponents: []
@@ -14422,6 +14442,7 @@ Prefab:
       propertyPath: m_Size.x
       value: 0.005
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 65397922526611946, guid: 6ba01a0ebd39b3e4bab1198f0ebb049e,
         type: 2}
       propertyPath: m_Size.y
@@ -14432,6 +14453,8 @@ Prefab:
       propertyPath: m_Size.z
       value: 0.01
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 6ebf9fc... added textures to the 4 breads in Kitchen Model
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ba01a0ebd39b3e4bab1198f0ebb049e, type: 2}
   m_IsPrefabParent: 0
