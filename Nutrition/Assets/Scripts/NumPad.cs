@@ -251,6 +251,7 @@ public class NumPad : MonoBehaviour {
         mIsClicked = false;
         ftInIsClicked = true;
         Debug.Log("kgIsClicked: " + kgIsClicked + "; lbsIsClicked: " + lbsIsClicked + "; mIsClicked: " + mIsClicked + "; ftInIsClicked: " + ftInIsClicked);/////////////////////////////////
+        outPutBMI(ftInIsClicked, mIsClicked, kgIsClicked, lbsIsClicked);
     }
     
 
@@ -309,15 +310,15 @@ public class NumPad : MonoBehaviour {
    /************** RESPONSIBLE FOR OUTPUT OF BMI VALUE ********************/
     public void outPutBMI(bool ftInIsClicked, bool mIsClicked, bool kgIsClicked, bool lbsIsClicked) {
         float valBMI = 0f;
-        if(ftInIsClicked && lbsIsClicked)
+        if (ftInIsClicked && lbsIsClicked)
         {
             Debug.Log("ftInIsClicked && lbsIsClicked");/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Debug.Log("valueWForBMI: " + valueWForBMI + "; valueHForBMI: " + valueHForBMI + "; valueHFtForBMI: " + valueHFtForBMI + "; valueHInForBMI: " + valueHInForBMI);/////////////////
-            if(valueHFtForBMI != 0 || valueHInForBMI != 0)
+            if (valueHFtForBMI != 0 || valueHInForBMI != 0)
             {
                 valBMI = valueWForBMI / ((valueHFtForBMI * 12 + valueHInForBMI) * (valueHFtForBMI * 12 + valueHInForBMI)) * 703; // English BMI conversion
             }
-            SetText(BMIText, "BMI value:" + valBMI.ToString() + "  (ft/in & lbs)");
+            SetText(BMIText, "BMI value:" + valBMI.ToString() + "  (" + valueHFtForBMI + "ft " + valueHInForBMI + "in " + valueWForBMI + "lbs)");
         }
         else if (mIsClicked && kgIsClicked)
         {
@@ -327,7 +328,7 @@ public class NumPad : MonoBehaviour {
             {
                 valBMI = valueWForBMI / ((valueHForBMI / 100) * (valueHForBMI / 100)); // Metric BMI conversion
             }
-            SetText(BMIText, "BMI value:" + valBMI.ToString() + "  (cm & kg)");
+            SetText(BMIText, "BMI value:" + valBMI.ToString() + "  (" + valueHForBMI + "cm " + valueWForBMI + "kg)");
         }
         else if (ftInIsClicked && kgIsClicked)
         {
@@ -339,7 +340,7 @@ public class NumPad : MonoBehaviour {
                 valBMI = valueWForBMI * 2.2046f / ((valueHFtForBMI * 12 + valueHInForBMI) * (valueHFtForBMI * 12 + valueHInForBMI)) * 703; // English BMI conversion
             }
 
-            SetText(BMIText, "BMI value:" + valBMI.ToString() + "  (ft/in & kg)");
+            SetText(BMIText, "BMI value:" + valBMI.ToString() + "  (" + valueHFtForBMI + "ft " + valueHInForBMI +"in " + valueWForBMI + "kg)");
         }
         else if (mIsClicked && lbsIsClicked)
         {
@@ -349,7 +350,7 @@ public class NumPad : MonoBehaviour {
             {
                 valBMI = valueWForBMI * 0.4536f / ((valueHForBMI / 100) * (valueHForBMI / 100)); // Metric BMI conversion
             }
-            SetText(BMIText, "BMI:" + valBMI.ToString() + "  (cm & lbs)");
+            SetText(BMIText, "BMI:" + valBMI.ToString() + "  (" + valueHForBMI + "cm " + valueWForBMI + "lbs)");
         }
         else
         {
