@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pick Up
   - Fireball
+  - Bread
   layers:
   - Default
   - TransparentFX
