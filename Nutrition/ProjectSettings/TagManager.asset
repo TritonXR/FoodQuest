@@ -4,11 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - FxTemporaire
-  - projectile
-  - TeleportIgnore
-  - ExcludeTeleport
-  - Arrow
+  - Pick Up
+  - Fireball
+  - Bread
   layers:
   - Default
   - TransparentFX
