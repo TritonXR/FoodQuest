@@ -6,9 +6,13 @@ TagManager:
   tags:
   - Pick Up
   - Fireball
+<<<<<<< HEAD
   - ExcludeTeleport
   - TeleportIgnore
   - ingredients
+=======
+  - Bread
+>>>>>>> 7acdadd904918fde7aeeafadca472630e44dd34b
   layers:
   - Default
   - TransparentFX
