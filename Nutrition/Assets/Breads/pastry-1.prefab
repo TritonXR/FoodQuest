@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 114674058521975600}
   m_Layer: 0
   m_Name: pastry-1
-  m_TagString: Bread
+  m_TagString: Croissant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

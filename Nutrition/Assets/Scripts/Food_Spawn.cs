@@ -11,7 +11,7 @@ public class Food_Spawn : MonoBehaviour {
     {
         string name = other.gameObject.name;
 
-        if (other.gameObject.tag == "Bread")
+        if (other.gameObject.tag == "Big Bread")
         {
             Instantiate(food, transform.position, transform.rotation);
         }

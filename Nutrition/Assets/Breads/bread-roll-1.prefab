@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 114190127193272502}
   m_Layer: 0
   m_Name: bread-roll-1
-  m_TagString: Bread
+  m_TagString: Seed Roll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
