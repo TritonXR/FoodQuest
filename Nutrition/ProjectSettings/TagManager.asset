@@ -8,6 +8,10 @@ TagManager:
   - Fireball
   - Bread
   - Button
+  - Danish
+  - Big Bread
+  - Seed Roll
+  - Croissant
   layers:
   - Default
   - TransparentFX
