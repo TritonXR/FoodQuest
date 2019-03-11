@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 114574755780278136}
   m_Layer: 0
   m_Name: pastry-3
-  m_TagString: Bread
+  m_TagString: Danish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

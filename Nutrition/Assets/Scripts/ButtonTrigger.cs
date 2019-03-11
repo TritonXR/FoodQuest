@@ -41,7 +41,6 @@ public class ButtonTrigger : MonoBehaviour {
             total = Trigger_Zone.instance.count;
             goal = randNumber.instanceNum.randomInt;
             userText = randNumber.instanceNum.calorieMax.text;
-
             //update their text, show them their estimation
             //randNumber.instanceNum.calorieMax.text += "\n" + "Your calories: " + count;
 

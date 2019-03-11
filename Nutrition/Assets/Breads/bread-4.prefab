@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 114530929596363560}
   m_Layer: 0
   m_Name: bread-4
-  m_TagString: Bread
+  m_TagString: Big Bread
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
