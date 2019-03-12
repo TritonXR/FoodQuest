@@ -402,7 +402,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: -0.2}
---- !u!43 &366432520
+--- !u!43 &360437998
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1040,11 +1040,11 @@ Prefab:
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1797837001}
+      objectReference: {fileID: 1598554040}
     - target: {fileID: 3380982, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 366432520}
+      objectReference: {fileID: 360437998}
     - target: {fileID: 147176, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_IsActive
       value: 1
@@ -1209,13 +1209,37 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1377892638}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67df3c33ce9d01745bd790eae303b4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mTrackeObject: {fileID: 0}
   projectile: {fileID: 1395642248428558, guid: cde94b662e614ba43b579294a1486668, type: 2}
+--- !u!114 &1377892641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1377892638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daca102d0d6fa23418205e12764247e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrackeObject: {fileID: 0}
+--- !u!65 &1377892642
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1377892638}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1460454935 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 159396, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
@@ -1226,13 +1250,37 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1460454935}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67df3c33ce9d01745bd790eae303b4c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mTrackeObject: {fileID: 0}
   projectile: {fileID: 1395642248428558, guid: cde94b662e614ba43b579294a1486668, type: 2}
+--- !u!114 &1460454938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1460454935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daca102d0d6fa23418205e12764247e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrackeObject: {fileID: 0}
+--- !u!65 &1460454939
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1460454935}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1463933622
 Prefab:
   m_ObjectHideFlags: 0
@@ -1402,7 +1450,7 @@ MonoBehaviour:
   Enemy_Health: 0
   Fireball_Health: 0
   food: {fileID: 1884034534634010, guid: 35fb0bb136c36f040a4e0eb5dcc27a74, type: 2}
---- !u!21 &1797837001
+--- !u!21 &1598554040
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
