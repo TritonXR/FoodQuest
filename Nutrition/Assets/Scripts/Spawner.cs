@@ -5,20 +5,20 @@ using Valve.VR;
 
 public class Spawner : MonoBehaviour {
 
-    public SteamVR_TrackedObject mTrackeObject; //= null;
-    public SteamVR_Controller.Device mDevice;
+    private SteamVR_TrackedObject TrackedObject; //= null;
+    public SteamVR_Controller.Device Device;
     public GameObject projectile;
 
     void Awake()
     {
-        mTrackeObject = GetComponent<SteamVR_TrackedObject>();
+        TrackedObject = GetComponent<SteamVR_TrackedObject>();
     }
 
     void Update()
     {
-        mDevice = SteamVR_Controller.Input((int)mTrackeObject.index);
+        Device = SteamVR_Controller.Input((int)TrackedObject.index);
 
-        if (mDevice.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
+        if (Device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
         {
             GameObject fireball = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
             Rigidbody rb = fireball.GetComponent<Rigidbody>();
