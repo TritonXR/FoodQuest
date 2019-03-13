@@ -11,12 +11,24 @@ public class plagueImpMovement : MonoBehaviour {
     private float distance;
     private Rigidbody rb;
     private GameObject player;
+    private float rotX;
+    private float rotZ;
 
     // Use this for initialization
     void Start () {
-        moveSpeed = 1.0f;
-        waitTime = 2.0f;
-        jumpHeight = 5.0f;
+        if(moveSpeed == 0f)
+        {
+            moveSpeed = 1.0f;
+        }
+        if(waitTime == 0f)
+        {
+            waitTime = 2.0f;
+        }
+        if(jumpHeight == 0f)
+        {
+            jumpHeight = 5.0f;
+        }
+        
         currTime = Time.time;
         rb = GetComponent<Rigidbody>();
     }
@@ -33,14 +45,34 @@ public class plagueImpMovement : MonoBehaviour {
             Vector3 relativePos = player.transform.position - transform.position;
             distance = Vector3.Distance(player.transform.position, transform.position);
             Quaternion rot = Quaternion.LookRotation(relativePos, Vector3.up);
-            transform.rotation = rot;
-
-            if (distance > 2f) {
-                rb.velocity = transform.forward * moveSpeed;
-            } else
+            
+            Vector3 moveTo = transform.forward;
+            if(transform.position.y > .5f)
             {
-                rb.velocity = Vector3.zero;
+                moveTo.y = 0f;
             }
+
+            if (distance > 3f) {
+                if (distance > 2f)
+                {
+                    rb.constraints = RigidbodyConstraints.None;
+                    rb.velocity = moveTo * moveSpeed;
+                }              
+            }
+            else
+            {
+                rot.x = rotX;
+                rot.z = rotZ;
+
+                rb.constraints = RigidbodyConstraints.FreezePosition;
+
+            }
+            transform.rotation = rot;
+            rotX = rot.x;
+            rotZ = rot.z;
+
+
+
             //transform.LookAt(player.transform);
             /*
             if (Time.time >= currTime)
