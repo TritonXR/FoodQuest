@@ -11,10 +11,10 @@ public class Trigger_Zone : MonoBehaviour
 
     Dictionary<string, int> dict = new Dictionary<string, int>()
     {
-        {"Danish", 600 },
-        {"Seed Roll", 80 },
-        {"Croissant", 200 },
-        {"Big Bread", 235 },
+        {"Danish", 721 },
+        {"Seed Roll", 285 },
+        {"Croissant", 300 },
+        {"Big Bread", 350 },
     };
 
     void Start()
