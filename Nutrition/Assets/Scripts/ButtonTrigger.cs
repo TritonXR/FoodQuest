@@ -57,11 +57,11 @@ public class ButtonTrigger : MonoBehaviour {
             if (total > goal)
             {
 
-                randNumber.instanceNum.calorieMax.text += "\n" + "you over estimated your calories by " + getPercent() + "%";
+                randNumber.instanceNum.calorieMax.text += "\n" + "Calories over estimated by " + (int)getPercent() + "%";
             }
             else if (total < goal)
             {
-                randNumber.instanceNum.calorieMax.text += "\n" + "you under estimated your calories by " + getPercent() + "%";
+                randNumber.instanceNum.calorieMax.text += "\n" + "Calories under estimated by " + (int)getPercent() + "%";
             }
 
             // display the components calories????
