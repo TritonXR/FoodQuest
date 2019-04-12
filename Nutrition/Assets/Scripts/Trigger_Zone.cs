@@ -8,6 +8,8 @@ public class Trigger_Zone : MonoBehaviour
 
     public static Trigger_Zone instance;
     public float count = 0;
+    public GameObject plate;
+    private Color orig;
 
     Dictionary<string, int> dict = new Dictionary<string, int>()
     {
@@ -20,6 +22,7 @@ public class Trigger_Zone : MonoBehaviour
     void Start()
     {
         instance = this;
+        orig = plate.GetComponent<Renderer>().material.color;
     }
 
     void OnTriggerEnter(Collider other)
@@ -30,6 +33,7 @@ public class Trigger_Zone : MonoBehaviour
         Debug.Log(calorieVal);
         count = count + calorieVal;
         Debug.Log("count" + count);
+        StartCoroutine(changer(Color.green));
     }
 
     private void OnTriggerExit(Collider other)
@@ -40,6 +44,13 @@ public class Trigger_Zone : MonoBehaviour
         Debug.Log(calorieVal);
         count = count - calorieVal;
         Debug.Log("count" + count);
+        StartCoroutine(changer(Color.red));
+    }
+
+    private IEnumerator changer(Color clr) {
+        plate.GetComponent<Renderer>().material.SetColor("Standard", clr);
+        yield return new WaitForSecondsRealtime(3);
+        plate.GetComponent<Renderer>().material.SetColor("Standard", orig);
     }
 
 }
