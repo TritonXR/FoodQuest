@@ -8,8 +8,14 @@ public class Trigger_Zone : MonoBehaviour
 
     public static Trigger_Zone instance;
     public float count = 0;
+    public float duration = 0f;
     public GameObject plate;
-    private Color orig;
+    private Material origMat;
+    private Color origClr;
+    private Color targetColor;
+    private float lerp = 0f;
+    private float timeLeft = 0f;
+    private bool clrChangeCheck = false;
 
     Dictionary<string, int> dict = new Dictionary<string, int>()
     {
@@ -22,7 +28,28 @@ public class Trigger_Zone : MonoBehaviour
     void Start()
     {
         instance = this;
-        orig = plate.GetComponent<Renderer>().material.color;
+        duration = 5f;
+        origMat = plate.GetComponent<Renderer>().material;
+        origClr = origMat.color;
+    }
+
+    void Update()
+    {
+        //if transition complete
+        if (timeLeft <= 0f)
+        {
+            //assign original plate color
+            origMat.color = origClr;
+        }
+        else
+        {
+            // calculate interpolated color
+            origMat.color = Color.Lerp(targetColor, origClr, (duration - timeLeft) * (1/timeLeft));
+
+            // update the timer
+            timeLeft -= Time.deltaTime;
+        }
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -33,7 +60,7 @@ public class Trigger_Zone : MonoBehaviour
         Debug.Log(calorieVal);
         count = count + calorieVal;
         Debug.Log("count" + count);
-        StartCoroutine(changer(Color.green));
+        colorChange(Color.green);
     }
 
     private void OnTriggerExit(Collider other)
@@ -44,13 +71,15 @@ public class Trigger_Zone : MonoBehaviour
         Debug.Log(calorieVal);
         count = count - calorieVal;
         Debug.Log("count" + count);
-        StartCoroutine(changer(Color.red));
+        colorChange(Color.red);
     }
 
-    private IEnumerator changer(Color clr) {
-        plate.GetComponent<Renderer>().material.SetColor("Standard", clr);
-        yield return new WaitForSecondsRealtime(3);
-        plate.GetComponent<Renderer>().material.SetColor("Standard", orig);
+    //Changes target color for plate transition
+    public void colorChange(Color newClr)
+    {
+        targetColor = newClr;
+        clrChangeCheck = true;
+        timeLeft = duration * 1.25f;
     }
 
 }
