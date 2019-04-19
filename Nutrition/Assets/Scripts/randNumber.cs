@@ -31,5 +31,10 @@ public class randNumber : MonoBehaviour
     {
 
     }
+
+    public void resetGoal()
+    {
+        randomInt = Random.Range(200, 2000);
+    }
 }
 

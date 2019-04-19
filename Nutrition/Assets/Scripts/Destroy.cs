@@ -10,7 +10,11 @@ public class Destroy : MonoBehaviour {
 
     void Start()
     {
-        Enemy_Health = 100;
+        if(Enemy_Health == 0)
+        {
+            Enemy_Health = 100;
+        }
+        
     }
     void OnCollisionEnter(Collision otherObj)
     {
@@ -25,18 +29,17 @@ public class Destroy : MonoBehaviour {
             Enemy_Health = Enemy_Health - 50;
             Destroy(otherObj.gameObject);
         }
-    }
 
-    void Update()
-    {
-       if (Enemy_Health <= 0)
+        if (Enemy_Health <= 0)
         {
             Destroy(gameObject);
             Instantiate(food, transform.position, food.transform.rotation);
             Debug.Log("Enemy has been slayed");
         }
+    }
 
+    void Update()
+    {
        
-
     }
 }
