@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Valve.VR;
 
-public class Spawner : MonoBehaviour {
+public class Thief : MonoBehaviour {
 
     private SteamVR_TrackedObject TrackedObject; //= null;
     public SteamVR_Controller.Device Device;
-    public GameObject projectile;
+    public GameObject Dagger;
 
     void Awake()
     {
@@ -20,11 +19,11 @@ public class Spawner : MonoBehaviour {
 
         if (Device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
         {
-            GameObject fireball = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
-            Rigidbody rb = fireball.GetComponent<Rigidbody>();
-            rb.velocity = transform.TransformDirection(Vector3.forward * 15);
-            Destroy(fireball, 1);
+            GameObject dagger = Instantiate(Dagger, transform.position, transform.rotation) as GameObject;
+            Rigidbody rb = dagger.GetComponent<Rigidbody>();
+            rb.velocity = transform.TransformDirection(Vector3.forward * 5);
+            Destroy(dagger, 1);
 
-        }      
+        }
     }
 }

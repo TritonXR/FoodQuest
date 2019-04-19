@@ -12,6 +12,11 @@ TagManager:
   - Big Bread
   - Seed Roll
   - Croissant
+  - Enemy
+  - Weapon
+  - Hand
+  - Shield
+  - Iceball
   layers:
   - Default
   - TransparentFX

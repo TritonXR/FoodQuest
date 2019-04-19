@@ -7,7 +7,7 @@ public class Enable_Components : MonoBehaviour {
 
     private SteamVR_TrackedObject TrackedObject; //= null;
     public SteamVR_Controller.Device Device;
-    private Spawner spawner;
+    private Mage spawner;
     public GameObject Warrior;
     public GameObject Thief;
     public GameObject Archer;
@@ -19,7 +19,7 @@ public class Enable_Components : MonoBehaviour {
 
     void Start()
     {
-        spawner = GetComponent<Spawner>();
+        spawner = GetComponent<Mage>();
         spawner.enabled = false;
         Warrior.SetActive(false);
         Thief.SetActive(false);

@@ -6,11 +6,17 @@ public class Destroy : MonoBehaviour {
 
     public int Enemy_Health;
     public int Fireball_Health;
+    public int cooldown;
     public GameObject food;
+    Rigidbody enemy;
+    private float timeStamp;
 
     void Start()
     {
-        if(Enemy_Health == 0)
+        enemy = GetComponent<Rigidbody>();
+        cooldown = 3;
+
+        if (Enemy_Health == 0)
         {
             Enemy_Health = 100;
         }
@@ -30,6 +36,14 @@ public class Destroy : MonoBehaviour {
             Destroy(otherObj.gameObject);
         }
 
+        if (otherObj.gameObject.tag == "Iceball")
+        {
+            Enemy_Health = Enemy_Health - 25;
+            Destroy(otherObj.gameObject);
+            enemy.constraints = RigidbodyConstraints.FreezeAll;
+            timeStamp = Time.time + cooldown;
+        }
+
         if (Enemy_Health <= 0)
         {
             Destroy(gameObject);
@@ -40,6 +54,9 @@ public class Destroy : MonoBehaviour {
 
     void Update()
     {
-       
+        if (timeStamp <= Time.time)
+        {
+            enemy.constraints = RigidbodyConstraints.None;
+        }
     }
 }
