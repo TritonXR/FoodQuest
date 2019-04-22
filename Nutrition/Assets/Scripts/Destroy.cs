@@ -33,6 +33,18 @@ public class Destroy : MonoBehaviour {
             Debug.Log("Enemy has been damaged");
         }
 
+        if (otherObj.gameObject.tag == "Rage Sword")
+        {
+            Enemy_Health = Enemy_Health - 100;
+            Debug.Log("Enemy has been damaged");
+        }
+
+        if (otherObj.gameObject.tag == "Rage Shield")
+        {
+            Enemy_Health = Enemy_Health - 25;
+            Debug.Log("Enemy has been damaged");
+        }
+
         if (otherObj.gameObject.tag == "Fireball")
         {
             Enemy_Health = Enemy_Health - 50;
@@ -54,6 +66,7 @@ public class Destroy : MonoBehaviour {
             Instantiate(food, transform.position, food.transform.rotation);
             Debug.Log("Enemy has been slayed");
         }
+
     }
 
     void Update()
