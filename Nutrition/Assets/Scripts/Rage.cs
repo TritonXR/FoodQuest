@@ -4,14 +4,15 @@ using UnityEngine;
 using Valve.VR;
 
 public class Rage : MonoBehaviour
-{
-
+{ 
     private SteamVR_TrackedObject TrackedObject; //= null;
     public SteamVR_Controller.Device Device;
     public GameObject warrior;
     public GameObject rage;
-    public int cooldown;
+    public float ragemode = 4;
+    public float cooldown = 10;
     private float timeStamp;
+    private float rageStamp;
 
     void Awake()
     {
@@ -20,7 +21,6 @@ public class Rage : MonoBehaviour
 
     void Start()
     {
-        cooldown = 5;
         warrior.SetActive(true);
         rage.SetActive(false);
     }
@@ -29,19 +29,19 @@ public class Rage : MonoBehaviour
     {
         Device = SteamVR_Controller.Input((int)TrackedObject.index);
 
-        if (Device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
+        if((timeStamp <= Time.time))
         {
-            Vector2 touchValue = Device.GetAxis(EVRButtonId.k_EButton_SteamVR_Touchpad);
-            if (touchValue.x > -1.0f && touchValue.x < 1.0f)
+            if (Device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
             {
+                timeStamp = Time.time + cooldown;
                 warrior.SetActive(false);
                 rage.SetActive(true);
-                timeStamp = Time.time + cooldown;
-                Debug.Log(timeStamp);
+                rageStamp = Time.time + ragemode;
+                Debug.Log("Button");
             }
         }
 
-        if (timeStamp <= Time.time)
+        if (rageStamp <= Time.time)
         {
             warrior.SetActive(true);
             rage.SetActive(false);

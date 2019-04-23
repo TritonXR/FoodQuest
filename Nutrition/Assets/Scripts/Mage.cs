@@ -9,7 +9,11 @@ public class Mage : MonoBehaviour {
     public SteamVR_Controller.Device Device;
     public GameObject Fireball;
     public GameObject Iceball;
-
+    public float cooldown = 4.0f;
+    public float fire = 0.5f;
+    private float timeStamp;
+    private float fireStamp;
+    
     void Awake()
     {
         TrackedObject = GetComponent<SteamVR_TrackedObject>();
@@ -19,24 +23,28 @@ public class Mage : MonoBehaviour {
     {
         Device = SteamVR_Controller.Input((int)TrackedObject.index);
 
-        if (Device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
+        if (fireStamp <= Time.time)
         {
-            GameObject fireball = Instantiate(Fireball, transform.position, transform.rotation) as GameObject;
-            Rigidbody rb = fireball.GetComponent<Rigidbody>();
-            rb.velocity = transform.TransformDirection(Vector3.forward * 15);
-            Destroy(fireball, 1);
+            if (Device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
+            {
+                GameObject fireball = Instantiate(Fireball, transform.position, transform.rotation) as GameObject;
+                Rigidbody rb = fireball.GetComponent<Rigidbody>();
+                rb.velocity = transform.TransformDirection(Vector3.forward * 15);
+                Destroy(fireball, 1);
+                fireStamp = Time.time + fire;
+            }
 
         }
 
-        if (Device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
+        if (timeStamp <= Time.time)
         {
-            Vector2 touchValue = Device.GetAxis(EVRButtonId.k_EButton_SteamVR_Touchpad);
-            if (touchValue.y > -1.0f && touchValue.y < -0.8f)
+            if (Device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
             {
                 GameObject fireball = Instantiate(Iceball, transform.position, transform.rotation) as GameObject;
                 Rigidbody rb = fireball.GetComponent<Rigidbody>();
                 rb.velocity = transform.TransformDirection(Vector3.forward * 15);
                 Destroy(fireball, 1);
+                timeStamp = Time.time + cooldown;
             }
         }
     }
