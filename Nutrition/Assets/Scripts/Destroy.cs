@@ -13,6 +13,7 @@ public class Destroy : MonoBehaviour {
     Rigidbody enemy;
     private float timeStamp;
 
+    // Use this to get Nav Mesh Agent of the enemy
     void Start()
     {
         enemy = GetComponent<Rigidbody>();
@@ -25,6 +26,7 @@ public class Destroy : MonoBehaviour {
         }
         
     }
+    // The amount of damage that certain weapons will deal
     void OnCollisionEnter(Collision otherObj)
     {
         if (otherObj.gameObject.tag == "Weapon")
@@ -68,7 +70,7 @@ public class Destroy : MonoBehaviour {
         }
 
     }
-
+    //Will freeze the opponent for 3 seconds if hit by iceball
     void Update()
     {
         if (timeStamp <= Time.time)

@@ -14,21 +14,25 @@ public class Rage : MonoBehaviour
     private float timeStamp;
     private float rageStamp;
 
+    // This will track the controller
     void Awake()
     {
         TrackedObject = GetComponent<SteamVR_TrackedObject>();
     }
 
+    //This will spawn the player with the basic warrior weapons
     void Start()
     {
         warrior.SetActive(true);
         rage.SetActive(false);
     }
 
+    //This controls the use of rage mode
     void Update()
     {
         Device = SteamVR_Controller.Input((int)TrackedObject.index);
 
+        // This allows rage mode to be active for a couple seconds
         if((timeStamp <= Time.time))
         {
             if (Device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
@@ -41,6 +45,7 @@ public class Rage : MonoBehaviour
             }
         }
 
+        //This adds a cooldown system to rage mode
         if (rageStamp <= Time.time)
         {
             warrior.SetActive(true);

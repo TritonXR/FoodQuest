@@ -14,15 +14,18 @@ public class Mage : MonoBehaviour {
     private float timeStamp;
     private float fireStamp;
     
+    // This will track the controller
     void Awake()
     {
         TrackedObject = GetComponent<SteamVR_TrackedObject>();
     }
-
+    // This controls the use of fireball and iceball
     void Update()
     {
+        //This will check it the controller recieves input 
         Device = SteamVR_Controller.Input((int)TrackedObject.index);
-
+        
+        //Creates fireball using touchpad and iceball's cooldown system
         if (fireStamp <= Time.time)
         {
             if (Device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
@@ -35,7 +38,7 @@ public class Mage : MonoBehaviour {
             }
 
         }
-
+        //Creates iceball using touchpad and iceball's cooldown system
         if (timeStamp <= Time.time)
         {
             if (Device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
