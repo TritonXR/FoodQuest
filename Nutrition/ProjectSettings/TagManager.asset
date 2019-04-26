@@ -4,23 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Seed Roll
   - Pick Up
-  - Fireball
-<<<<<<< HEAD
   - ExcludeTeleport
-  - TeleportIgnore
-  - ingredients
-=======
-  - Bread
-<<<<<<< HEAD
->>>>>>> 7acdadd904918fde7aeeafadca472630e44dd34b
-=======
-  - Button
+  - Croissant
   - Danish
   - Big Bread
-  - Seed Roll
-  - Croissant
->>>>>>> 2ac82b5e172b52c5b3d7bab82d2f160125da8a9b
+  - Fireball
+  - TeleportIgnore
   layers:
   - Default
   - TransparentFX
