@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class plagueImpMovement : MonoBehaviour {
+public class PlagueImpMovement : MonoBehaviour {
 
     public float moveSpeed;
     public float jumpHeight;
@@ -31,6 +31,7 @@ public class plagueImpMovement : MonoBehaviour {
         
         currTime = Time.time;
         rb = GetComponent<Rigidbody>();
+        rb.AddForce(0, 1000, 0);
     }
 	
 	// Update is called once per frame
@@ -46,30 +47,30 @@ public class plagueImpMovement : MonoBehaviour {
             distance = Vector3.Distance(player.transform.position, transform.position);
             Quaternion rot = Quaternion.LookRotation(relativePos, Vector3.up);
             
-            Vector3 moveTo = transform.forward;
-            if(transform.position.y > .5f)
-            {
-                moveTo.y = 0f;
-            }
+           //moveTo = transform.forward;
+           // if(transform.position.y > .5f)
+           // {
+           //     moveTo.y = 0f;
+           // }
 
-            if (distance > 3f) {
-                if (distance > 2f)
-                {
-                    rb.constraints = RigidbodyConstraints.None;
-                    rb.velocity = moveTo * moveSpeed;
-                }              
+            if (distance > 2f) {
+                //if (distance > 2f)
+                //{
+                rb.constraints = RigidbodyConstraints.None;
+                //rb.velocity = moveTo * moveSpeed;
+                //}              
             }
             else
             {
-                rot.x = rotX;
-                rot.z = rotZ;
+                //rot.x = rotX;
+                //rot.z = rotZ;
 
                 rb.constraints = RigidbodyConstraints.FreezePosition;
 
             }
             transform.rotation = rot;
-            rotX = rot.x;
-            rotZ = rot.z;
+            //rotX = rot.x;
+            //rotZ = rot.z;
 
 
 
