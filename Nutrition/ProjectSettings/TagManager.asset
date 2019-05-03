@@ -17,6 +17,9 @@ TagManager:
   - Hand
   - Shield
   - Iceball
+  - Rage Shield
+  - Rage Sword
+  - Floor
   layers:
   - Default
   - TransparentFX

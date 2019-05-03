@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Destroy : MonoBehaviour {
 
@@ -8,12 +9,15 @@ public class Destroy : MonoBehaviour {
     public int Fireball_Health;
     public int cooldown;
     public GameObject food;
+    NavMeshAgent freeze;
     Rigidbody enemy;
     private float timeStamp;
 
+    // Use this to get Nav Mesh Agent of the enemy
     void Start()
     {
         enemy = GetComponent<Rigidbody>();
+        freeze = GetComponent<NavMeshAgent>();
         cooldown = 3;
 
         if (Enemy_Health == 0)
@@ -22,11 +26,24 @@ public class Destroy : MonoBehaviour {
         }
         
     }
+    // The amount of damage that certain weapons will deal
     void OnCollisionEnter(Collision otherObj)
     {
         if (otherObj.gameObject.tag == "Weapon")
         {
             Enemy_Health = Enemy_Health - 50;
+            Debug.Log("Enemy has been damaged");
+        }
+
+        if (otherObj.gameObject.tag == "Rage Sword")
+        {
+            Enemy_Health = Enemy_Health - 100;
+            Debug.Log("Enemy has been damaged");
+        }
+
+        if (otherObj.gameObject.tag == "Rage Shield")
+        {
+            Enemy_Health = Enemy_Health - 25;
             Debug.Log("Enemy has been damaged");
         }
 
@@ -41,6 +58,7 @@ public class Destroy : MonoBehaviour {
             Enemy_Health = Enemy_Health - 25;
             Destroy(otherObj.gameObject);
             enemy.constraints = RigidbodyConstraints.FreezeAll;
+            freeze.enabled = false;
             timeStamp = Time.time + cooldown;
         }
 
@@ -50,13 +68,15 @@ public class Destroy : MonoBehaviour {
             Instantiate(food, transform.position, food.transform.rotation);
             Debug.Log("Enemy has been slayed");
         }
-    }
 
+    }
+    //Will freeze the opponent for 3 seconds if hit by iceball
     void Update()
     {
         if (timeStamp <= Time.time)
         {
             enemy.constraints = RigidbodyConstraints.None;
+            freeze.enabled = true;
         }
     }
 }

@@ -5,19 +5,83 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour {
 
-    Transform player;
-    NavMeshAgent nav;
+    public float moveSpeed;
+    public float jumpHeight;
+    private float currTime;
+    private float distance;
+    private float xdistance;
+    private float zdistance;
+    public Rigidbody rb;
+    private GameObject player;
+    public bool isGrounded;
+    private float timeStamp;
+    public float cooldown = 2.0f;
+    public int damp = 5;
 
-    void Awake()
+    //void Awake()
+    //{
+    //    player = GameObject.FindGameObjectWithTag("Player").transform;
+    //}
+
+    void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        nav = GetComponent<NavMeshAgent>();
+        if (moveSpeed == 0f)
+        {
+            moveSpeed = 1.0f;
+        }
+        if (jumpHeight == 0f)
+        {
+            jumpHeight = 2.0f;
+        }
+
+        currTime = Time.time;
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        nav.SetDestination(player.position);
+        if (!player)
+        {
+            player = GameObject.FindWithTag("Player");
+            Debug.Log("can't find player");
+        }
+        else
+        {
+            xdistance = player.transform.position.x - transform.position.x;
+            zdistance = player.transform.position.z - transform.position.z;
+            distance = Mathf.Sqrt(Mathf.Pow(xdistance, 2.0f) + Mathf.Pow(zdistance, 2.0f));
+            var rotationAngle = Quaternion.LookRotation(player.transform.position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotationAngle, Time.deltaTime * damp);
+
+            if (distance > 1.0f)
+            {
+                rb.constraints = RigidbodyConstraints.None;
+                //rb.velocity = Vector3.forward * moveSpeed + Vector3.up * jumpHeight;
+                rb.AddForce(transform.forward * moveSpeed);
+            }
+                
+            else
+            {
+                rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+            }
+        }
     }
 
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Floor")
+        {
+            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        }
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.tag == "Floor")
+        {
+            rb.constraints = RigidbodyConstraints.None;
+            timeStamp = Time.time + cooldown;
+        }
+    }
 }
 
