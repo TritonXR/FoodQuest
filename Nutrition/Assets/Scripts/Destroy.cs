@@ -9,7 +9,6 @@ public class Destroy : MonoBehaviour {
     public int Fireball_Health;
     public int cooldown;
     public GameObject food;
-    NavMeshAgent freeze;
     Rigidbody enemy;
     private float timeStamp;
 
@@ -17,7 +16,6 @@ public class Destroy : MonoBehaviour {
     void Start()
     {
         enemy = GetComponent<Rigidbody>();
-        freeze = GetComponent<NavMeshAgent>();
         cooldown = 3;
 
         if (Enemy_Health == 0)
@@ -58,7 +56,6 @@ public class Destroy : MonoBehaviour {
             Enemy_Health = Enemy_Health - 25;
             Destroy(otherObj.gameObject);
             enemy.constraints = RigidbodyConstraints.FreezeAll;
-            freeze.enabled = false;
             timeStamp = Time.time + cooldown;
         }
 
@@ -76,7 +73,6 @@ public class Destroy : MonoBehaviour {
         if (timeStamp <= Time.time)
         {
             enemy.constraints = RigidbodyConstraints.None;
-            freeze.enabled = true;
         }
     }
 }
