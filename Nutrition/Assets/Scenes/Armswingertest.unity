@@ -432,6 +432,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: -0.2}
+<<<<<<< HEAD
 --- !u!1 &336761216 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: bf3851513d99d054a8e0645046cab23e, type: 3}
@@ -441,23 +442,50 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: bf3851513d99d054a8e0645046cab23e, type: 3}
   m_PrefabInternal: {fileID: 498006716}
 --- !u!65 &336761219
+=======
+--- !u!1 &386430169 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1512915922007612, guid: 7118ff4d06d45ad47add646eb29163c5,
+    type: 2}
+  m_PrefabInternal: {fileID: 2018010813}
+--- !u!1 &457252972 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013268969960, guid: 1dfc9f416f83bee4b861d75d1d50e5a5,
+    type: 2}
+  m_PrefabInternal: {fileID: 841259060}
+--- !u!65 &457252977
+>>>>>>> a18af43da1ce14f809c7443a419ad4571e67f9e0
 BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 336761216}
+=======
+  m_GameObject: {fileID: 457252972}
+>>>>>>> a18af43da1ce14f809c7443a419ad4571e67f9e0
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
+<<<<<<< HEAD
   m_Size: {x: 1.418782, y: 1.418782, z: 0.19130962}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &336761220
+=======
+  m_Size: {x: 0.04, y: 0.015, z: 0.005}
+  m_Center: {x: 0.023, y: 0, z: 0}
+--- !u!54 &457252978
+>>>>>>> a18af43da1ce14f809c7443a419ad4571e67f9e0
 Rigidbody:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 336761216}
+=======
+  m_GameObject: {fileID: 457252972}
+>>>>>>> a18af43da1ce14f809c7443a419ad4571e67f9e0
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -467,6 +495,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+<<<<<<< HEAD
 --- !u!1001 &498006716
 Prefab:
   m_ObjectHideFlags: 0
@@ -576,6 +605,138 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+=======
+--- !u!43 &685267132
+Mesh:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  serializedVersion: 8
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0.01, z: 0}
+      m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
+  m_Skin: []
+  m_VertexData:
+    m_CurrentChannels: 13
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 288
+    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0.01, z: 0}
+    m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshOptimized: 0
+>>>>>>> a18af43da1ce14f809c7443a419ad4571e67f9e0
 --- !u!1 &818283704
 GameObject:
   m_ObjectHideFlags: 0
@@ -4341,11 +4502,19 @@ Prefab:
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
+<<<<<<< HEAD
       objectReference: {fileID: 1815026740}
     - target: {fileID: 3380982, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 44465583}
+=======
+      objectReference: {fileID: 1880099516}
+    - target: {fileID: 3380982, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 685267132}
+>>>>>>> a18af43da1ce14f809c7443a419ad4571e67f9e0
     - target: {fileID: 147176, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_IsActive
       value: 1
@@ -4473,6 +4642,12 @@ Prefab:
       propertyPath: m_Name
       value: Rage Sword
       objectReference: {fileID: 0}
+    - target: {fileID: 114474271863024410, guid: af34226a101926d45879dc91197dac98,
+        type: 2}
+      propertyPath: food
+      value: 
+      objectReference: {fileID: 1043050030539330, guid: 9973fac409e500c4dbaf263a072d3beb,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
   m_IsPrefabParent: 0
@@ -4618,7 +4793,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cbe268c038dd4c4c92a673367d37743, type: 3}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
 --- !u!21 &1815026740
+=======
+--- !u!21 &1880099516
+>>>>>>> a18af43da1ce14f809c7443a419ad4571e67f9e0
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -4651,6 +4830,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+<<<<<<< HEAD
 --- !u!1 &1887452760
 GameObject:
   m_ObjectHideFlags: 0
@@ -4785,6 +4965,8 @@ MonoBehaviour:
   Fireball_Health: 0
   cooldown: 0
   food: {fileID: 0}
+=======
+>>>>>>> a18af43da1ce14f809c7443a419ad4571e67f9e0
 --- !u!1001 &1923874600
 Prefab:
   m_ObjectHideFlags: 0
