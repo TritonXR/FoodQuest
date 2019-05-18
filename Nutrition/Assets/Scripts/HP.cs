@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Health : MonoBehaviour
+public class HP : MonoBehaviour
 {
     public static float CurrentHealth { get; set; }
     public static float MaxHealth { get; set; }
     public Slider healthbar;
     //public Text mytext;
-    public Health instance;
+    public HP instance;
 
     // Start is called before the first frame update
     void Start()
