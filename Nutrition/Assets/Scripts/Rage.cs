@@ -44,9 +44,9 @@ public class Rage : MonoBehaviour
                 warrior.SetActive(false);
                 rage.SetActive(true);
                 rageStamp = Time.time + ragemode;
-                Magic.startStamp = Time.time + Magic.cooldown;
                 Magic.CurrentMagic = Magic.CurrentMagic - 10;
                 magicbar.value = Magic.CalculateMagic();
+                Magic.magicRegen = true;
                 //mytext.text = CurrentHealth.ToString() + "/" + MaxHealth.ToString();
             }
         }
