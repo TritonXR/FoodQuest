@@ -9,7 +9,7 @@ public class Magic : MonoBehaviour
     public static float CurrentMagic { get; set; }
     public static float MaxMagic { get; set; }
     public Slider magicbar;
-    public Text mytext;
+    public Text magic;
     public static float cooldown = 3;
     private float magicStamp;
     public float startStamp;
@@ -24,7 +24,7 @@ public class Magic : MonoBehaviour
         CurrentMagic = MaxMagic;
         magicbar.value = CalculateMagic();
         startStamp = 0f;
-        mytext.text = "MP:" + " " + CurrentMagic.ToString() + "/" + MaxMagic.ToString();
+        magic.text = "MP:" + " " + CurrentMagic.ToString() + "/" + MaxMagic.ToString();
     }
 
     // Update is called once per frame
@@ -60,15 +60,16 @@ public class Magic : MonoBehaviour
     {
         CurrentMagic -= magiclose;
         magicbar.value = CalculateMagic();
+        magic.text = "MP:" + " " + CurrentMagic.ToString() + "/" + MaxMagic.ToString();
         magicRegen = true;
-        mytext.text = "MP:" + " " + CurrentMagic.ToString() + "/" + MaxMagic.ToString();
+        
     }
 
     public void GainMagic(float magicgain)
     {
         CurrentMagic += magicgain;
         magicbar.value = CalculateMagic();
-        mytext.text = "MP:" + " " + CurrentMagic.ToString() + "/" + MaxMagic.ToString();
+        magic.text = "MP:" + " " + CurrentMagic.ToString() + "/" + MaxMagic.ToString();
     }
 
     public static float CalculateMagic()
