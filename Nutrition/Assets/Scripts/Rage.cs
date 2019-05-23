@@ -1,7 +1,8 @@
-﻿ using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using UnityEngine.UI;
 
 public class Rage : MonoBehaviour
 { 
@@ -13,6 +14,8 @@ public class Rage : MonoBehaviour
     public float cooldown = 10;
     private float timeStamp;
     private float rageStamp;
+    public Slider magicbar;
+    public Text mytext;
 
     // This will track the controller
     void Awake()
@@ -37,11 +40,14 @@ public class Rage : MonoBehaviour
         {
             if (Device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
             {
-                timeStamp = Time.time + cooldown;
+                timeStamp = Time.time + cooldown;             
                 warrior.SetActive(false);
                 rage.SetActive(true);
                 rageStamp = Time.time + ragemode;
-                Debug.Log("Button");
+                Magic.CurrentMagic = Magic.CurrentMagic - 10;
+                magicbar.value = Magic.CalculateMagic();
+                Magic.magicRegen = true;
+                mytext.text = "MP:" + " " + Magic.CurrentMagic.ToString() + "/" + Magic.MaxMagic.ToString();
             }
         }
 
