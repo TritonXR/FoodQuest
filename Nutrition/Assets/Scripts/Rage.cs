@@ -15,7 +15,7 @@ public class Rage : MonoBehaviour
     private float timeStamp;
     private float rageStamp;
     public Slider magicbar;
-    public Text mytext;
+    public Text magic;
 
     // This will track the controller
     void Awake()
@@ -47,7 +47,7 @@ public class Rage : MonoBehaviour
                 Magic.CurrentMagic = Magic.CurrentMagic - 10;
                 magicbar.value = Magic.CalculateMagic();
                 Magic.magicRegen = true;
-                mytext.text = "MP:" + " " + Magic.CurrentMagic.ToString() + "/" + Magic.MaxMagic.ToString();
+                magic.text = "MP:" + " " + Magic.CurrentMagic.ToString() + "/" + Magic.MaxMagic.ToString();
             }
         }
 
