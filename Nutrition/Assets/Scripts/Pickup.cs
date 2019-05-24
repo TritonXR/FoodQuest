@@ -26,16 +26,16 @@ public class Pickup : MonoBehaviour {
 
         // PICK UP AINT WORKIN N I DONT KNOW WHY :D
 
-    void OnCollisionEnter(Collision other)
-  {
-      if (other.gameObject.tag == "Hand")
-      {
-          Destroy(gameObject);
+  //  void OnCollisionEnter(Collision other)
+  //{
+  //    if (other.gameObject.tag == "Hand")
+  //    {
+  //        Destroy(gameObject);
 
-          Inventory.instance.addItem(gameObject.name);
-          // add the item to the inventory
-          print("Item Collected" + gameObject.name);
-      }
-  }
+  //        Inventory.instance.addItem(gameObject.name);
+  //        // add the item to the inventory
+  //        print("Item Collected" + gameObject.name);
+  //    }
+  //}
 
 }
