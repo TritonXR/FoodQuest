@@ -6,26 +6,21 @@ using System.Linq;
 public class Inventory : MonoBehaviour {
 
     public GameObject food;
-    public GameObject panelImage;
+    //the actual image sprites to be displayed
+    public static GameObject apple;
+    public static GameObject fish;
+    public static GameObject carrot;
+    public static GameObject broc;
+    public static GameObject grape;
 
-    //TODO: change later when have added all the food details like sprite and nutritional content
-    //for now name of food is key and value is its calories
-    //for later, name of food is key, will store sprite/img and stat values in object array as dict value
-
-    //call Inventory.updateFood()
-    //generate random number
-    //go into conditional, 
-    //if not in inventory yet, enable,
-    //if it is then increase the count. 
-
-
-    Dictionary<string, int> items = new Dictionary<string, int>();
+    Dictionary<GameObject, int> items = new Dictionary<GameObject, int>();
     //public static Inventory instance;
 
     void Start () {
-       //not sure about this
-        //food = GameObject.FindGameObjectWithTag("food");
-        //instance = this;
+        //not sure about this
+        //apple = GameObject.F
+        //how to grab the foodz indGameObjectWithTag("food");
+        
 	}
 
     void OnCollisionEnter(Collision otherObj)
@@ -33,7 +28,6 @@ public class Inventory : MonoBehaviour {
 
         if (otherObj.gameObject.tag == "Weapon")
         {
-
             Debug.Log("food is destroyed!!!!!!!!!!!!!!!!!!!");
             food.SetActive(false);
             Destroy(food);
@@ -42,31 +36,34 @@ public class Inventory : MonoBehaviour {
         }
     }
 
-    public string pickRandomItem()
+    public GameObject pickRandomItem()
     {
         //generate random number and choose an item to add 
-        return "apple";
+        var randomInt = Random.Range(1, 6);
+        var randomFood = foodsList[randomInt];
+        return randomFood;
     }
 
     
     public void addItem()
     {
         //if the item has never been added
-        string foodName = pickRandomItem();
+        GameObject foodName = pickRandomItem();
         if ((items.ContainsKey(foodName)))
         {
             Debug.Log("incrementing item");
             items[foodName]++;
         }
+        //if the item is already in it
         else if ((!items.ContainsKey(foodName))) {
             //add the sprite
             Debug.Log("adding item");
             //activate panel for first time
-            panelImage.SetActive(true);
+            foodName = GameObject.Find(foodName.name);
+            foodName.SetActive(true);
             items.Add(foodName, 1);
         }
-        //if the item is already in it
-
+   
 
        
     }
@@ -86,13 +83,18 @@ public class Inventory : MonoBehaviour {
 
 
     // our "data base :P" of food, their sprites and stats
-    //Dictionary<string, int> foodsList = new Dictionary<string, int>()
-    //{
-    //    {"Bun", 20 },
-    //    {"Tomato", 50 },
-    //    {"Lettuce", 15 },
-    //    {"Meat", 300 },
-    //    {"Cheese", 150 },
-    //    {"Apple", 75 }
-    //};
+    Dictionary<int, GameObject> foodsList = new Dictionary<int, GameObject>()
+    {
+        {1, apple},
+        {2, fish},
+        {3, carrot},
+        {4, broc},
+        {5, grape},
+        //{"Bun", 20 },
+        //{"Tomato", 50 },
+        //{"Lettuce", 15 },
+        //{"Meat", 300 },
+        //{"Cheese", 150 },
+        //{"Apple", 75 }
+    };
 }
