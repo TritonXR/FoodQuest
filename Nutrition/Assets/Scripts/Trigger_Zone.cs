@@ -10,6 +10,7 @@ public class Trigger_Zone : MonoBehaviour
     public float count = 0;
     public float duration = 0f;
     public GameObject plate;
+    public int fruitCount = 0;
     private Material origMat;
     private Color origClr;
     private Color targetColor;
@@ -54,23 +55,39 @@ public class Trigger_Zone : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        string name = other.gameObject.tag;
-        Debug.Log(name);
-        int calorieVal = dict[name];
-        Debug.Log(calorieVal);
-        count = count + calorieVal;
-        Debug.Log("count" + count);
+        if (other.gameObject.tag == "Orange")
+        {
+            fruitCount++;
+        }
+        else
+        {
+            string name = other.gameObject.tag;
+            //Debug.Log(name);
+            int calorieVal = dict[name];
+            Debug.Log(calorieVal);
+            count = count + calorieVal;
+            Debug.Log("count" + count);
+        }
+        
         colorChange(Color.green);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        string name = other.gameObject.tag;
-        Debug.Log(name);
-        int calorieVal = dict[name];
-        Debug.Log(calorieVal);
-        count = count - calorieVal;
-        Debug.Log("count" + count);
+        if (other.gameObject.tag == "Orange")
+        {
+            fruitCount--;
+        }
+        else
+        {
+            string name = other.gameObject.tag;
+            //Debug.Log(name);
+            int calorieVal = dict[name];
+            Debug.Log(calorieVal);
+            count = count - calorieVal;
+            Debug.Log("count" + count);
+        }
+        
         colorChange(Color.red);
     }
 
