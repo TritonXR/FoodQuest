@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114065436755286680}
   - component: {fileID: 65765217730077040}
   - component: {fileID: 54803003465017900}
+  - component: {fileID: 114026177005506724}
   m_Layer: 0
   m_Name: orange
   m_TagString: Orange
@@ -133,6 +134,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114026177005506724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1655885059823284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a068fd9c3905e4468be1ce9b9862b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114065436755286680
 MonoBehaviour:
   m_ObjectHideFlags: 1

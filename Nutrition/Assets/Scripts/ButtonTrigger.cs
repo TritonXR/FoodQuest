@@ -20,7 +20,7 @@ public class ButtonTrigger : MonoBehaviour {
     public float percentOff = 0;
     public Boolean reset = false;
 
-    public float xSpacing = -0.5f;
+    public float xSpacing = -0.4f;
     public float zSpacing = 0.2f;
 
     public GameObject cup;
@@ -108,10 +108,11 @@ public class ButtonTrigger : MonoBehaviour {
             else
             {
                 //First clear any cups from previous iteration
-                allCups.Clear();
+                removeCups();
+                numCup = 0;
+
                 GameObject temp;
                 totalFruit = Trigger_Zone.instance.fruitCount;
-                Debug.Log("totalFruit: " + totalFruit);
                 fullCup = Mathf.FloorToInt(totalFruit/3);               //Number of full cups to spawn
                 partFilledCup = totalFruit % 3;                  //Partly filled cup
 
@@ -119,11 +120,11 @@ public class ButtonTrigger : MonoBehaviour {
                 //third of the way filled
                 if(partFilledCup == 1)
                 {
+                    Debug.Log("we are spawning a third filled cup");
                     temp = Instantiate(cup, spawn, Quaternion.Euler(0, 0, 0));
                     allCups.Add(temp);
                     //Add cups to disableMacro as well so when we switch games they will all disable
                     gameController.addMacroObj(temp.GetComponent<disableMacro>());
-                    Debug.Log("spawned a cup third way filled");
                     foreach (Transform child in temp.transform)
                     {
                         //disable top and middle cylinder to simulate a third filled cup
@@ -136,6 +137,7 @@ public class ButtonTrigger : MonoBehaviour {
                 }
                 else if(partFilledCup == 2)
                 {
+                    Debug.Log("we are spawning a 2/3rd filled cup");
                     temp = Instantiate(cup, spawn, Quaternion.Euler(0, 0, 0));
                     allCups.Add(temp);
                     gameController.addMacroObj(temp.GetComponent<disableMacro>());
@@ -151,15 +153,24 @@ public class ButtonTrigger : MonoBehaviour {
                 }
 
                 Vector3 spawnAdjust = spawn;
-                for(int i=numCup; i < fullCup; i++)
+                for(int i=0; i < fullCup; i++)
                 {
-                    spawnAdjust += new Vector3(xSpacing, 0, 0);
-
+                    if(i == 0 && partFilledCup == 0)
+                    {
+                        //Do Nothing if partfilledcup did not spawn
+                    }
+                    else
+                    {
+                        spawnAdjust += new Vector3(xSpacing, 0, 0);
+                    }
+                    
                     if(spawnAdjust.x <= 13.1)
                     {
                         spawnAdjust = spawn;
                         spawnAdjust += new Vector3(0, 0, zSpacing);
                     }
+
+                    Debug.Log(spawnAdjust);
 
                     temp = Instantiate(cup, spawnAdjust, Quaternion.Euler(0, 0, 0));
                     allCups.Add(temp);
@@ -178,5 +189,14 @@ public class ButtonTrigger : MonoBehaviour {
     {
         calGame = true;
         Debug.Log("cal game on ");
+    }
+
+    private void removeCups()
+    {
+        foreach(GameObject cup in allCups)
+        {
+            cup.SetActive(false);
+        }
+        allCups.Clear();
     }
 }
