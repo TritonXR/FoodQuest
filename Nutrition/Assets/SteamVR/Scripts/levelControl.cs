@@ -7,9 +7,8 @@ public class levelControl : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("Weapon") || other.CompareTag("Rage Sword"))
+        if (other.CompareTag("Player") || other.CompareTag("Weapon"))
         {
-            Debug.Log(" scene changer obj? collided with " + other.tag);
             EditorSceneManager.LoadScene(1);
         }
     }
