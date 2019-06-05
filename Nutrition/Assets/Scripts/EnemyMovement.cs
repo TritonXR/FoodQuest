@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour {
 
@@ -48,21 +47,22 @@ public class EnemyMovement : MonoBehaviour {
         else
         {
             xdistance = player.transform.position.x - transform.position.x;
-            zdistance = player.transform.position.z - transform.position.z;
+            zdistance = player.transform.position.y - transform.position.y;
             distance = Mathf.Sqrt(Mathf.Pow(xdistance, 2.0f) + Mathf.Pow(zdistance, 2.0f));
-            var rotationAngle = Quaternion.LookRotation(player.transform.position - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotationAngle, Time.deltaTime * damp);
+            var rotationAngle = Quaternion.LookRotation(player.transform.position - transform.position, Vector3.forward);
+            //transform.rotation = Quaternion.Slerp(transform.rotation, rotationAngle, Time.deltaTime * damp);
 
             if (distance > 1.0f)
             {
-                rb.constraints = RigidbodyConstraints.None;
-                //rb.velocity = Vector3.forward * moveSpeed + Vector3.up * jumpHeight;
-                rb.AddForce(transform.forward * moveSpeed);
+                //rb.constraints = RigidbodyConstraints.None;
+                rb.velocity = Vector3.left * moveSpeed;
+                Debug.Log(zdistance);
+                //rb.AddForce(transform.forward * moveSpeed);
             }
                 
             else
             {
-                rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+                rb.velocity = Vector3.zero;
             }
         }
     }
