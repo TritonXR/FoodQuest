@@ -82,7 +82,7 @@ public class Destroy : MonoBehaviour {
     {
         if (timeStamp <= Time.time)
         {
-            enemy.constraints = RigidbodyConstraints.None;
+            //enemy.constraints = RigidbodyConstraints.None;
         }
     }
 }
