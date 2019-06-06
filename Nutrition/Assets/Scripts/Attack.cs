@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Destroy : MonoBehaviour {
+public class Attack : MonoBehaviour {
 
     public int Enemy_Health;
     public int Fireball_Health;

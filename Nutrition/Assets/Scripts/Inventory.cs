@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class Inventory : MonoBehaviour {
     public  GameObject broc;
     public  GameObject grape;
     private GameObject randomFood;
+    public Text fishes;
     Dictionary<GameObject, int> items = new Dictionary<GameObject, int>();
     //public static Inventory instance;
 
@@ -30,7 +32,6 @@ public class Inventory : MonoBehaviour {
 
         if (otherObj.gameObject.tag == "Weapon" || otherObj.gameObject.tag == "Rage Sword")
         {
-
             food.SetActive(true);
             Debug.Log("food is " + food.activeSelf);
             if (food != null)
@@ -39,7 +40,7 @@ public class Inventory : MonoBehaviour {
                 food.SetActive(false);
                 //Destroy(food);
                 //Debug.Log("food is destroyed " + food.activeSelf);
-                addItem();
+                AddItem();
             }
         }
     }
@@ -90,7 +91,7 @@ public class Inventory : MonoBehaviour {
     }
 
 
-    public void addItem()
+    public void AddItem()
     {
         //if the item has  been added
         GameObject foodName = pickRandomItem();
@@ -114,7 +115,7 @@ public class Inventory : MonoBehaviour {
     }
 
     //TODO: if the user wants to delete things
-    public void removeItem(GameObject food)
+    public void RemoveItem(GameObject food)
     {
         //add the name of the item and its list of information (if in inventory)
        // items.Remove(food.name);
@@ -122,9 +123,10 @@ public class Inventory : MonoBehaviour {
 
 
     // Update is called once per frame
-    void Update () {
-		
-	}
+    void Update ()
+    {
+        Debug.Log(items);
+    }
 
 
     // our "data base :P" of food, their sprites and stats
