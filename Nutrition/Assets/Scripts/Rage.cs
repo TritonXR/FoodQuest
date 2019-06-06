@@ -54,14 +54,8 @@ public class Rage : MonoBehaviour
         //This adds a cooldown system to rage mode
         if (rageStamp <= Time.time)
         {
-            if (warrior != null)
-            {
-                warrior.SetActive(true);
-            }
-            if (rage != null)
-            {
-                rage.SetActive(false);
-            }
+            warrior.SetActive(true);
+            rage.SetActive(false);
         }
     }
 }

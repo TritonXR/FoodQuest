@@ -9,16 +9,16 @@ public class Attack : MonoBehaviour {
     public int Fireball_Health;
     public int cooldown;
     public GameObject food;
-    public GameObject sphere;
     Rigidbody enemy;
     private float timeStamp;
+    private bool destroyedAlready;
 
     // Use this to get Nav Mesh Agent of the enemy
     void Start()
     {
+        destroyedAlready = false;
         enemy = GetComponent<Rigidbody>();
         cooldown = 3;
-        food.SetActive(false);
 
         if (Enemy_Health == 0)
         {
@@ -67,13 +67,13 @@ public class Attack : MonoBehaviour {
         if (Enemy_Health <= 0)
         {
 
-          //  // Instantiate(food, transform.position, food.transform.rotation);
-         //   if (otherObj.gameObject.tag == "enemy")
-          //  { 
-            Debug.Log("Enemy has been slayed");
-            sphere.SetActive(false);
+            // Instantiate(food, transform.position, food.transform.rotation);
 
-         // }
+            Debug.Log("Enemy has been slayed");
+            Destroy(gameObject);
+
+            food.SetActive(true);
+            Debug.Log("food is " + food.activeSelf);
         }
 
     }
@@ -82,7 +82,7 @@ public class Attack : MonoBehaviour {
     {
         if (timeStamp <= Time.time)
         {
-            enemy.constraints = RigidbodyConstraints.None;
+            //enemy.constraints = RigidbodyConstraints.None;
         }
     }
 }
