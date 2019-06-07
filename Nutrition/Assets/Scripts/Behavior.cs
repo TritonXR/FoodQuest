@@ -18,7 +18,7 @@ public class Behavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if(Vector3.Distance(transform.position, player.position) > 3)
+        if(Vector3.Distance(transform.position, player.position) > 2)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed);
             Quaternion rotationAngle = Quaternion.LookRotation(player.transform.position - transform.position);
