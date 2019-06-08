@@ -8,6 +8,11 @@ public class SceneController : MonoBehaviour {
     private int currentSceneIndex;
     private int nextSceneIndex;
 
+    void Awake()
+    {
+        DynamicGI.UpdateEnvironment();
+    }
+
     // Use this for initialization
     void Start () {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
