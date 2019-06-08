@@ -29,6 +29,11 @@ public class SceneController : MonoBehaviour {
         {
             prevScene();
         }
+        //Right shift key to restart current scene
+        else if(Input.GetKeyUp(KeyCode.RightShift))
+        {
+            SceneManager.LoadScene(currentSceneIndex);
+        }
 
         if (nextSceneIndex != currentSceneIndex)
         {
@@ -53,4 +58,6 @@ public class SceneController : MonoBehaviour {
         if (nextSceneIndex < 0)
             nextSceneIndex = SceneManager.sceneCountInBuildSettings - 1;
     }
+    
+
 }
