@@ -10,8 +10,9 @@ public class HP : MonoBehaviour
     public static float MaxHealth { get; set; }
     public Slider healthbar;
     public Text health;
-    public HP instance;
     public Text tomatoText;
+    public Text saltText;
+    public Text pepperText;
   
 
     // Start is called before the first frame update
@@ -21,13 +22,14 @@ public class HP : MonoBehaviour
         CurrentHealth = MaxHealth;
         healthbar.value = CalculateHealth();
         health.text = "HP:" + " " + CurrentHealth.ToString() + "/" + MaxHealth.ToString();
-        tomatoText.text = Item.tomato.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
         tomatoText.text = Item.tomato.ToString();
+        saltText.text = Item.salt.ToString();
+        pepperText.text = Item.pepper.ToString();
     }
 
     public void DealDamage(float damageValue)
