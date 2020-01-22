@@ -56,8 +56,12 @@ public class disableController : MonoBehaviour {
             btnSwitch.turnOnCal();
             player.transform.position = caloriePosition.transform.position;
         }
-        if (Input.GetKeyDown("[3]"))
+        if (Input.GetKeyDown("[3]") || GameDecider.Macro)
         {
+            if(GameDecider.Macro)
+            {
+                GameDecider.Macro = false;
+            }
             Debug.Log("Switch to Macro Molecule Game");
             setCalState(false);
             setBMIState(false);

@@ -26,6 +26,7 @@ public class ButtonTrigger : MonoBehaviour {
     public GameObject cup;
     public GameObject cupSpawnLocation;
     public disableController gameController;
+    public MacroText textUpdate;
 
     // Use this for initialization
     void Start()
@@ -152,6 +153,7 @@ public class ButtonTrigger : MonoBehaviour {
                     numCup++;
                 }
 
+                //Spawning cups with spacing in between
                 Vector3 spawnAdjust = spawn;
                 for(int i=0; i < fullCup; i++)
                 {
@@ -176,6 +178,8 @@ public class ButtonTrigger : MonoBehaviour {
                     allCups.Add(temp);
                     gameController.addMacroObj(temp.GetComponent<disableMacro>());
                 }
+
+                textUpdate.updateCupText(fullCup, partFilledCup);
             }
 
         }

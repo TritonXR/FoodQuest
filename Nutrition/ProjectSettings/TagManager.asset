@@ -20,6 +20,10 @@ TagManager:
   - Rage Shield
   - Rage Sword
   - Floor
+  - calorie
+  - macro
+  - Pepper
+  - Salt
   layers:
   - Default
   - TransparentFX

@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4400166789077164}
   - component: {fileID: 114502158540876276}
   m_Layer: 0
-  m_Name: OrientationFixedMushroom
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -20,7 +20,7 @@ public class Destroy : MonoBehaviour {
 
         if (Enemy_Health == 0)
         {
-            Enemy_Health = 100;
+            Enemy_Health = 150;
         }
         
     }
@@ -35,7 +35,7 @@ public class Destroy : MonoBehaviour {
 
         if (otherObj.gameObject.tag == "Rage Sword")
         {
-            Enemy_Health = Enemy_Health - 100;
+            Enemy_Health = Enemy_Health - 75;
             Debug.Log("Enemy has been damaged");
         }
 
