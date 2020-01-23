@@ -27,9 +27,9 @@ public class HP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tomatoText.text = Item.tomato.ToString();
-        saltText.text = Item.salt.ToString();
-        pepperText.text = Item.pepper.ToString();
+        tomatoText.text = Item.food["Tomato"].ToString();
+        saltText.text = Item.food["Salt"].ToString();
+        pepperText.text = Item.food["Pepper"].ToString();
     }
 
     public void DealDamage(float damageValue)

@@ -5,14 +5,11 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour {
 
-    public static int tomato = 0;
-    public static int salt = 0;
-    public static int pepper = 0;
-
     public GameObject tomatoPic;
     public GameObject saltPic;
     public GameObject pepperPic;
 
+    public static Dictionary<string, int> food;
 
 
     void Start()
@@ -20,8 +17,15 @@ public class Item : MonoBehaviour {
         tomatoPic.SetActive(false);
         saltPic.SetActive(false);
         pepperPic.SetActive(false);
-        Dictionary<int, string> food = new Dictionary<int, string>();
-        food.Add(1, "Tomato");
+        food = new Dictionary<string, int>();
+        food.Add("Tomato", 0);
+        food.Add("Salt", 0);
+        food.Add("Pepper", 0);
+    }
+
+    void Update()
+    {
+        Debug.Log(food["Tomato"]);
     }
 
 
@@ -29,21 +33,21 @@ public class Item : MonoBehaviour {
     {
         if (otherObj.gameObject.tag == "Big Bread")
         {
-            tomato += 1;
+            food["Tomato"] += 1;
             Destroy(otherObj.gameObject);
             tomatoPic.SetActive(true);
         }
 
         if (otherObj.gameObject.tag == "Salt")
         {
-            salt += 1;
+            food["Salt"] += 1;
             Destroy(otherObj.gameObject);
             saltPic.SetActive(true);
         }
 
         if (otherObj.gameObject.tag == "Pepper")
         {
-            pepper += 1;
+            food["Pepper"] += 1;
             Destroy(otherObj.gameObject);
             pepperPic.SetActive(true);
         }
