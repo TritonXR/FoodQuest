@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114645473518514984}
   - component: {fileID: 114236609464276890}
   - component: {fileID: 114190127193272502}
+  - component: {fileID: 114739576113826218}
   m_Layer: 0
   m_Name: bread-roll-1
   m_TagString: Seed Roll
@@ -205,5 +206,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114739576113826218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1713534318959098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72dcee3a48cda1b41bbf0f77fb9eb878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

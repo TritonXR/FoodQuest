@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114076452609497156}
   - component: {fileID: 114974546812006854}
   - component: {fileID: 114530929596363560}
+  - component: {fileID: 114039918724132092}
   m_Layer: 0
   m_Name: bread-4
   m_TagString: Big Bread
@@ -115,6 +116,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02274546, y: 0.039259244, z: 0.013232258}
   m_Center: {x: -0.000000002793968, y: -2.0816682e-17, z: -4.6566126e-10}
+--- !u!114 &114039918724132092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1213970130429186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72dcee3a48cda1b41bbf0f77fb9eb878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114076452609497156
 MonoBehaviour:
   m_ObjectHideFlags: 1

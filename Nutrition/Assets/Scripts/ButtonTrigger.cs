@@ -5,11 +5,28 @@ using UnityEngine.UI;
 using System;
 
 public class ButtonTrigger : MonoBehaviour {
+
+    private bool calGame = true;
+
+    private int totalFruit = 0;
+    private int fullCup = 0;
+    private int partFilledCup = 0;
+    private int numCup = 0;
+    private List<GameObject> allCups = new List<GameObject>();
+
     public float total = 0;
     public float goal = 0;
     public string userText;
     public float percentOff = 0;
     public Boolean reset = false;
+
+    public float xSpacing = -0.4f;
+    public float zSpacing = 0.2f;
+
+    public GameObject cup;
+    public GameObject cupSpawnLocation;
+    public disableController gameController;
+    public MacroText textUpdate;
 
     // Use this for initialization
     void Start()
@@ -43,50 +60,147 @@ public class ButtonTrigger : MonoBehaviour {
     {
         if (other.tag == "Button")
         {
-            randNumber.instanceNum.calorieMax.text = "";
-            //Reset if plate is empty
-            total = Trigger_Zone.instance.count;
-            if (total == 0)
+            Debug.Log(calGame);
+            if(calGame)
             {
-                randNumber.instanceNum.resetGoal();
-                goal = randNumber.instanceNum.randomInt;
-                randNumber.instanceNum.calorieMax.text += "Your goal is: " + goal;
+                randNumber.instanceNum.calorieMax.text = "";
+                //Reset if plate is empty
+                total = Trigger_Zone.instance.count;
+                if (total == 0)
+                {
+                    randNumber.instanceNum.resetGoal();
+                    goal = randNumber.instanceNum.randomInt;
+                    randNumber.instanceNum.calorieMax.text += "Your goal is: " + goal;
+                }
+                else
+                {
+                    randNumber.instanceNum.calorieMax.text += "Your goal is: " + goal;
+                    userText = randNumber.instanceNum.calorieMax.text;
+                    //update their text, show them their estimation
+                    //randNumber.instanceNum.calorieMax.text += "\n" + "Your calories: " + count;
+
+                    //total += 2000;
+                    randNumber.instanceNum.calorieMax.text += "\n" + "Your calories: " + total;
+
+                    float difference = Math.Abs(goal - total);
+
+
+                    //calculate the difference
+                    randNumber.instanceNum.calorieMax.text += "\n" + "You were off by: " + difference;
+
+                    //calculate over or underestimation %
+                    if (total > goal)
+                    {
+
+                        randNumber.instanceNum.calorieMax.text += "\n" + "Calories were over estimated your by " + (int)getPercent() + "%";
+                    }
+                    else if (total < goal)
+                    {
+                        randNumber.instanceNum.calorieMax.text += "\n" + "Calories were under estimated your by " + (int)getPercent() + "%";
+                    }
+
+                    // display the components calories????
+
+                    // logic for winner or loser
+                    // score swith
+                }
             }
+
             else
             {
-                randNumber.instanceNum.calorieMax.text += "Your goal is: " + goal;
-                userText = randNumber.instanceNum.calorieMax.text;
-                //update their text, show them their estimation
-                //randNumber.instanceNum.calorieMax.text += "\n" + "Your calories: " + count;
+                //First clear any cups from previous iteration
+                removeCups();
+                numCup = 0;
 
-                //total += 2000;
-                randNumber.instanceNum.calorieMax.text += "\n" + "Your calories: " + total;
+                GameObject temp;
+                totalFruit = Trigger_Zone.instance.fruitCount;
+                fullCup = Mathf.FloorToInt(totalFruit/3);               //Number of full cups to spawn
+                partFilledCup = totalFruit % 3;                  //Partly filled cup
 
-                float difference = Math.Abs(goal - total);
-
-
-                //calculate the difference
-                randNumber.instanceNum.calorieMax.text += "\n" + "You were off by: " + difference;
-
-                //calculate over or underestimation %
-                if (total > goal)
+                Vector3 spawn = cupSpawnLocation.transform.position;
+                //third of the way filled
+                if(partFilledCup == 1)
                 {
-
-                    randNumber.instanceNum.calorieMax.text += "\n" + "Calories were over estimated your by " + (int)getPercent() + "%";
+                    Debug.Log("we are spawning a third filled cup");
+                    temp = Instantiate(cup, spawn, Quaternion.Euler(0, 0, 0));
+                    allCups.Add(temp);
+                    //Add cups to disableMacro as well so when we switch games they will all disable
+                    gameController.addMacroObj(temp.GetComponent<disableMacro>());
+                    foreach (Transform child in temp.transform)
+                    {
+                        //disable top and middle cylinder to simulate a third filled cup
+                        if(child.name == "juice2" || child.name == "juice3")
+                        {
+                            child.gameObject.SetActive(false);
+                        }
+                    }
+                    numCup++;
                 }
-                else if (total < goal)
+                else if(partFilledCup == 2)
                 {
-                    randNumber.instanceNum.calorieMax.text += "\n" + "Calories were under estimated your by " + (int)getPercent() + "%";
+                    Debug.Log("we are spawning a 2/3rd filled cup");
+                    temp = Instantiate(cup, spawn, Quaternion.Euler(0, 0, 0));
+                    allCups.Add(temp);
+                    gameController.addMacroObj(temp.GetComponent<disableMacro>());
+                    foreach (Transform child in temp.transform)
+                    {
+                        //disable top cylinder to simulate a cup filled 2/3
+                        if (child.name == "juice3")
+                        {
+                            child.gameObject.SetActive(false);
+                        }
+                    }
+                    numCup++;
                 }
 
-                // display the components calories????
+                //Spawning cups with spacing in between
+                Vector3 spawnAdjust = spawn;
+                for(int i=0; i < fullCup; i++)
+                {
+                    if(i == 0 && partFilledCup == 0)
+                    {
+                        //Do Nothing if partfilledcup did not spawn
+                    }
+                    else
+                    {
+                        spawnAdjust += new Vector3(xSpacing, 0, 0);
+                    }
+                    
+                    if(spawnAdjust.x <= 13.1)
+                    {
+                        spawnAdjust = spawn;
+                        spawnAdjust += new Vector3(0, 0, zSpacing);
+                    }
 
-                // logic for winner or loser
-                // score swith
+                    Debug.Log(spawnAdjust);
+
+                    temp = Instantiate(cup, spawnAdjust, Quaternion.Euler(0, 0, 0));
+                    allCups.Add(temp);
+                    gameController.addMacroObj(temp.GetComponent<disableMacro>());
+                }
+
+                textUpdate.updateCupText(fullCup, partFilledCup);
             }
 
-            
-
         }
+    }
+    public void turnOffCal()
+    {
+        calGame = false;
+        Debug.Log("cal game off");
+    }
+    public void turnOnCal()
+    {
+        calGame = true;
+        Debug.Log("cal game on ");
+    }
+
+    private void removeCups()
+    {
+        foreach(GameObject cup in allCups)
+        {
+            cup.SetActive(false);
+        }
+        allCups.Clear();
     }
 }
