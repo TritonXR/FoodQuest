@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Destroy : MonoBehaviour
-{
+public class Destroy : MonoBehaviour {
 
     public int Enemy_Health;
     public int Fireball_Health;
@@ -23,7 +22,7 @@ public class Destroy : MonoBehaviour
         {
             Enemy_Health = 150;
         }
-
+        
     }
     // The amount of damage that certain weapons will deal
     void OnCollisionEnter(Collision otherObj)
