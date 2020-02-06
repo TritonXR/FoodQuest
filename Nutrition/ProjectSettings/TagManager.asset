@@ -24,6 +24,7 @@ TagManager:
   - macro
   - Pepper
   - Salt
+  - Food
   layers:
   - Default
   - TransparentFX
