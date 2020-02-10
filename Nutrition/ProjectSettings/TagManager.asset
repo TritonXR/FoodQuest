@@ -6,12 +6,6 @@ TagManager:
   tags:
   - Pick Up
   - Fireball
-  - Bread
-  - Button
-  - Danish
-  - Big Bread
-  - Seed Roll
-  - Croissant
   - Enemy
   - Weapon
   - Hand
@@ -19,12 +13,12 @@ TagManager:
   - Iceball
   - Rage Shield
   - Rage Sword
-  - Floor
-  - calorie
-  - macro
   - Pepper
   - Salt
   - Food
+  - Class Decision
+  - magePortal
+  - warriorPortal
   layers:
   - Default
   - TransparentFX
