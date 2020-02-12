@@ -6,11 +6,14 @@ public class classDecision : MonoBehaviour {
 
     public GameObject warriorPortal;
     public GameObject magePortal;
+    public GameObject startArrow;
+
 
     void Start()
     {
         warriorPortal.SetActive(false);
         magePortal.SetActive(false);
+        startArrow.SetActive(true);
     }
 
     void OnTriggerEnter(Collider other)
@@ -19,6 +22,7 @@ public class classDecision : MonoBehaviour {
         {
             warriorPortal.SetActive(true);
             magePortal.SetActive(true);
+            startArrow.SetActive(false);
         }
     }
 }
