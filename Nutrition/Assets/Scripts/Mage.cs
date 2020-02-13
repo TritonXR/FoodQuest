@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
-public class Mage : MonoBehaviour {
+public class Mage : Roles {
 
     private SteamVR_TrackedObject TrackedObject; //= null;
     public SteamVR_Controller.Device Device;

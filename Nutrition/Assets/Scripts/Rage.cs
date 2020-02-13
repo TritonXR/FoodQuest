@@ -4,7 +4,7 @@ using UnityEngine;
 using Valve.VR;
 using UnityEngine.UI;
 
-public class Rage : MonoBehaviour
+public class Rage : Roles
 { 
     private SteamVR_TrackedObject TrackedObject; //= null;
     public SteamVR_Controller.Device Device;
