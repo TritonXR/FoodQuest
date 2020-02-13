@@ -5,13 +5,14 @@ using UnityEngine.AI;
 
 public class Mine : MonoBehaviour
 {
-    public int resetTimer;
-    public int mineHealth;
-    public bool isActive;
+    private int resetTimer;
+    private int mineHealth;
+    private bool isActive;
     private float timeStamp;
     public GameObject food;
     Rigidbody mine;
     private Vector3 originalSize;
+    public AudioClip audioClip;
 
     [SerializeField]
     private string tag;
@@ -62,17 +63,37 @@ public class Mine : MonoBehaviour
         if (mineHealth <= 0)
         {
             GameObject drop;
-            drop = Instantiate(food, transform.position, food.transform.rotation);
-            drop.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            Component component;
+            AudioSource audioSource;
+
+            Vector3 newPosition = new Vector3(transform.position.x + 2, transform.position.y, transform.position.z+2);
+            drop = Instantiate(food, newPosition, food.transform.rotation);
+            drop.transform.localScale = new Vector3(25f, 25f, 25f);
             drop.tag = tag;
-            drop = Instantiate(food, transform.position, food.transform.rotation);
-            drop.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            component = drop.GetComponent<Mine>();
+            Destroy(component);
+            audioSource = drop.GetComponent<AudioSource>();
+            Destroy(audioSource);
+            newPosition = new Vector3(transform.position.x - 2, transform.position.y, transform.position.z+2);
+            drop = Instantiate(food, newPosition, food.transform.rotation);
+            drop.transform.localScale = new Vector3(25f, 25f, 25f);
             drop.tag = tag;
-            drop = Instantiate(food, transform.position, food.transform.rotation);
-            drop.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            component = drop.GetComponent<Mine>();
+            Destroy(component);
+            audioSource = drop.GetComponent<AudioSource>();
+            Destroy(audioSource);
+            newPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z-2);
+            drop = Instantiate(food, newPosition, food.transform.rotation);
+            drop.transform.localScale = new Vector3(25f, 25f, 25f);
             drop.tag = tag;
+            component = drop.GetComponent<Mine>();
+            Destroy(component);
+            audioSource = drop.GetComponent<AudioSource>();
+            Destroy(audioSource);
+
             AudioSource audio = this.GetComponent<AudioSource>();
-            audio.Play();
+            audio.PlayOneShot(audioClip);
+            Debug.Log("Breaking sound played");
             this.transform.localScale = new Vector3(0, 0, 0);
             isActive = false;
             timeStamp = Time.time + resetTimer;
@@ -87,6 +108,7 @@ public class Mine : MonoBehaviour
             if(timeStamp <= Time.time)
             {
                 isActive = true;
+                mineHealth = 3;
                 this.transform.localScale = originalSize;
             }
         }
