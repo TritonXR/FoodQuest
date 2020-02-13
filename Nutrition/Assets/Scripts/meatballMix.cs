@@ -6,10 +6,6 @@ using UnityEngine.UI;
 public class meatballMix : MonoBehaviour 
 {
 
-	bool beeff = false;
-	bool saltt = false;
-	bool pepperr = false;
-	bool ingre = false;
 	bool ges = false;
 	int count = 0;
 	int countt = 0;
@@ -22,17 +18,14 @@ public class meatballMix : MonoBehaviour
 		if (other.gameObject.tag == "Beef") {
 
 			stuffInPlate [0] = other.gameObject.tag; 
-			beeff = true;
 		}
 
 		if (other.gameObject.tag == "Pepper") {
 			stuffInPlate [1] = other.gameObject.tag; 
-			pepperr = true;
 		}
 
 		if (other.gameObject.tag == "Salt") {
 			stuffInPlate [2] = other.gameObject.tag; 
-			saltt = true;
 		}
 
 		if (other.gameObject.tag == "leftHand"){
@@ -44,31 +37,30 @@ public class meatballMix : MonoBehaviour
 			stuffInPlate [4] = other.gameObject.tag; 
 			countt++;
 		}
-
-		if (beeff && saltt && pepperr) {
-			ingre = true;
-		}
+			
 
 		if (count == 3 && countt == 3) {
 			ges = true;
 
 		}
 
-		if (ingre && ges) {
-			meatball.SetActive (true);
+		if (ges) {
+			bool meatballl = CanMake ();
+			if (meatballl)
+				meatball.SetActive (true);
 		}
+	
 	}
 
 
 	void onTriggerExit(Collider other)
 	{
-		if (other.gameObject.tag == "leftHand"){
-			stuffInPlate = RemoveIndices (stuffInPlate, 3);
+		
+		for (int i = 0; i <= stuffInPlate.Length; i++) {
+			if(other.gameObject.tag == stuffInPlate[i])
+				stuffInPlate = RemoveIndices (stuffInPlate, i);
 		}
 
-		if (other.gameObject.tag == "rightHand"){
-			stuffInPlate = RemoveIndices (stuffInPlate, 4);
-		}
 	}
 
 	private string[] RemoveIndices(string[] IndicesArray, int RemoveAt)
@@ -90,4 +82,18 @@ public class meatballMix : MonoBehaviour
 
 		return newIndicesArray;
 	}
+
+
+	private bool CanMake()
+	{
+		for(int i = 0; i<stuffInPlate.Length; i++)
+		{
+			if (stuffInPlate [i] == null)
+				return false;	
+		}
+			
+		return true;
+	}
+
+
 }
