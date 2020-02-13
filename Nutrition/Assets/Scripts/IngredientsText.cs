@@ -12,8 +12,8 @@ public class IngredientsText : MonoBehaviour {
 	public string ingredientName; 
 	
 	void Start () {
-		fraction = playerIngredients/ingredientsNeeded; 
-		
+		    fraction = playerIngredients/ingredientsNeeded; 
+
 	}
 	
 	// Update is called once per frame
