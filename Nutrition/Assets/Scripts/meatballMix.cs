@@ -14,8 +14,8 @@ public class meatballMix : MonoBehaviour
 	int count = 0;
 	int countt = 0;
 	public string[] stuffInPlate;
-
 	public GameObject meatball;
+
 	// Use this for initialization
 	void onTriggerEnter(Collider other)
 	{
@@ -54,7 +54,9 @@ public class meatballMix : MonoBehaviour
 
 		}
 
-		//if (beeff && saltt && pepperr)
+		if (ingre && ges) {
+			meatball.SetActive (true);
+		}
 	}
 
 
