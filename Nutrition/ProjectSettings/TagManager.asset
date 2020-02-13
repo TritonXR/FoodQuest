@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FxTemporaire
+  - projectile
+  - TeleportIgnore
+  - Beef
+  - Salt
+  - Pepper
+  - Plate
+  - Meatball
+  - Stove
+  - MeatBallMixButton
   layers:
   - Default
   - TransparentFX
