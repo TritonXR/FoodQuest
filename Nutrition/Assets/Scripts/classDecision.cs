@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class classDecision : MonoBehaviour {
 
     public GameObject warriorPortal;
     public GameObject magePortal;
     public GameObject startArrow;
-
+    public Text classText;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class classDecision : MonoBehaviour {
             warriorPortal.SetActive(true);
             magePortal.SetActive(true);
             startArrow.SetActive(false);
+            classText.text = "Now choose a class";
         }
     }
 }
