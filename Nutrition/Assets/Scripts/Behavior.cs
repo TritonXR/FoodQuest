@@ -23,7 +23,7 @@ public class Behavior : MonoBehaviour {
         singleStep = angularSpeed * Time.deltaTime;
         Vector3 targetDirection = player.position - transform.position;
 
-        if (Vector3.Distance(transform.position, player.position) > 2)
+        if (Vector3.Distance(transform.position, player.position) > 1.5 && Vector3.Distance(transform.position, player.position) < 5)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed);
 

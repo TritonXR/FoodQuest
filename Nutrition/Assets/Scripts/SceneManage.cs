@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class sceneManager : MonoBehaviour {
+public class SceneManage : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
@@ -21,5 +21,10 @@ public class sceneManager : MonoBehaviour {
         {
             SceneManager.LoadScene("Kitchen");
         }
+    }
+
+    public void ForestEscape()
+    {
+        SceneManager.LoadScene("Forest");
     }
 }

@@ -5,25 +5,26 @@ using UnityEngine;
 public class CreateObject : MonoBehaviour {
 
 	public Transform Spawnpoint; 
-	public Rigidbody Prefab;
+	public GameObject Prefab;
 	public float delay = 0.75f; 
 	
-	public void repeat() {
-		InvokeRepeating("faucetOn", 0, delay); 
+	public void Repeat()
+    {
+		InvokeRepeating("FaucetOn", 0, delay); 
 	}
 	
 	// when faucet on button is pressed
-	public void faucetOn () {
-		Rigidbody RigidPrefab; 
-		//create water droplets
-		RigidPrefab = Instantiate(Prefab, Spawnpoint.position, Spawnpoint.rotation) as Rigidbody; 
-	
+	public void FaucetOn () {
 		
+        //create water droplets
+		GameObject RigidPrefab = Instantiate(Prefab, Spawnpoint.position, Spawnpoint.rotation) as GameObject;
+        Rigidbody rb = RigidPrefab.GetComponent<Rigidbody>();
+        Destroy(RigidPrefab, 1);
 	}
 	
-	public void faucetOff () {
+	public void FaucetOff ()
+    {
 			CancelInvoke(); 
-
 	}
 	
 	
