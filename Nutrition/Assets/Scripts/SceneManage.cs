@@ -21,6 +21,11 @@ public class SceneManage : MonoBehaviour {
         {
             SceneManager.LoadScene("Kitchen");
         }
+
+        if (other.gameObject.tag == "Player" && gameObject.tag == "forestPortal")
+        {
+            SceneManager.LoadScene("Forest");
+        }
     }
 
     public void ForestEscape()

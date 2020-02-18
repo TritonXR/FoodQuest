@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour {
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("tutorial");
         Debug.Log("Button pressed");
     }
 
@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour {
 
     public void Menu()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1;
         AudioListener.pause = false;
         panel.SetActive(false);
@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour {
 
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Forest");
         Time.timeScale = 1;
         AudioListener.pause = false;
         panel.SetActive(false);
