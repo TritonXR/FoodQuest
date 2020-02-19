@@ -21,6 +21,10 @@ TagManager:
   - warriorPortal
   - kitchenPortal
   - forestPortal
+  - Orange
+  - Mushroom
+  - Garlic
+  - Tomato
   layers:
   - Default
   - TransparentFX

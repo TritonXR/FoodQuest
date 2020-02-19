@@ -3,8 +3,18 @@ guid: 2cbe268c038dd4c4c92a673367d37743
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Sword
-  externalObjects: {}
+    11100000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02 - Default1
+    second: {fileID: 2100000, guid: 0e0bc66114a704641a50fee773a4650b, type: 2}
   materials:
     importMaterials: 1
     materialName: 3

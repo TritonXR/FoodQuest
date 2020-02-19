@@ -13,6 +13,8 @@ public class HP : MonoBehaviour
     public Text tomatoText;
     public Text saltText;
     public Text pepperText;
+    public Text mushroomText;
+    public Text garlicText;
   
 
     // Start is called before the first frame update
@@ -30,6 +32,8 @@ public class HP : MonoBehaviour
         tomatoText.text = Item.food["Tomato"].ToString();
         saltText.text = Item.food["Salt"].ToString();
         pepperText.text = Item.food["Pepper"].ToString();
+        mushroomText.text = Item.food["Mushroom"].ToString();
+        garlicText.text = Item.food["Garlic"].ToString();
     }
 
     public void DealDamage(float damageValue)
