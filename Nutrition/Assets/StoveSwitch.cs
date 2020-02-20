@@ -19,7 +19,7 @@ public class StoveSwitch : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "Player" ) 
+		if (other.gameObject.tag == "Player") 
 		{
 			lightt.SetActive (true);
 			lSwitch.transform.position = new Vector3 (_inPosition.transform.position.x,

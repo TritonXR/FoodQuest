@@ -6,10 +6,9 @@ using UnityEngine.UI;
 public class meatballMix : MonoBehaviour 
 {
 
-	bool ges = false;
 	int count = 0;
-	int countt = 0;
-	public string[] stuffInPlate;
+	public GameObject[] stuffInPlate = new GameObject[4];
+	public string[] stuffInPlateName = new string[4] ;
 	public GameObject meatball;
 
 	// Use this for initialization
@@ -17,58 +16,71 @@ public class meatballMix : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Beef") {
 
-			stuffInPlate [0] = other.gameObject.tag; 
+			stuffInPlate [0] = other.gameObject; 
+			stuffInPlateName [0] = other.gameObject.tag;
 		}
 
 		if (other.gameObject.tag == "Pepper") {
-			stuffInPlate [1] = other.gameObject.tag; 
+			stuffInPlate [1] = other.gameObject; 
+			stuffInPlateName [1] = other.gameObject.tag;
 		}
 
 		if (other.gameObject.tag == "Salt") {
-			stuffInPlate [2] = other.gameObject.tag; 
+			stuffInPlate [2] = other.gameObject; 
+			stuffInPlateName [2] = other.gameObject.tag;
 		}
 
 		if (other.gameObject.tag == "leftHand"){
-			stuffInPlate [3] = other.gameObject.tag;
+			stuffInPlate [3] = other.gameObject;
+			stuffInPlateName [3] = other.gameObject.tag;
 			count++;
-			}
+		}
 
+		/*
 		if (other.gameObject.tag == "rightHand"){
-			stuffInPlate [4] = other.gameObject.tag; 
+			stuffInPlate [4] = other.gameObject; 
+			stuffInPlateName [4] = other.gameObject.tag;
 			countt++;
 		}
-			
+       */
 
-		if (count == 3 && countt == 3) {
-			ges = true;
 
-		}
+		if (count == 3) {
 
-		if (ges) {
-			bool meatballl = CanMake ();
-			if (meatballl)
+			if (CanMake ()) {
+
 				meatball.SetActive (true);
+
+				count = 0;
+
+				for (int i = 0; i < 3; i++) {
+
+					Destroy (stuffInPlate [i].gameObject);
+				}
+			}
 		}
-	
+
 	}
 
 
 	void onTriggerExit(Collider other)
 	{
-		
-		for (int i = 0; i <= stuffInPlate.Length; i++) {
-			if(other.gameObject.tag == stuffInPlate[i])
-				stuffInPlate = RemoveIndices (stuffInPlate, i);
+
+		for (int i = 0; i < 3; i++) {
+			if (other.gameObject.tag == stuffInPlateName [i])
+				stuffInPlateName [i] = null;
+
 		}
 
 	}
 
+	/*
 	private string[] RemoveIndices(string[] IndicesArray, int RemoveAt)
 	{
-		string[] newIndicesArray = new string[IndicesArray.Length];
+		string[] newIndicesArray = new string[4];
 
 		int i = 0;
-		while (i < IndicesArray.Length)
+		while (i < 3)
 		{
 			if (i != RemoveAt)
 			{
@@ -82,16 +94,17 @@ public class meatballMix : MonoBehaviour
 
 		return newIndicesArray;
 	}
+	*/
 
 
 	private bool CanMake()
 	{
-		for(int i = 0; i<stuffInPlate.Length; i++)
+		for(int i = 0; i < 3; i++)
 		{
-			if (stuffInPlate [i] == null)
+			if (stuffInPlateName [i] == null)
 				return false;	
 		}
-			
+
 		return true;
 	}
 
