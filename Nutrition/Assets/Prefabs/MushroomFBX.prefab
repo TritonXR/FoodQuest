@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4647628144869072}
   - component: {fileID: 95837972683121438}
   - component: {fileID: 54249392573848812}
-  - component: {fileID: 65276495423077578}
+  - component: {fileID: 135660951432240092}
   m_Layer: 0
   m_Name: MushroomFBX
   m_TagString: Mushroom
@@ -247,18 +247,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65276495423077578
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1415587375035144}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.02}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95837972683121438
 Animator:
   serializedVersion: 3
@@ -276,3 +264,15 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!135 &135660951432240092
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1415587375035144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0075
+  m_Center: {x: 0, y: 0.004, z: 0}

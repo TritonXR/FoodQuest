@@ -15,8 +15,6 @@ public class Magic : MonoBehaviour
     public float startStamp;
     public static bool magicRegen;
 
-    public Magic instance;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -54,15 +52,6 @@ public class Magic : MonoBehaviour
         }
         //if(startStamp != 0) 
         //Debug.Log(startStamp);
-    }
-
-    public void LoseMagic(float magiclose)
-    {
-        CurrentMagic -= magiclose;
-        magicbar.value = CalculateMagic();
-        magic.text = "MP:" + " " + CurrentMagic.ToString() + "/" + MaxMagic.ToString();
-        magicRegen = true;
-        
     }
 
     public void GainMagic(float magicgain)

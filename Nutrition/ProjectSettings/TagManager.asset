@@ -7,7 +7,6 @@ TagManager:
   - Pick Up
   - Fireball
   - Enemy
-  - Weapon
   - Hand
   - Shield
   - Iceball
@@ -25,6 +24,8 @@ TagManager:
   - Mushroom
   - Garlic
   - Tomato
+  - Fire
+  - Sword
   layers:
   - Default
   - TransparentFX

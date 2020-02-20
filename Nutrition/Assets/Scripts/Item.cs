@@ -33,7 +33,7 @@ public class Item : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log(food["Tomato"]);
+       
     }
 
 
