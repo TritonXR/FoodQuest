@@ -12,7 +12,7 @@ public class meatballMix : MonoBehaviour
 	public GameObject meatball;
 
 	// Use this for initialization
-	void onTriggerEnter(Collider other)
+	void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "Beef") {
 
@@ -63,7 +63,7 @@ public class meatballMix : MonoBehaviour
 	}
 
 
-	void onTriggerExit(Collider other)
+	void OnTriggerExit(Collider other)
 	{
 
 		for (int i = 0; i < 3; i++) {
