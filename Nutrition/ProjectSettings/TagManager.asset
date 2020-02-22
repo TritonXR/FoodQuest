@@ -4,18 +4,28 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - FxTemporaire
-  - projectile
-  - TeleportIgnore
-  - Beef
-  - Salt
+  - Pick Up
+  - Fireball
+  - Enemy
+  - Hand
+  - Shield
+  - Iceball
+  - Rage Shield
+  - Rage Sword
   - Pepper
-  - Plate
-  - Meatball
-  - Stove
-  - MeatBallMixButton
-  - leftHand
-  - rightHand
+  - Salt
+  - Food
+  - Class Decision
+  - magePortal
+  - warriorPortal
+  - kitchenPortal
+  - forestPortal
+  - Orange
+  - Mushroom
+  - Garlic
+  - Tomato
+  - Fire
+  - Sword
   layers:
   - Default
   - TransparentFX
