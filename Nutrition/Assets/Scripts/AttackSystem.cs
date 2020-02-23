@@ -1,72 +1,79 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+using UnityEngine.UI;
 
-public class Destroy : MonoBehaviour {
+public class AttackSystem : MonoBehaviour {
 
-    public int Enemy_Health;
-    public int Fireball_Health;
-    public int cooldown;
+    private Vector3 moveDirection;
+    public int iceballCooldown;
     public GameObject food;
     Rigidbody enemy;
     private float timeStamp;
-    public Vector3 pushBack;
+    public static bool hitStatus = false;
+    public float speed = 100;
+
+    public Text nameLabel;
+    public Slider healthStatus;
+    public float MaxHealth { get; set; }
+    public float CurrentHealth { get; set; }
 
     // Use this to get Nav Mesh Agent of the enemy
     void Start()
     {
         enemy = GetComponent<Rigidbody>();
-        cooldown = 3;
 
-        if (Enemy_Health == 0)
-        {
-            Enemy_Health = 150;
-            pushBack = new Vector3(50, 0);
-        }
-        
+        iceballCooldown = 3;
+        nameLabel.text = gameObject.tag;
+        MaxHealth = 150f;
+        CurrentHealth = MaxHealth;
+        healthStatus.value = CalculateHealth();
     }
     // The amount of damage that certain weapons will deal
     void OnCollisionEnter(Collision otherObj)
     {
         if (otherObj.gameObject.tag == "Sword")
         {
-            Enemy_Health = Enemy_Health - 50;
-
-            enemy.AddForce(pushBack);
+            hitStatus = true;
+            CurrentHealth = CurrentHealth - 50;
+            healthStatus.value = CalculateHealth();
             Debug.Log("Enemy has been damaged");
         }
 
         if (otherObj.gameObject.tag == "Rage Sword")
         {
-            Enemy_Health = Enemy_Health - 75;
-            enemy.AddForce(pushBack);
+            CurrentHealth = CurrentHealth - 75;
+            healthStatus.value = CalculateHealth();
+            hitStatus = true;
             Debug.Log("Enemy has been damaged");
         }
 
         if (otherObj.gameObject.tag == "Rage Shield")
         {
-            Enemy_Health = Enemy_Health - 25;
-            enemy.AddForce(pushBack);
+            CurrentHealth = CurrentHealth - 25;
+            healthStatus.value = CalculateHealth();
+            hitStatus = true;
             Debug.Log("Enemy has been damaged");
         }
 
         if (otherObj.gameObject.tag == "Fireball")
         {
-            Enemy_Health = Enemy_Health - 50;
-            enemy.AddForce(pushBack);
+            CurrentHealth = CurrentHealth - 50;
+            healthStatus.value = CalculateHealth();
+            hitStatus = true;
             Destroy(otherObj.gameObject);
         }
 
         if (otherObj.gameObject.tag == "Iceball")
         {
-            Enemy_Health = Enemy_Health - 25;
+            CurrentHealth = CurrentHealth - 25;
+            healthStatus.value = CalculateHealth();
             Destroy(otherObj.gameObject);
             enemy.constraints = RigidbodyConstraints.FreezeAll;
-            timeStamp = Time.time + cooldown;
+            timeStamp = Time.time + iceballCooldown;
         }
 
-        if (Enemy_Health <= 0)
+        if (CurrentHealth <= 0)
         {
             Destroy(gameObject);
             Instantiate(food, transform.position, transform.rotation);
@@ -81,5 +88,10 @@ public class Destroy : MonoBehaviour {
         {
             //enemy.constraints = RigidbodyConstraints.None;
         }
+    }
+
+    public float CalculateHealth()
+    {
+        return CurrentHealth / MaxHealth;
     }
 }

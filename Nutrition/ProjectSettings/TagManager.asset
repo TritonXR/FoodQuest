@@ -32,6 +32,8 @@ TagManager:
   - rightHand
   - InPosition
   - OutPosition
+  - Hand
+  - Mushbro
   layers:
   - Default
   - TransparentFX
