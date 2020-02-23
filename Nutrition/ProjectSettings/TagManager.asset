@@ -7,8 +7,6 @@ TagManager:
   - Pick Up
   - Fireball
   - Enemy
-  - Weapon
-  - Hand
   - Shield
   - Iceball
   - Rage Shield
@@ -21,6 +19,19 @@ TagManager:
   - warriorPortal
   - kitchenPortal
   - forestPortal
+  - Orange
+  - Mushroom
+  - Garlic
+  - Tomato
+  - Fire
+  - Sword
+  - Meatball
+  - Plate
+  - Beef
+  - leftHand
+  - rightHand
+  - InPosition
+  - OutPosition
   layers:
   - Default
   - TransparentFX

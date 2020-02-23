@@ -8,8 +8,10 @@ public class Rage : Roles
 { 
     private SteamVR_TrackedObject TrackedObject; //= null;
     public SteamVR_Controller.Device Device;
-    public GameObject warrior;
-    public GameObject rage;
+    public GameObject warriorSword;
+    public GameObject rageSword;
+    public GameObject warriorShield;
+    public GameObject rageShield;
     public float ragemode = 4;
     public float cooldown = 10;
     private float timeStamp;
@@ -26,8 +28,10 @@ public class Rage : Roles
     //This will spawn the player with the basic warrior weapons
     void Start()
     {
-        warrior.SetActive(true);
-        rage.SetActive(false);
+        warriorSword.SetActive(true);
+        rageSword.SetActive(false);
+        warriorShield.SetActive(true);
+        rageShield.SetActive(false);
     }
 
     //This controls the use of rage mode
@@ -41,21 +45,27 @@ public class Rage : Roles
             if (Device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
             {
                 timeStamp = Time.time + cooldown;             
-                warrior.SetActive(false);
-                rage.SetActive(true);
+                warriorSword.SetActive(false);
+                rageSword.SetActive(true);
+                warriorShield.SetActive(false);
+                rageShield.SetActive(true);
                 rageStamp = Time.time + ragemode;
-                Magic.CurrentMagic = Magic.CurrentMagic - 10;
+                Magic.CurrentMagic -= 10;
                 magicbar.value = Magic.CalculateMagic();
                 Magic.magicRegen = true;
-                magic.text = "MP:" + " " + Magic.CurrentMagic.ToString() + "/" + Magic.MaxMagic.ToString();
+                magic.text = "MP: " + Magic.CurrentMagic.ToString() + "/" + Magic.MaxMagic.ToString();
+                Debug.Log(magic.text);
             }
         }
+
 
         //This adds a cooldown system to rage mode
         if (rageStamp <= Time.time)
         {
-            warrior.SetActive(true);
-            rage.SetActive(false);
+            warriorSword.SetActive(true);
+            rageSword.SetActive(false);
+            warriorShield.SetActive(true);
+            rageShield.SetActive(false);
         }
     }
 }

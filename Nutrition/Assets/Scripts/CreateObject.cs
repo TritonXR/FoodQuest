@@ -18,7 +18,6 @@ public class CreateObject : MonoBehaviour {
 		
         //create water droplets
 		GameObject RigidPrefab = Instantiate(Prefab, Spawnpoint.position, Spawnpoint.rotation) as GameObject;
-        Rigidbody rb = RigidPrefab.GetComponent<Rigidbody>();
         Destroy(RigidPrefab, 1);
 	}
 	

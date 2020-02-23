@@ -12,6 +12,8 @@ public class Mine : MonoBehaviour
     public GameObject food;
     Rigidbody mine;
     private Vector3 originalSize;
+    private Vector3 originalPosition;
+    private Quaternion originalRotation;
     public AudioClip audioClip;
 
     [SerializeField]
@@ -21,7 +23,8 @@ public class Mine : MonoBehaviour
     void Start()
     {
         originalSize = this.transform.localScale;
-        mine = GetComponent<Rigidbody>();
+        originalPosition = this.transform.position;
+        originalRotation = this.transform.localRotation;
         resetTimer = 15;
         isActive = true;
         if (mineHealth == 0)
@@ -33,7 +36,7 @@ public class Mine : MonoBehaviour
     // The amount of damage that certain weapons will deal
     void OnCollisionEnter(Collision otherObj)
     {
-        if (otherObj.gameObject.tag == "Weapon")
+        if (otherObj.gameObject.tag == "Sword")
         {
             mineHealth = mineHealth - 1;
             Debug.Log("Mine has been hited");
@@ -62,34 +65,42 @@ public class Mine : MonoBehaviour
 
         if (mineHealth <= 0)
         {
+            mineHealth = 3;
+            Debug.Log("Mine has 0 health");
             GameObject drop;
-            Component component;
-            AudioSource audioSource;
+            /*Component component;
+            AudioSource audioSource;*/
 
-            Vector3 newPosition = new Vector3(transform.position.x + 2, transform.position.y, transform.position.z+2);
+            Vector3 newPosition = new Vector3(transform.position.x + 0.5f, transform.position.y, transform.position.z+0.5f);
             drop = Instantiate(food, newPosition, food.transform.rotation);
             drop.transform.localScale = new Vector3(25f, 25f, 25f);
             drop.tag = tag;
-            component = drop.GetComponent<Mine>();
+            drop.AddComponent<Rigidbody>();
+            drop.AddComponent<BoxCollider>();
+            /*component = drop.GetComponent<Mine>();
             Destroy(component);
             audioSource = drop.GetComponent<AudioSource>();
-            Destroy(audioSource);
-            newPosition = new Vector3(transform.position.x - 2, transform.position.y, transform.position.z+2);
+            Destroy(audioSource);*/
+            newPosition = new Vector3(transform.position.x - 0.5f, transform.position.y, transform.position.z+0.5f);
             drop = Instantiate(food, newPosition, food.transform.rotation);
             drop.transform.localScale = new Vector3(25f, 25f, 25f);
             drop.tag = tag;
-            component = drop.GetComponent<Mine>();
+            drop.AddComponent<Rigidbody>();
+            drop.AddComponent<BoxCollider>();
+            /*component = drop.GetComponent<Mine>();
             Destroy(component);
             audioSource = drop.GetComponent<AudioSource>();
-            Destroy(audioSource);
-            newPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z-2);
+            Destroy(audioSource);*/
+            newPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z-0.5f);
             drop = Instantiate(food, newPosition, food.transform.rotation);
             drop.transform.localScale = new Vector3(25f, 25f, 25f);
             drop.tag = tag;
-            component = drop.GetComponent<Mine>();
+            drop.AddComponent<Rigidbody>();
+            drop.AddComponent<BoxCollider>();
+            /*component = drop.GetComponent<Mine>();
             Destroy(component);
             audioSource = drop.GetComponent<AudioSource>();
-            Destroy(audioSource);
+            Destroy(audioSource);*/
 
             AudioSource audio = this.GetComponent<AudioSource>();
             audio.PlayOneShot(audioClip);
@@ -110,6 +121,8 @@ public class Mine : MonoBehaviour
                 isActive = true;
                 mineHealth = 3;
                 this.transform.localScale = originalSize;
+                this.transform.position = originalPosition;
+                this.transform.localRotation = originalRotation;
             }
         }
     }

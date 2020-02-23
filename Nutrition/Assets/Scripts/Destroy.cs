@@ -11,6 +11,7 @@ public class Destroy : MonoBehaviour {
     public GameObject food;
     Rigidbody enemy;
     private float timeStamp;
+    public Vector3 pushBack;
 
     // Use this to get Nav Mesh Agent of the enemy
     void Start()
@@ -21,33 +22,39 @@ public class Destroy : MonoBehaviour {
         if (Enemy_Health == 0)
         {
             Enemy_Health = 150;
+            pushBack = new Vector3(50, 0);
         }
         
     }
     // The amount of damage that certain weapons will deal
     void OnCollisionEnter(Collision otherObj)
     {
-        if (otherObj.gameObject.tag == "Weapon")
+        if (otherObj.gameObject.tag == "Sword")
         {
             Enemy_Health = Enemy_Health - 50;
+
+            enemy.AddForce(pushBack);
             Debug.Log("Enemy has been damaged");
         }
 
         if (otherObj.gameObject.tag == "Rage Sword")
         {
             Enemy_Health = Enemy_Health - 75;
+            enemy.AddForce(pushBack);
             Debug.Log("Enemy has been damaged");
         }
 
         if (otherObj.gameObject.tag == "Rage Shield")
         {
             Enemy_Health = Enemy_Health - 25;
+            enemy.AddForce(pushBack);
             Debug.Log("Enemy has been damaged");
         }
 
         if (otherObj.gameObject.tag == "Fireball")
         {
             Enemy_Health = Enemy_Health - 50;
+            enemy.AddForce(pushBack);
             Destroy(otherObj.gameObject);
         }
 
@@ -62,7 +69,7 @@ public class Destroy : MonoBehaviour {
         if (Enemy_Health <= 0)
         {
             Destroy(gameObject);
-            Instantiate(food, transform.position, food.transform.rotation);
+            Instantiate(food, transform.position, transform.rotation);
             Debug.Log("Enemy has been slayed");
         }
 
