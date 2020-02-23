@@ -42,25 +42,25 @@ public class AttackSystem : MonoBehaviour {
 
         if (otherObj.gameObject.tag == "Rage Sword")
         {
+            hitStatus = true;
             CurrentHealth = CurrentHealth - 75;
             healthStatus.value = CalculateHealth();
-            hitStatus = true;
             Debug.Log("Enemy has been damaged");
         }
 
         if (otherObj.gameObject.tag == "Rage Shield")
         {
+            hitStatus = true;
             CurrentHealth = CurrentHealth - 25;
             healthStatus.value = CalculateHealth();
-            hitStatus = true;
             Debug.Log("Enemy has been damaged");
         }
 
         if (otherObj.gameObject.tag == "Fireball")
         {
+            hitStatus = true;
             CurrentHealth = CurrentHealth - 50;
             healthStatus.value = CalculateHealth();
-            hitStatus = true;
             Destroy(otherObj.gameObject);
         }
 
