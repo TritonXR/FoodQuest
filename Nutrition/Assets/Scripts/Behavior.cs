@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Behavior : MonoBehaviour {
 
-    public Rigidbody enemy;
+    private Rigidbody enemy;
     public Transform player;
     public float speed;
     public float angularSpeed;
-    public int damp = 5;
     public float singleStep;
     private float movementStamp;
     public float cooldown = 1.0f;
@@ -35,9 +34,6 @@ public class Behavior : MonoBehaviour {
 
                 Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
                 transform.rotation = Quaternion.LookRotation(newDirection);
-
-                //Quaternion rotationAngle = Quaternion.LookRotation(player.transform.position - transform.position);
-                //transform.rotation = Quaternion.Slerp(enemy.rotation, rotationAngle, Time.deltaTime * damp);
             }
         }
 
