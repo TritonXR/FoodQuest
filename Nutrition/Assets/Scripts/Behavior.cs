@@ -11,6 +11,8 @@ public class Behavior : MonoBehaviour {
     public float singleStep;
     private float movementStamp;
     public float cooldown = 1.0f;
+    public float freezeCooldown = 5.0f;
+    public float freezeStamp = 0.0f;
     private bool stomp = true;
     private Vector3 targetDirection;
 
@@ -27,17 +29,32 @@ public class Behavior : MonoBehaviour {
         singleStep = angularSpeed * Time.deltaTime;
         targetDirection = player.position - transform.position;
 
-        if (!AttackSystem.hitStatus)
+        if (!AttackSystem.hitStatus && !AttackSystem.freezeStatus)
         {
-            if (Vector3.Distance(transform.position, player.position) > 1.5 && Vector3.Distance(transform.position, player.position) < 5)
+            if (Vector3.Distance(transform.position, player.position) > 1 && Vector3.Distance(transform.position, player.position) < 7.5)
             {
                 transform.position = Vector3.MoveTowards(transform.position, player.position, speed);
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDirection), angularSpeed * Time.deltaTime);
 
                 //Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
                 //transform.rotation = Quaternion.LookRotation(newDirection);
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDirection), angularSpeed * Time.deltaTime);
             }
         }
+
+        else if (AttackSystem.freezeStatus)
+        {
+            enemy.constraints = RigidbodyConstraints.FreezeAll;
+
+            freezeStamp += Time.deltaTime;
+
+            if (freezeStamp >= freezeCooldown)
+            {
+                enemy.constraints = RigidbodyConstraints.None;
+                AttackSystem.freezeStatus = false;
+                freezeStamp = 0;
+            }
+        }
+
 
         else
         {
@@ -55,5 +72,7 @@ public class Behavior : MonoBehaviour {
                 stomp = true;
             }
         }
+
+        //Debug.Log(freezeStamp);
     }
 }

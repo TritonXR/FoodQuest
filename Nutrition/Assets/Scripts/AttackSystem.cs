@@ -5,13 +5,10 @@ using UnityEngine.UI;
 
 public class AttackSystem : MonoBehaviour {
 
-    private Vector3 moveDirection;
-    public int iceballCooldown;
     public GameObject food;
     Rigidbody enemy;
-    private float timeStamp;
     public static bool hitStatus = false;
-    public float speed = 100;
+    public static bool freezeStatus = false;
 
     public Text nameLabel;
     public Slider healthStatus;
@@ -23,7 +20,6 @@ public class AttackSystem : MonoBehaviour {
     {
         enemy = GetComponent<Rigidbody>();
 
-        iceballCooldown = 3;
         nameLabel.text = gameObject.tag;
         MaxHealth = 150f;
         CurrentHealth = MaxHealth;
@@ -48,6 +44,11 @@ public class AttackSystem : MonoBehaviour {
             Debug.Log("Enemy has been damaged");
         }
 
+        if (otherObj.gameObject.tag == "Shield")
+        {
+            hitStatus = true;
+        }
+
         if (otherObj.gameObject.tag == "Rage Shield")
         {
             hitStatus = true;
@@ -66,11 +67,10 @@ public class AttackSystem : MonoBehaviour {
 
         if (otherObj.gameObject.tag == "Iceball")
         {
+            freezeStatus = true;
             CurrentHealth = CurrentHealth - 25;
             healthStatus.value = CalculateHealth();
             Destroy(otherObj.gameObject);
-            enemy.constraints = RigidbodyConstraints.FreezeAll;
-            timeStamp = Time.time + iceballCooldown;
         }
 
         if (CurrentHealth <= 0)
@@ -84,10 +84,7 @@ public class AttackSystem : MonoBehaviour {
     //Will freeze the opponent for 3 seconds if hit by iceball
     void Update()
     {
-        if (timeStamp <= Time.time)
-        {
-            //enemy.constraints = RigidbodyConstraints.None;
-        }
+
     }
 
     public float CalculateHealth()
