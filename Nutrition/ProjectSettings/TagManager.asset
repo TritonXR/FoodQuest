@@ -7,7 +7,6 @@ TagManager:
   - Pick Up
   - Fireball
   - Enemy
-  - Hand
   - Shield
   - Iceball
   - Rage Shield
@@ -26,6 +25,15 @@ TagManager:
   - Tomato
   - Fire
   - Sword
+  - Meatball
+  - Plate
+  - Beef
+  - leftHand
+  - rightHand
+  - InPosition
+  - OutPosition
+  - Hand
+  - Mushbro
   layers:
   - Default
   - TransparentFX

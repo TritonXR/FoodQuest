@@ -36,6 +36,7 @@ public class meatballMix : MonoBehaviour
 			count++;
 		}
 
+        Debug.Log(stuffInPlateName);
 		/*
 		if (other.gameObject.tag == "rightHand"){
 			stuffInPlate [4] = other.gameObject; 
@@ -49,7 +50,7 @@ public class meatballMix : MonoBehaviour
 
 			if (CanMake ()) {
 
-				meatball.SetActive (true);
+                Instantiate(meatball, transform.position, transform.rotation);
 
 				count = 0;
 
@@ -69,7 +70,6 @@ public class meatballMix : MonoBehaviour
 		for (int i = 0; i < 3; i++) {
 			if (other.gameObject.tag == stuffInPlateName [i])
 				stuffInPlateName [i] = null;
-
 		}
 
 	}

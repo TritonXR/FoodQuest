@@ -10,7 +10,8 @@ public class NoodleInstruction : MonoBehaviour {
 	public int stepCount = 0;
 	public string[] noodleIns = new string[8] ;
 
-	public void Start(){
+	public void Start()
+    {
 		
 		noodleIns [0] = "Put water in pot.";
 		noodleIns [1] = "Boil water, once boiled, put noodles in side.";
@@ -23,7 +24,8 @@ public class NoodleInstruction : MonoBehaviour {
 	
 	}
 		
-	public void ChangeText () {
+	public void ChangeText ()
+    {
 
 		textt.text = noodleIns [stepCount];
 
