@@ -12,6 +12,7 @@ public class Behavior : MonoBehaviour {
     private float movementStamp;
     public float cooldown = 1.0f;
     private bool stomp = true;
+    private Vector3 targetDirection;
 
     // Use this for initialization
     void Start ()
@@ -24,7 +25,7 @@ public class Behavior : MonoBehaviour {
 	void Update ()
     {
         singleStep = angularSpeed * Time.deltaTime;
-        Vector3 targetDirection = player.position - transform.position;
+        targetDirection = player.position - transform.position;
 
         if (!AttackSystem.hitStatus)
         {
@@ -32,8 +33,9 @@ public class Behavior : MonoBehaviour {
             {
                 transform.position = Vector3.MoveTowards(transform.position, player.position, speed);
 
-                Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
-                transform.rotation = Quaternion.LookRotation(newDirection);
+                //Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
+                //transform.rotation = Quaternion.LookRotation(newDirection);
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDirection), angularSpeed * Time.deltaTime);
             }
         }
 

@@ -34,15 +34,16 @@ public class MinotaurBehavior : MonoBehaviour {
         {
             chargeStamp = 0;
 
-           while(locationStamp <= locationCooldown)
+           if(locationStamp <= locationCooldown)
            {
-                targetDirection = player.position - transform.position;
-                singleStep = angularSpeed * Time.deltaTime;
-                Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
-                transform.rotation = Quaternion.LookRotation(newDirection);
-           }
+                //targetDirection = player.position - transform.position;
+                //singleStep = angularSpeed * Time.deltaTime;
+                //Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
+                //transform.rotation = Quaternion.LookRotation(newDirection);
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), angularSpeed * Time.deltaTime);
+            }
 
-            if(locationStamp <= 3)
+            if(locationStamp >= 3)
             {
                 locationBoolean = false;
                 chargeBoolean = true;
@@ -52,17 +53,16 @@ public class MinotaurBehavior : MonoBehaviour {
         }
 
 
-        else if (chargeBoolean)
+        if (chargeBoolean)
         {
             locationStamp = 0;
 
-            while (chargeStamp <= chargeCooldown)
+            if(chargeStamp <= chargeCooldown)
             {
                 enemy.AddRelativeForce(Vector3.forward * speed);
             }
 
-
-            if(chargeStamp <= 3)
+            if(chargeStamp >= 3)
             {
                 locationBoolean = true;
                 chargeBoolean = false;
@@ -70,7 +70,7 @@ public class MinotaurBehavior : MonoBehaviour {
 
             chargeStamp += Time.deltaTime;
         }
+
         Debug.Log(chargeStamp);
-        chargeStamp += Time.deltaTime;
     }
 }
