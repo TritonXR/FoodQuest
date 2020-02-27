@@ -47,4 +47,12 @@ public class HP : MonoBehaviour
     {
         return CurrentHealth / MaxHealth;
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Mushbro")
+        {
+            DealDamage(5);
+        }
+    }
 }
