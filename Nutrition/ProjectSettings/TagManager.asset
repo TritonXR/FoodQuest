@@ -34,6 +34,7 @@ TagManager:
   - OutPosition
   - Hand
   - Mushbro
+  - Water
   layers:
   - Default
   - TransparentFX
