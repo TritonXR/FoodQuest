@@ -22,7 +22,7 @@ public class SceneManage : MonoBehaviour {
             SceneManager.LoadScene("Kitchen");
         }
 
-        if (other.gameObject.tag == "Player" && gameObject.tag == "forestPortal")
+        if (other.gameObject.tag == "Player" || gameObject.tag == "Sword" || gameObject.tag == "Shield" && gameObject.tag == "forestPortal")
         {
             SceneManager.LoadScene("Forest");
         }
