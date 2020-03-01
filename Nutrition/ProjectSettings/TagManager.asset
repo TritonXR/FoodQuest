@@ -36,6 +36,7 @@ TagManager:
   - Knife
   - shape
   - Class Decision
+  - Noodles
   layers:
   - Default
   - TransparentFX
