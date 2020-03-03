@@ -71,6 +71,5 @@ public class MinotaurBehavior : MonoBehaviour {
             chargeStamp += Time.deltaTime;
         }
 
-        Debug.Log(chargeStamp);
     }
 }

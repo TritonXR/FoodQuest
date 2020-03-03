@@ -9,10 +9,12 @@ public class meatballMix : MonoBehaviour
 	int count = 0;
 	public GameObject[] stuffInPlate = new GameObject[4];
 	public string[] stuffInPlateName = new string[4] ;
-	public GameObject meatball;
+	public GameObject meatball; public GameObject knife;
+    public GameObject Cutting1; public GameObject Cutting2;
+    public Text instructions;
 
-	// Use this for initialization
-	void OnTriggerEnter(Collider other)
+    // Use this for initialization
+    void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "Beef") {
 
@@ -58,7 +60,12 @@ public class meatballMix : MonoBehaviour
 
 					Destroy (stuffInPlate [i].gameObject);
 				}
-			}
+                Cutting1.SetActive(true);
+                Cutting2.SetActive(true);
+                knife.SetActive(true);
+                instructions.text = "Next, cut the mushrooms and garlic. Once cut, pick up the plate using the grip button and drop them with the grip button into the bowl.";
+
+            }
 		}
 
 	}

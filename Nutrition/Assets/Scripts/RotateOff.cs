@@ -8,6 +8,7 @@ public class RotateOff : MonoBehaviour {
     public SteamVR_Controller.Device Device;
 
     public Transform plate;
+    public Transform plate2;
 
     void Awake()
     {
@@ -30,9 +31,17 @@ public class RotateOff : MonoBehaviour {
         {
             foreach (Transform child in plate)
             {
-                if (child.tag != "shape")
+                if (child.tag == "Mushroom")
                 {
                     child.transform.parent = null;
+                }
+            }
+
+            foreach (Transform child2 in plate2)
+            {
+                if (child2.tag == "Garlic")
+                {
+                    child2.transform.parent = null;
                 }
             }
         }
