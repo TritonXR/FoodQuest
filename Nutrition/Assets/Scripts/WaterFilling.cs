@@ -11,7 +11,7 @@ public class WaterFilling : MonoBehaviour {
     {
         count = 0;
         transform.localScale = new Vector3(2, 0.1f, 2);
-        transform.localPosition = new Vector3(0, 0.1f, 0);
+        transform.localPosition = new Vector3(-0.78f, -0.8f, 2.16f);
     }
 	
 	// Update is called once per frame
