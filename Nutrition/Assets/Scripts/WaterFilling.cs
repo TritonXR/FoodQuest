@@ -31,6 +31,11 @@ public class WaterFilling : MonoBehaviour {
                 count += 1;
             }
 
+            else
+            {
+                GameObject.Find("faucet").GetComponent<WaterSpawn>().enabled = false;
+            }
+
         }
     }
 }
