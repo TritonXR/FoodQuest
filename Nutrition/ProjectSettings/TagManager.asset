@@ -7,8 +7,6 @@ TagManager:
   - Pick Up
   - Fireball
   - Enemy
-  - Weapon
-  - Hand
   - Shield
   - Iceball
   - Rage Shield
@@ -16,11 +14,29 @@ TagManager:
   - Pepper
   - Salt
   - Food
-  - Class Decision
   - magePortal
   - warriorPortal
   - kitchenPortal
   - forestPortal
+  - Mushroom
+  - Garlic
+  - Tomato
+  - Fire
+  - Sword
+  - Meatball
+  - Plate
+  - Beef
+  - leftHand
+  - rightHand
+  - InPosition
+  - OutPosition
+  - Hand
+  - Mushbro
+  - Water
+  - Knife
+  - shape
+  - Class Decision
+  - Noodles
   layers:
   - Default
   - TransparentFX
@@ -30,7 +46,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Ground
   - 
   - 
   - 

@@ -33,9 +33,10 @@ public class HeadsetCollider : MonoBehaviour {
 	// INITIATILIZATION //
 	//////////////////////
 	void Start() {
-		// Create a box collider for the headset if it doesn't already exist
-		// The collider is a non-trigger
-		headsetSphereCollider = GetComponent<SphereCollider>();
+        // Create a box collider for the headset if it doesn't already exist
+        // The collider is a non-trigger
+
+        headsetSphereCollider = GetComponent<SphereCollider>();
 		if (!headsetSphereCollider) {
 			headsetSphereCollider = this.gameObject.AddComponent<SphereCollider>();
 			headsetSphereCollider.isTrigger = false;

@@ -13,6 +13,10 @@ public class HP : MonoBehaviour
     public Text tomatoText;
     public Text saltText;
     public Text pepperText;
+    public Text mushroomText;
+    public Text garlicText;
+    public Text beefText;
+    public Text noodleText;
   
 
     // Start is called before the first frame update
@@ -30,6 +34,10 @@ public class HP : MonoBehaviour
         tomatoText.text = Item.food["Tomato"].ToString();
         saltText.text = Item.food["Salt"].ToString();
         pepperText.text = Item.food["Pepper"].ToString();
+        mushroomText.text = Item.food["Mushroom"].ToString();
+        garlicText.text = Item.food["Garlic"].ToString();
+        beefText.text = Item.food["Beef"].ToString();
+        noodleText.text = Item.food["Noodles"].ToString();
     }
 
     public void DealDamage(float damageValue)
@@ -42,5 +50,13 @@ public class HP : MonoBehaviour
     public static float CalculateHealth()
     {
         return CurrentHealth / MaxHealth;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Mushbro")
+        {
+            DealDamage(5);
+        }
     }
 }

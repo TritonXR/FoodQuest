@@ -16,9 +16,13 @@ namespace TurnTheGameOn.ArrowWaypointer{
 		}
 
 		void OnTriggerEnter (Collider col) {
-			if(col.gameObject.tag == "Player"){
-				waypointController.WaypointEvent (waypointNumber);
-				waypointController.ChangeTarget ();
+			if(col.gameObject.tag == "Player")
+            {
+                if(gameObject.tag != "forestPortal" ||  gameObject.tag != "Class Decision")
+                {
+                    waypointController.WaypointEvent(waypointNumber);
+                    waypointController.ChangeTarget();
+                }
 			}
 		}
 

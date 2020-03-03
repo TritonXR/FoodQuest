@@ -20,9 +20,10 @@ public class SceneManage : MonoBehaviour {
         if (other.gameObject.tag == "Player" && gameObject.tag == "kitchenPortal")
         {
             SceneManager.LoadScene("Kitchen");
+            Debug.Log("yes");
         }
 
-        if (other.gameObject.tag == "Player" && gameObject.tag == "forestPortal")
+        if (other.gameObject.tag == "Player" || gameObject.tag == "Sword" || gameObject.tag == "Shield" && gameObject.tag == "forestPortal")
         {
             SceneManager.LoadScene("Forest");
         }
