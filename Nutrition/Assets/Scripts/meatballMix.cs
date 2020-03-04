@@ -11,7 +11,19 @@ public class meatballMix : MonoBehaviour
 	public string[] stuffInPlateName = new string[4] ;
 	public GameObject meatball; public GameObject knife;
     public GameObject Cutting1; public GameObject Cutting2;
+    public GameObject mushrooms; public GameObject garlic;
     public Text instructions;
+    private bool mush; private bool gar;
+
+    public GameObject pot; public GameObject noodlebowl;
+
+    void Start()
+    {
+        mush = false;
+        gar = false;
+        pot.SetActive(false);
+        noodlebowl.SetActive(false);
+    }
 
     // Use this for initialization
     void OnTriggerEnter(Collider other)
@@ -65,6 +77,20 @@ public class meatballMix : MonoBehaviour
                 knife.SetActive(true);
                 instructions.text = "Next, cut the mushrooms and garlic. Once cut, pick up the plate using the grip button and drop them with the grip button into the bowl.";
 
+                if(other.gameObject.tag == "Cut Mushrooms")
+                {
+                    Destroy(other.gameObject);
+                    mushrooms.SetActive(true);
+                    mush = true;
+                }
+
+                if(other.gameObject.tag == "Cut Garlic")
+                {
+                    Destroy(other.gameObject);
+                    garlic.SetActive(true);
+                    gar = true;
+                }
+
             }
 		}
 
@@ -115,5 +141,15 @@ public class meatballMix : MonoBehaviour
 		return true;
 	}
 
+
+    void Update()
+    {
+        if(gar && mush)
+        {
+            pot.SetActive(true);
+            noodlebowl.SetActive(true);
+            instructions.text = "Now, fill up water using the faucet, put the noodles inside the pot, and set it to boil on the stove.";
+        }
+    }
 
 }

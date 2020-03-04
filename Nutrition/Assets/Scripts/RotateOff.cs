@@ -29,21 +29,7 @@ public class RotateOff : MonoBehaviour {
 
         if (Device.GetTouchDown(SteamVR_Controller.ButtonMask.Grip))
         {
-            foreach (Transform child in transform)
-            {
-                if (child.tag == "Mushroom")
-                {
-                    child.transform.parent = null;
-                }
-            }
-
-            foreach (Transform child2 in plate2)
-            {
-                if (child2.tag == "Garlic")
-                {
-                    child2.transform.parent = null;
-                }
-            }
+            
         }
 
 

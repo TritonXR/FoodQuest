@@ -42,6 +42,7 @@ public class Cutting : MonoBehaviour {
                 foodMovement = foodMovement - 0.005f;
                 zoneMovement = zoneMovement + 0.0025f;
                 i++;
+                gameObject.tag = "Cut Garlic";
             }
 
             if (gameObject.tag == "Mushroom")
@@ -51,6 +52,7 @@ public class Cutting : MonoBehaviour {
                 foodMovement = foodMovement - 0.005f;
                 zoneMovement = zoneMovement + 0.0025f;
                 i++;
+                gameObject.tag = "Cut Mushrooms";
             }
         }
     }
