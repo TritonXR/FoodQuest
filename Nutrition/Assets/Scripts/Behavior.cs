@@ -31,7 +31,7 @@ public class Behavior : MonoBehaviour {
 
         if (!AttackSystem.hitStatus && !AttackSystem.freezeStatus)
         {
-            if (Vector3.Distance(transform.position, player.position) > 1 && Vector3.Distance(transform.position, player.position) < 7.5)
+            if (Vector3.Distance(transform.position, player.position) > 0.5 && Vector3.Distance(transform.position, player.position) < 7.5)
             {
                 transform.position = Vector3.MoveTowards(transform.position, player.position, speed);
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDirection), angularSpeed * Time.deltaTime);

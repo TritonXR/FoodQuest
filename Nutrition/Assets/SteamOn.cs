@@ -6,7 +6,6 @@ public class SteamOn : MonoBehaviour {
 
     public GameObject steam;
     public GameObject water;
-    public GameObject noodles;
 
     private float flameStamp;
     private float flameStartup;
@@ -17,7 +16,10 @@ public class SteamOn : MonoBehaviour {
     // Use this for initialization
 	void Start ()
     {
-		
+        flameStamp = 0;
+        chillStamp = 0;
+        flameStartup = 3;
+        chillStartup = 5;
 	}
 	
 	// Update is called once per frame
@@ -51,7 +53,6 @@ public class SteamOn : MonoBehaviour {
                     {
                         steam.SetActive(false);
                         water.tag = "Water";
-                        noodles.tag = "Boiled Noodles";
                     }
 
                     else
