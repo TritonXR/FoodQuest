@@ -51,6 +51,7 @@ TagManager:
   - Slide 4
   - Slide 5
   - Slide 6
+  - Strainer
   layers:
   - Default
   - TransparentFX
