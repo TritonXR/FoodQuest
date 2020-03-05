@@ -8,6 +8,8 @@ public class Mixture : MonoBehaviour {
     public GameObject sauce;
     public GameObject mixed; public GameObject mixed2;
     public GameObject tomatobowl;
+    public Material sauced;
+    public Renderer noodless;
     
     
     // Use this for initialization
@@ -54,21 +56,23 @@ public class Mixture : MonoBehaviour {
             {
                 noodles2.SetActive(true);
                 Destroy(other.gameObject);
-            }
+                noodles.tag = "Done Noodles";
+;            }
         }
 
-        if (gameObject.tag == "Finished Noodles")
+        if (gameObject.tag == "Done Noodles")
         {
             if (other.gameObject.tag == "Sauce")
             {
-                sauce.SetActive(true);
+                noodless.material = sauced;
                 Destroy(other.gameObject);
+                noodles.tag = "Sauced Noodles";
             }
         }
 
-        if (gameObject.tag == "FinishedSauce")
+        if (gameObject.tag == "Sauced Noodles")
         {
-            if (other.gameObject.tag == "mixture2")
+            if (other.gameObject.tag == "Finished Mixture")
             {
                 mixed2.SetActive(true);
                 Destroy(other.gameObject);

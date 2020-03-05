@@ -8,7 +8,7 @@ public class Cooking : MonoBehaviour {
     public GameObject rawFood;
     public GameObject cookedFood;
     private bool zone1; private bool zone2;
-    public GameObject strainer;
+    public GameObject strainer; public GameObject pan;
 
     // Use this for initialization
 	void Start ()
@@ -54,6 +54,24 @@ public class Cooking : MonoBehaviour {
                         count += 1;
                     }
                 }
+
+                if (gameObject.tag == "Pan")
+                {
+                    if (zone1)
+                    {
+                        transform.localPosition = new Vector3(-0.4f, -0.1f, 1.6f);
+                        zone1 = false;
+                        zone2 = true;
+                    }
+
+                    else if (zone2)
+                    {
+                        transform.localPosition = new Vector3(-0.8f, -0.2f, 3.0f);
+                        zone1 = true;
+                        zone2 = false;
+                        count += 1;
+                    }
+                }
             }
         }
 
@@ -65,7 +83,10 @@ public class Cooking : MonoBehaviour {
             if(gameObject.tag == "Pot")
             {
                 strainer.SetActive(true);
+                pan.SetActive(true);
             }
+
+
         }
     }
 }

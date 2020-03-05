@@ -15,6 +15,7 @@ public class meatballMix : MonoBehaviour
     public GameObject spatula;
     public Text instructions;
     private bool mush; private bool gar;
+    public Transform Mixture;
 
     public GameObject pot; public GameObject noodlebowl;
 
@@ -66,7 +67,7 @@ public class meatballMix : MonoBehaviour
 			if (CanMake ())
             {
 
-                Instantiate(meatball, transform.position, transform.rotation);
+                GameObject mixture = Instantiate(meatball, transform.position, transform.rotation);
                 count = 4;
 
 				for (int i = 0; i < 3; i++) {
@@ -76,6 +77,7 @@ public class meatballMix : MonoBehaviour
                 Cutting1.SetActive(true);
                 Cutting2.SetActive(true);
                 knife.SetActive(true);
+                mixture.GetComponent<Transform>().SetParent(Mixture);
                 instructions.text = "Next, cut the mushrooms and garlic. Once cut, pick up the plate using the grip button and drop them with the grip button into the bowl.";
             }
         }

@@ -26,8 +26,8 @@ public class TomatoSauce : MonoBehaviour {
 			
 
 		if (other.gameObject.tag == "leftHand") {
-			stuffInPlate [3] = other.gameObject;
-			stuffInPlateName [3] = other.gameObject.tag;
+			stuffInPlate [1] = other.gameObject;
+			stuffInPlateName [1] = other.gameObject.tag;
 			count++;
 		}
 
@@ -43,12 +43,12 @@ public class TomatoSauce : MonoBehaviour {
 
 			if (CanMake ()) {
 
-				Instantiate (mushedTomato, transform.position, transform.rotation);
 				count = 4;
 
 				Destroy (stuffInPlate [0].gameObject);
 
                 pot2.SetActive(true);
+                mushedTomato.SetActive(true);
 			}
 
 		}

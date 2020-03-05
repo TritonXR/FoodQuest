@@ -52,6 +52,11 @@ TagManager:
   - Slide 5
   - Slide 6
   - Strainer
+  - Sauce
+  - Mixture
+  - Finished Mixture
+  - Sauced Noodles
+  - mixture2
   layers:
   - Default
   - TransparentFX
