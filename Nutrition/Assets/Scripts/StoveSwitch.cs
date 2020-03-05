@@ -15,11 +15,10 @@ public class StoveSwitch : MonoBehaviour {
     private bool stoveOn;
     private bool stoveOff;
 
-	void Awake()
+	void Start()
 	{
-		_inPosition = GameObject.FindWithTag ("InPosition");
-		_outPosition = GameObject.FindWithTag ("OutPosition");
-
+        stoveOn = true;
+        stoveOff = false;
 	}
 
 	void OnTriggerEnter(Collider other)

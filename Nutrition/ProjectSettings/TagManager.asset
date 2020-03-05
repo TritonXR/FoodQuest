@@ -37,6 +37,8 @@ TagManager:
   - shape
   - Class Decision
   - Noodles
+  - CutMushroom
+  - CutGarlic
   layers:
   - Default
   - TransparentFX

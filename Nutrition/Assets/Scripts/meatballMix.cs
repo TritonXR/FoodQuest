@@ -58,15 +58,14 @@ public class meatballMix : MonoBehaviour
 			countt++;
 		}
        */
+		if (count == 3)
+        {
 
-
-		if (count == 3) {
-
-			if (CanMake ()) {
+			if (CanMake ())
+            {
 
                 Instantiate(meatball, transform.position, transform.rotation);
-
-				count = 0;
+                count = 4;
 
 				for (int i = 0; i < 3; i++) {
 
@@ -76,23 +75,25 @@ public class meatballMix : MonoBehaviour
                 Cutting2.SetActive(true);
                 knife.SetActive(true);
                 instructions.text = "Next, cut the mushrooms and garlic. Once cut, pick up the plate using the grip button and drop them with the grip button into the bowl.";
-
-                if(other.gameObject.tag == "Cut Mushrooms")
-                {
-                    Destroy(other.gameObject);
-                    mushrooms.SetActive(true);
-                    mush = true;
-                }
-
-                if(other.gameObject.tag == "Cut Garlic")
-                {
-                    Destroy(other.gameObject);
-                    garlic.SetActive(true);
-                    gar = true;
-                }
-
             }
-		}
+        }
+
+        else if (count >= 3)
+        {
+            if (other.gameObject.tag == "CutMushroom")
+            {
+                Destroy(other.gameObject);
+                mushrooms.SetActive(true);
+                mush = true;
+            }
+
+            if (other.gameObject.tag == "CutGarlic")
+            {
+                Destroy(other.gameObject);
+                garlic.SetActive(true);
+                gar = true;
+            }
+        }
 
 	}
 

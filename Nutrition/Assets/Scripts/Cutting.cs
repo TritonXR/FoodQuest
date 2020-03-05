@@ -16,6 +16,8 @@ public class Cutting : MonoBehaviour {
     public GameObject cut3;
     public GameObject cut4;
 
+    public GameObject plate;
+
     // Use this for initialization
     void Start ()
     {
@@ -28,7 +30,18 @@ public class Cutting : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if(i >= 3)
+        {
+            if(gameObject.tag == "Garlic")
+            {
+                plate.tag = "CutGarlic";
+            }
 
+            else if(gameObject.tag == "Mushroom")
+            {
+                plate.tag = "CutMushroom";
+            }
+        }
 	}
 
     void OnTriggerEnter(Collider other)
@@ -42,7 +55,6 @@ public class Cutting : MonoBehaviour {
                 foodMovement = foodMovement - 0.005f;
                 zoneMovement = zoneMovement + 0.0025f;
                 i++;
-                gameObject.tag = "Cut Garlic";
             }
 
             if (gameObject.tag == "Mushroom")
@@ -52,7 +64,6 @@ public class Cutting : MonoBehaviour {
                 foodMovement = foodMovement - 0.005f;
                 zoneMovement = zoneMovement + 0.0025f;
                 i++;
-                gameObject.tag = "Cut Mushrooms";
             }
         }
     }

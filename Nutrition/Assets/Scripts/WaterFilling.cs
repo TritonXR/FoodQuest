@@ -46,7 +46,6 @@ public class WaterFilling : MonoBehaviour {
         {
             Destroy(other.gameObject);
             noodles.SetActive(true);
-
         }
     }
 }
