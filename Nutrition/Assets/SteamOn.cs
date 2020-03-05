@@ -6,7 +6,6 @@ public class SteamOn : MonoBehaviour {
 
     public GameObject steam;
     public GameObject water;
-    public GameObject noodles;
 
     private float flameStamp;
     private float flameStartup;
@@ -35,7 +34,6 @@ public class SteamOn : MonoBehaviour {
         {
             if (StoveSwitch.HeatOn)
             {
-                Debug.Log("yaes");
                 chillStamp = 0;
                 if (flameStamp >= flameStartup)
                 {
@@ -55,7 +53,6 @@ public class SteamOn : MonoBehaviour {
                     {
                         steam.SetActive(false);
                         water.tag = "Water";
-                        noodles.tag = "Boiled Noodles";
                     }
 
                     else

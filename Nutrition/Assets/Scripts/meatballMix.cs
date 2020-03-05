@@ -12,6 +12,7 @@ public class meatballMix : MonoBehaviour
 	public GameObject meatball; public GameObject knife;
     public GameObject Cutting1; public GameObject Cutting2;
     public GameObject mushrooms; public GameObject garlic;
+    public GameObject spatula;
     public Text instructions;
     private bool mush; private bool gar;
 
@@ -23,6 +24,7 @@ public class meatballMix : MonoBehaviour
         gar = false;
         pot.SetActive(false);
         noodlebowl.SetActive(false);
+        spatula.SetActive(false);
     }
 
     // Use this for initialization
@@ -149,6 +151,7 @@ public class meatballMix : MonoBehaviour
         {
             pot.SetActive(true);
             noodlebowl.SetActive(true);
+            spatula.SetActive(true);
             instructions.text = "Now, fill up water using the faucet, put the noodles inside the pot, and set it to boil on the stove.";
         }
     }

@@ -42,6 +42,15 @@ TagManager:
   - Pot
   - Boiled Water
   - Faucet
+  - Pan
+  - Spatula
+  - Boiled Noodles
+  - Cooked Noodles
+  - Finished Noodles
+  - Finished Sauce
+  - Slide 4
+  - Slide 5
+  - Slide 6
   layers:
   - Default
   - TransparentFX

@@ -13,7 +13,12 @@ public class MinotaurBehavior : MonoBehaviour {
     private float chargeStamp = 0.0f;
     public float chargeCooldown = 3.0f;
     public float locationCooldown = 3.0f;
+    public float freezeCooldown = 5.0f;
+    public float freezeStamp = 0.0f;
+    private bool stomp = true;
+    private float movementStamp;
     private Vector3 targetDirection;
+    public float cooldown = 1.0f;
 
     private bool locationBoolean;
     private bool chargeBoolean;
@@ -30,46 +35,88 @@ public class MinotaurBehavior : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        if (locationBoolean)
+        if (!AttackSystem.hitStatus && !AttackSystem.freezeStatus)
         {
-            chargeStamp = 0;
-
-           if(locationStamp <= locationCooldown)
-           {
-                //targetDirection = player.position - transform.position;
-                //singleStep = angularSpeed * Time.deltaTime;
-                //Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
-                //transform.rotation = Quaternion.LookRotation(newDirection);
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), angularSpeed * Time.deltaTime);
-            }
-
-            if(locationStamp >= 3)
+            if (locationBoolean)
             {
-                locationBoolean = false;
-                chargeBoolean = true;
+                chargeStamp = 0;
+
+                if (locationStamp <= locationCooldown)
+                {
+                    //targetDirection = player.position - transform.position;
+                    //singleStep = angularSpeed * Time.deltaTime;
+                    //Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
+                    //transform.rotation = Quaternion.LookRotation(newDirection);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.position - transform.position), angularSpeed * Time.deltaTime);
+                }
+
+                if (locationStamp >= 3)
+                {
+                    locationBoolean = false;
+                    chargeBoolean = true;
+                }
+
+                locationStamp += Time.deltaTime;
             }
 
-            locationStamp += Time.deltaTime;
+
+            if (chargeBoolean)
+            {
+                locationStamp = 0;
+
+                if (chargeStamp <= chargeCooldown)
+                {
+                    enemy.AddRelativeForce(Vector3.forward * speed);
+                }
+
+                if (chargeStamp >= 3)
+                {
+                    locationBoolean = true;
+                    chargeBoolean = false;
+                }
+
+                chargeStamp += Time.deltaTime;
+            }
         }
 
-
-        if (chargeBoolean)
+        else if (AttackSystem.freezeStatus)
         {
-            locationStamp = 0;
+            enemy.constraints = RigidbodyConstraints.FreezeAll;
 
-            if(chargeStamp <= chargeCooldown)
-            {
-                enemy.AddRelativeForce(Vector3.forward * speed);
-            }
+            freezeStamp += Time.deltaTime;
+            locationBoolean = false;
+            chargeBoolean = false;
 
-            if(chargeStamp >= 3)
+            if (freezeStamp >= freezeCooldown)
             {
+                enemy.constraints = RigidbodyConstraints.None;
+                AttackSystem.freezeStatus = false;
+                freezeStamp = 0;
                 locationBoolean = true;
                 chargeBoolean = false;
             }
-
-            chargeStamp += Time.deltaTime;
         }
 
+        else
+        {
+            locationBoolean = false;
+            chargeBoolean = false;
+
+            if (stomp)
+            {
+                movementStamp = Time.time + cooldown;
+                stomp = false;
+            }
+
+            enemy.velocity = new Vector3(0, 0, 1);
+
+            if (movementStamp <= Time.time)
+            {
+                AttackSystem.hitStatus = false;
+                stomp = true;
+                locationBoolean = false;
+                chargeBoolean = true;
+            }
+        }
     }
 }

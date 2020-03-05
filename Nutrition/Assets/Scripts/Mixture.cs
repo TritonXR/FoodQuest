@@ -30,7 +30,7 @@ public class Mixture : MonoBehaviour {
                 Destroy(other.gameObject);
             }
 
-            if(other.gameObject.tag == "Noodles")
+            if(other.gameObject.tag == "Cooked Noodles")
             {
                 noodles.SetActive(true);
                 Destroy(other.gameObject);
@@ -46,9 +46,9 @@ public class Mixture : MonoBehaviour {
             }
         }
 
-        if (gameObject.tag == "Bowl")
+        if (gameObject.tag == "Plate")
         {
-            if (other.gameObject.tag == "cookedNoodles")
+            if (other.gameObject.tag == "Finished Noodles")
             {
                 noodles2.SetActive(true);
                 Destroy(other.gameObject);

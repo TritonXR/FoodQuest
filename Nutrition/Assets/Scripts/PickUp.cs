@@ -17,7 +17,6 @@ public class PickUp : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
         if (food_Health == 0)
         {
             food_Health = 3;
@@ -36,19 +35,21 @@ public class PickUp : MonoBehaviour {
         if (food_Health <= 0)
         {
             GameObject drop;
+            GameObject drop2;
+            GameObject drop3;
             Destroy(gameObject);
             Vector3 newPosition = new Vector3(transform.position.x + 0.5f, transform.position.y, transform.position.z + 0.5f);
             drop = Instantiate(food, newPosition, food.transform.rotation);
             drop.transform.localScale = new Vector3(25f, 25f, 25f);
             drop.tag = tag;
-            newPosition = new Vector3(transform.position.x - 0.5f, transform.position.y, transform.position.z + 0.5f);
-            drop = Instantiate(food, newPosition, food.transform.rotation);
-            drop.transform.localScale = new Vector3(25f, 25f, 25f);
-            drop.tag = tag;
-            newPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.5f);
-            drop = Instantiate(food, newPosition, food.transform.rotation);
-            drop.transform.localScale = new Vector3(25f, 25f, 25f);
-            drop.tag = tag;
+            Vector3 newPosition2 = new Vector3(transform.position.x - 0.5f, transform.position.y, transform.position.z + 0.5f);
+            drop2 = Instantiate(food, newPosition2, food.transform.rotation);
+            drop2.transform.localScale = new Vector3(25f, 25f, 25f);
+            drop2.tag = tag;
+            Vector3 newPosition3 = new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.5f);
+            drop3 = Instantiate(food, newPosition3, food.transform.rotation);
+            drop3.transform.localScale = new Vector3(25f, 25f, 25f);
+            drop3.tag = tag;
             Debug.Log("Food has dropped");
         }
 
