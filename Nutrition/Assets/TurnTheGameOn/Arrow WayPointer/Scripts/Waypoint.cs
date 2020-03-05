@@ -10,6 +10,7 @@ namespace TurnTheGameOn.ArrowWaypointer{
 		void Update(){
 			if (waypointController.player) {
 				if(Vector3.Distance(transform.position, waypointController.player.position) < radius){
+                    Debug.Log("Update");
 					waypointController.ChangeTarget ();
 				}
 			}
@@ -21,13 +22,16 @@ namespace TurnTheGameOn.ArrowWaypointer{
                 if(gameObject.tag != "forestPortal" ||  gameObject.tag != "Class Decision")
                 {
                     waypointController.WaypointEvent(waypointNumber);
+                    Debug.Log("On Trigger Enter");
                     waypointController.ChangeTarget();
+                    this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+                    this.enabled = false;
                 }
 			}
 		}
 
-		#if UNITY_EDITOR
-		void OnDrawGizmosSelected(){
+#if UNITY_EDITOR
+        void OnDrawGizmosSelected(){
 			waypointController.OnDrawGizmosSelected (radius);
 		}
 		#endif
