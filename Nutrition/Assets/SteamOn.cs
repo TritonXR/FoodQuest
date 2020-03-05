@@ -17,7 +17,10 @@ public class SteamOn : MonoBehaviour {
     // Use this for initialization
 	void Start ()
     {
-		
+        flameStamp = 0;
+        chillStamp = 0;
+        flameStartup = 3;
+        chillStartup = 5;
 	}
 	
 	// Update is called once per frame
@@ -32,6 +35,7 @@ public class SteamOn : MonoBehaviour {
         {
             if (StoveSwitch.HeatOn)
             {
+                Debug.Log("yaes");
                 chillStamp = 0;
                 if (flameStamp >= flameStartup)
                 {

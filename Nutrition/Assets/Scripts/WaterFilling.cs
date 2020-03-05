@@ -7,11 +7,14 @@ public class WaterFilling : MonoBehaviour {
     private int count;
 
     public GameObject noodles;
+    public Renderer rend;
     
     // Use this for initialization
 	void Start ()
     {
         count = 0;
+        rend = GetComponent<Renderer>();
+        rend.enabled = false;
         transform.localScale = new Vector3(2, 0.1f, 2);
         transform.localPosition = new Vector3(-0.7f, -0.7f, 2.2f);
         noodles.SetActive(false);
@@ -27,7 +30,12 @@ public class WaterFilling : MonoBehaviour {
     {
         if(other.gameObject.tag == "Water")
         {
-            if(count < 3)
+            if (count == 0)
+            {
+                rend.enabled = true;
+            }
+
+            else if (count < 3)
             {
                 transform.localScale = new Vector3(2, transform.localScale.y + 0.1f, 2);
                 transform.localPosition = new Vector3(-0.7f, transform.localPosition.y + 0.1f, 2.2f);
@@ -36,8 +44,7 @@ public class WaterFilling : MonoBehaviour {
 
             else
             {
-                GameObject.Find("faucet").GetComponent<WaterSpawn>().enabled = false;
-
+                GameObject.FindGameObjectWithTag("Faucet").GetComponent<WaterSpawn>().enabled = false;
             }
 
         }

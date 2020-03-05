@@ -39,6 +39,9 @@ TagManager:
   - Noodles
   - CutMushroom
   - CutGarlic
+  - Pot
+  - Boiled Water
+  - Faucet
   layers:
   - Default
   - TransparentFX
