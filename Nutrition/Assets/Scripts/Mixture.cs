@@ -7,6 +7,7 @@ public class Mixture : MonoBehaviour {
     public GameObject noodles; public GameObject noodles2;
     public GameObject sauce;
     public GameObject mixed; public GameObject mixed2;
+    public GameObject tomatobowl;
     
     
     // Use this for initialization
@@ -34,6 +35,7 @@ public class Mixture : MonoBehaviour {
             {
                 noodles.SetActive(true);
                 Destroy(other.gameObject);
+                tomatobowl.SetActive(true);
             }
         }
 

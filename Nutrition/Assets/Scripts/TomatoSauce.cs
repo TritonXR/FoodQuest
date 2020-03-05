@@ -8,7 +8,7 @@ public class TomatoSauce : MonoBehaviour {
 	int count = 0;
 	public GameObject[] stuffInPlate = new GameObject[2];
 	public string[] stuffInPlateName = new string[2] ;
-	public GameObject mushedTomato;
+	public GameObject mushedTomato; public GameObject pot2;
 
 	void Start()
 	{
@@ -47,6 +47,8 @@ public class TomatoSauce : MonoBehaviour {
 				count = 4;
 
 				Destroy (stuffInPlate [0].gameObject);
+
+                pot2.SetActive(true);
 			}
 
 		}
