@@ -9,6 +9,7 @@ public class Cooking : MonoBehaviour {
     public GameObject cookedFood;
     private bool zone1; private bool zone2;
     public GameObject strainer; public GameObject pan;
+    public GameObject plate;
 
     // Use this for initialization
 	void Start ()
@@ -84,6 +85,11 @@ public class Cooking : MonoBehaviour {
             {
                 strainer.SetActive(true);
                 pan.SetActive(true);
+            }
+
+            if(gameObject.tag == "Pan")
+            {
+                plate.SetActive(true);
             }
 
 
