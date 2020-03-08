@@ -28,11 +28,11 @@ public class AttackSystem : MonoBehaviour {
 
     private float locationStamp = 0.0f;
     private float chargeStamp = 0.0f;
-    public float chargeCooldown = 3.0f;
-    public float locationCooldown = 3.0f;
+    private float chargeCooldown = 3.0f;
+    private float locationCooldown = 3.0f;
 
-    private bool locationBoolean;
-    private bool chargeBoolean;
+    private bool locationBoolean = true;
+    private bool chargeBoolean = false;
 
     // Use this to get Nav Mesh Agent of the enemy
     void Start()

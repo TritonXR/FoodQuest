@@ -885,136 +885,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!43 &82715428
-Mesh:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  serializedVersion: 8
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 24
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0, y: 0.01, z: 0}
-      m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
-  m_Skin: []
-  m_VertexData:
-    m_CurrentChannels: 13
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 28
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 288
-    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0.01, z: 0}
-    m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshOptimized: 0
 --- !u!1001 &95056442
 Prefab:
   m_ObjectHideFlags: 0
@@ -1909,7 +1779,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 144949210}
-  m_Mesh: {fileID: 82715428}
+  m_Mesh: {fileID: 1972463869}
 --- !u!23 &144949214
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1925,7 +1795,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 706125521}
+  - {fileID: 1651120412}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1998,11 +1868,11 @@ MonoBehaviour:
     m_RotationOrder: 4
   _armSwingControllerSpeedForMaxSpeed: 3
   _armSwingMaxSpeed: 8
-  _armSwingBothControllersCoefficient: 1
+  _armSwingBothControllersCoefficient: 1.1
   _armSwingSingleControllerCoefficient: 0.7
   controllerSmoothing: 1
   controllerSmoothingMode: 2
-  controllerSmoothingCacheSize: 3
+  controllerSmoothingCacheSize: 10
   _movingInertia: 1
   movingInertiaTimeToStopAtMaxSpeed: 0.5
   _stoppingInertia: 1
@@ -2636,7 +2506,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 135260, guid: 54dd8ae60378d5143b14a2e5e6a8da1e, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135260, guid: 54dd8ae60378d5143b14a2e5e6a8da1e, type: 2}
       propertyPath: m_TagString
@@ -3862,7 +3732,6 @@ GameObject:
   - component: {fileID: 372441787}
   - component: {fileID: 372441786}
   - component: {fileID: 372441785}
-  - component: {fileID: 372441784}
   m_Layer: 0
   m_Name: Snake (3)
   m_TagString: Noodle Snake
@@ -3884,24 +3753,6 @@ Transform:
   m_Father: {fileID: 651226680}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &372441784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 372441782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23469522b2088ba4e93771f8dc7c67d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 648964269}
-  speed: 0.02
-  angularSpeed: 3
-  singleStep: 0
-  cooldown: 0.25
-  freezeCooldown: 5
-  freezeStamp: 0
 --- !u!114 &372441785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3917,8 +3768,8 @@ MonoBehaviour:
   nameLabel: {fileID: 361598266}
   healthStatus: {fileID: 366767566}
   player: {fileID: 0}
-  speed: 0
-  angularSpeed: 0
+  speed: 0.02
+  angularSpeed: 5
   singleStep: 0
   cooldown: 1
   freezeCooldown: 5
@@ -5486,7 +5337,8 @@ Prefab:
       propertyPath: m_Name
       value: orientationfixedmushroom (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114502158540876276, guid: 761bf3a5491d7594680d3feae273380d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 761bf3a5491d7594680d3feae273380d, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &603746061 stripped
@@ -5514,8 +5366,8 @@ MonoBehaviour:
   nameLabel: {fileID: 1685432890}
   healthStatus: {fileID: 1211634722}
   player: {fileID: 0}
-  speed: 0
-  angularSpeed: 0
+  speed: 0.02
+  angularSpeed: 5
   singleStep: 0
   cooldown: 1
   freezeCooldown: 5
@@ -6220,39 +6072,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 705877510}
---- !u!21 &706125521
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &736900622 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4827543868558376, guid: bb147685fd85c0642833a173065b34b0,
@@ -7012,7 +6831,8 @@ Prefab:
       propertyPath: m_Name
       value: orientationfixedmushroom (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114502158540876276, guid: 761bf3a5491d7594680d3feae273380d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 761bf3a5491d7594680d3feae273380d, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &846135198 stripped
@@ -7040,8 +6860,8 @@ MonoBehaviour:
   nameLabel: {fileID: 1439003285}
   healthStatus: {fileID: 1542228119}
   player: {fileID: 0}
-  speed: 0
-  angularSpeed: 0
+  speed: 0.02
+  angularSpeed: 5
   singleStep: 0
   cooldown: 1
   freezeCooldown: 5
@@ -11384,7 +11204,6 @@ GameObject:
   - component: {fileID: 1021659167}
   - component: {fileID: 1021659166}
   - component: {fileID: 1021659165}
-  - component: {fileID: 1021659164}
   m_Layer: 0
   m_Name: Snake (2)
   m_TagString: Noodle Snake
@@ -11406,24 +11225,6 @@ Transform:
   m_Father: {fileID: 651226680}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &1021659164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1021659162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23469522b2088ba4e93771f8dc7c67d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 648964269}
-  speed: 0.02
-  angularSpeed: 3
-  singleStep: 0
-  cooldown: 0.25
-  freezeCooldown: 5
-  freezeStamp: 0
 --- !u!114 &1021659165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11439,8 +11240,8 @@ MonoBehaviour:
   nameLabel: {fileID: 31161125}
   healthStatus: {fileID: 1544314150}
   player: {fileID: 0}
-  speed: 0
-  angularSpeed: 0
+  speed: 0.02
+  angularSpeed: 5
   singleStep: 0
   cooldown: 1
   freezeCooldown: 5
@@ -11604,8 +11405,8 @@ MonoBehaviour:
   nameLabel: {fileID: 404002486}
   healthStatus: {fileID: 1316915708}
   player: {fileID: 0}
-  speed: 0
-  angularSpeed: 0
+  speed: 0.02
+  angularSpeed: 5
   singleStep: 0
   cooldown: 1
   freezeCooldown: 5
@@ -13153,7 +12954,8 @@ Prefab:
       propertyPath: freezeStamp
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114502158540876276, guid: 761bf3a5491d7594680d3feae273380d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 761bf3a5491d7594680d3feae273380d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1235393697
@@ -14048,8 +13850,8 @@ MonoBehaviour:
   nameLabel: {fileID: 1887034223}
   healthStatus: {fileID: 1011909534}
   player: {fileID: 0}
-  speed: 0
-  angularSpeed: 0
+  speed: 50
+  angularSpeed: 5
   singleStep: 0
   cooldown: 1
   freezeCooldown: 5
@@ -14058,25 +13860,6 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 435260, guid: 54dd8ae60378d5143b14a2e5e6a8da1e, type: 2}
   m_PrefabInternal: {fileID: 266870125}
---- !u!114 &1323345989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1323345986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ede9e61c76d0ae45bd0a3b1ba64d03c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 648964269}
-  speed: 35
-  angularSpeed: 2.5
-  chargeCooldown: 2.5
-  locationCooldown: 3
-  freezeCooldown: 5
-  freezeStamp: 0
-  cooldown: 1
 --- !u!136 &1323345990
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15222,7 +15005,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.52, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15270,7 +15053,6 @@ GameObject:
   - component: {fileID: 1444995965}
   - component: {fileID: 1444995964}
   - component: {fileID: 1444995963}
-  - component: {fileID: 1444995962}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Noodle Snake
@@ -15278,24 +15060,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1444995962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1444995961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23469522b2088ba4e93771f8dc7c67d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 648964269}
-  speed: 0.02
-  angularSpeed: 3
-  singleStep: 0
-  cooldown: 0.25
-  freezeCooldown: 5
-  freezeStamp: 0
 --- !u!114 &1444995963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15311,8 +15075,8 @@ MonoBehaviour:
   nameLabel: {fileID: 14877902}
   healthStatus: {fileID: 628758329}
   player: {fileID: 0}
-  speed: 0
-  angularSpeed: 0
+  speed: 0.02
+  angularSpeed: 5
   singleStep: 0
   cooldown: 1
   freezeCooldown: 5
@@ -17095,6 +16859,39 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 7.300003}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!21 &1651120412
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1653796411 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4719809999312442, guid: 7be6312967053e94692000c19fd00461,
@@ -18866,7 +18663,6 @@ GameObject:
   - component: {fileID: 1859067656}
   - component: {fileID: 1859067655}
   - component: {fileID: 1859067654}
-  - component: {fileID: 1859067653}
   m_Layer: 0
   m_Name: Snake (1)
   m_TagString: Noodle Snake
@@ -18888,24 +18684,6 @@ Transform:
   m_Father: {fileID: 651226680}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &1859067653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1859067651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23469522b2088ba4e93771f8dc7c67d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 648964269}
-  speed: 0.02
-  angularSpeed: 3
-  singleStep: 0
-  cooldown: 0.25
-  freezeCooldown: 5
-  freezeStamp: 0
 --- !u!114 &1859067654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18921,8 +18699,8 @@ MonoBehaviour:
   nameLabel: {fileID: 115058343}
   healthStatus: {fileID: 1924073234}
   player: {fileID: 0}
-  speed: 0
-  angularSpeed: 0
+  speed: 0.02
+  angularSpeed: 5
   singleStep: 0
   cooldown: 1
   freezeCooldown: 5
@@ -19823,6 +19601,136 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1965646786}
+--- !u!43 &1972463869
+Mesh:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  serializedVersion: 8
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0.01, z: 0}
+      m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
+  m_Skin: []
+  m_VertexData:
+    m_CurrentChannels: 13
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 288
+    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0.01, z: 0}
+    m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshOptimized: 0
 --- !u!4 &1973490003 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4827543868558376, guid: bb147685fd85c0642833a173065b34b0,
@@ -19989,7 +19897,8 @@ Prefab:
       propertyPath: m_Name
       value: orientationfixedmushroom (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114502158540876276, guid: 761bf3a5491d7594680d3feae273380d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 761bf3a5491d7594680d3feae273380d, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1974792446 stripped
@@ -20017,8 +19926,8 @@ MonoBehaviour:
   nameLabel: {fileID: 1853196810}
   healthStatus: {fileID: 289802370}
   player: {fileID: 0}
-  speed: 0
-  angularSpeed: 0
+  speed: 0.02
+  angularSpeed: 5
   singleStep: 0
   cooldown: 1
   freezeCooldown: 5
