@@ -28,13 +28,9 @@ TagManager:
   - Beef
   - leftHand
   - rightHand
-  - InPosition
-  - OutPosition
-  - Hand
   - Mushbro
   - Water
   - Knife
-  - shape
   - Class Decision
   - Noodles
   - CutMushroom
@@ -57,6 +53,12 @@ TagManager:
   - Finished Mixture
   - Sauced Noodles
   - mixture2
+  - Done Noodles
+  - Sauce Pot
+  - shape
+  - Hand
+  - Noodle Snake
+  - Cow Monster
   layers:
   - Default
   - TransparentFX

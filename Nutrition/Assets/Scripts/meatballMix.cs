@@ -16,6 +16,10 @@ public class meatballMix : MonoBehaviour
     public Text instructions;
     private bool mush; private bool gar;
     public Transform Mixture;
+    private bool sound;
+
+    public AudioClip correct;
+    private AudioSource ears;
 
     public GameObject pot; public GameObject noodlebowl;
 
@@ -26,6 +30,7 @@ public class meatballMix : MonoBehaviour
         pot.SetActive(false);
         noodlebowl.SetActive(false);
         spatula.SetActive(false);
+        ears = GetComponent<AudioSource>();
     }
 
     // Use this for initialization
@@ -62,11 +67,9 @@ public class meatballMix : MonoBehaviour
 		}
        */
 		if (count == 3)
-        {
-
+        {       
 			if (CanMake ())
             {
-
                 GameObject mixture = Instantiate(meatball, transform.position, transform.rotation);
                 count = 4;
 
@@ -78,7 +81,8 @@ public class meatballMix : MonoBehaviour
                 Cutting2.SetActive(true);
                 knife.SetActive(true);
                 mixture.GetComponent<Transform>().SetParent(Mixture);
-                instructions.text = "Next, cut the mushrooms and garlic. Once cut, pick up the plate using the grip button and drop them with the grip button into the bowl.";
+                ears.PlayOneShot(correct);
+                instructions.text = "Next, cut the mushrooms and garlic. Once cut, pick up the plate using the trigger button and drop them into the bowl.";
             }
         }
 
@@ -86,14 +90,14 @@ public class meatballMix : MonoBehaviour
         {
             if (other.gameObject.tag == "CutMushroom")
             {
-                Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
                 mushrooms.SetActive(true);
                 mush = true;
             }
 
             if (other.gameObject.tag == "CutGarlic")
             {
-                Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
                 garlic.SetActive(true);
                 gar = true;
             }
@@ -153,9 +157,17 @@ public class meatballMix : MonoBehaviour
         {
             pot.SetActive(true);
             noodlebowl.SetActive(true);
-            spatula.SetActive(true);
-            instructions.text = "Now, fill up water using the faucet, put the noodles inside the pot, and set it to boil on the stove.";
+            spatula.SetActive(true);         
+            instructions.text = "Now, fill up water using the faucet, put the noodles inside the pot, and set it to boil on the stove. Once boiled, stir the noodles until they are cooked.";
+            sound = true;
+            gar = false;
+            mush = false;
+        }
+
+        if (sound)
+        {
+            ears.PlayOneShot(correct);
+            sound = false;
         }
     }
-
 }

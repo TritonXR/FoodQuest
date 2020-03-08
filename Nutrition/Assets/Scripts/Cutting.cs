@@ -18,6 +18,9 @@ public class Cutting : MonoBehaviour {
 
     public GameObject plate;
 
+    public AudioClip cutting;
+    private AudioSource ears;
+
     // Use this for initialization
     void Start ()
     {
@@ -25,6 +28,7 @@ public class Cutting : MonoBehaviour {
         cuttingMaterials[1] = cut2;
         cuttingMaterials[2] = cut3;
         cuttingMaterials[3] = cut4;
+        ears = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -46,7 +50,7 @@ public class Cutting : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Knife")
+        if (other.gameObject.tag == "Knife" && i <= 3)
         {
             if(gameObject.tag == "Garlic")
             {
@@ -54,6 +58,7 @@ public class Cutting : MonoBehaviour {
                 transform.localPosition = new Vector3(-0.001f, transform.localScale.y + 0.0058f, 0) - new Vector3(0, zoneMovement, 0);
                 foodMovement = foodMovement - 0.005f;
                 zoneMovement = zoneMovement + 0.0025f;
+                ears.PlayOneShot(cutting);
                 i++;
             }
 
@@ -63,6 +68,7 @@ public class Cutting : MonoBehaviour {
                 transform.localPosition = new Vector3(0.0019f, transform.localScale.y + 0.0058f, 0) - new Vector3(0, zoneMovement, 0);
                 foodMovement = foodMovement - 0.005f;
                 zoneMovement = zoneMovement + 0.0025f;
+                ears.PlayOneShot(cutting);
                 i++;
             }
         }

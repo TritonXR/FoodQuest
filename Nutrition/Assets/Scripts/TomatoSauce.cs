@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TomatoSauce : MonoBehaviour {
 
@@ -10,10 +11,14 @@ public class TomatoSauce : MonoBehaviour {
 	public string[] stuffInPlateName = new string[2] ;
 	public GameObject mushedTomato; public GameObject pot2;
 
-	void Start()
+    public AudioClip correct;
+    private AudioSource ears;
+    public Text ingredients;
+
+    void Start()
 	{
-		
-	}
+        ears = GetComponent<AudioSource>();
+    }
 
 	// Use this for initialization
 	void OnTriggerEnter(Collider other)
@@ -41,7 +46,8 @@ public class TomatoSauce : MonoBehaviour {
        */
 		if (count == 3) {
 
-			if (CanMake ()) {
+			if (CanMake ())
+            {
 
 				count = 4;
 
@@ -49,7 +55,9 @@ public class TomatoSauce : MonoBehaviour {
 
                 pot2.SetActive(true);
                 mushedTomato.SetActive(true);
-			}
+                ears.PlayOneShot(correct);
+                ingredients.text = "Now, put the sauce inside of the pot";
+            }
 
 		}
 	}
