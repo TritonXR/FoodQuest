@@ -22,7 +22,7 @@ public class classDecision : MonoBehaviour {
        if (other.gameObject.tag == "Player")
         {
             warriorPortal.SetActive(true);
-            magePortal.SetActive(true);
+            magePortal.SetActive(false);
             startArrow.SetActive(false);
             classText.text = "Now choose a class";
         }
