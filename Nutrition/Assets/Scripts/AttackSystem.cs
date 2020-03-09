@@ -33,6 +33,7 @@ public class AttackSystem : MonoBehaviour {
 
     private bool locationBoolean = true;
     private bool chargeBoolean = false;
+    private bool blocked = false;
 
     // Use this to get Nav Mesh Agent of the enemy
     void Start()
@@ -50,23 +51,46 @@ public class AttackSystem : MonoBehaviour {
     {
         if (otherObj.gameObject.tag == "Sword")
         {
-            hitStatus = true;
-            CurrentHealth = CurrentHealth - 50;
-            healthStatus.value = CalculateHealth();
-            Debug.Log("Enemy has been damaged");
+            if(gameObject.tag == "Mushbro" || gameObject.tag == "Noodle Snake")
+            {
+                hitStatus = true;
+                CurrentHealth = CurrentHealth - 50;
+                healthStatus.value = CalculateHealth();
+            }
+
+            else if(gameObject.tag == "Cow Monster" && blocked)
+            {
+                CurrentHealth = CurrentHealth - 50;
+                healthStatus.value = CalculateHealth();
+            }
         }
 
         if (otherObj.gameObject.tag == "Rage Sword")
         {
-            hitStatus = true;
-            CurrentHealth = CurrentHealth - 75;
-            healthStatus.value = CalculateHealth();
-            Debug.Log("Enemy has been damaged");
+            if (gameObject.tag == "Mushbro" || gameObject.tag == "Noodle Snake")
+            {
+                hitStatus = true;
+                CurrentHealth = CurrentHealth - 75;
+                healthStatus.value = CalculateHealth();
+            }
+
+            else if (gameObject.tag == "Cow Monster" && blocked)
+            {
+                CurrentHealth = CurrentHealth - 75;
+                healthStatus.value = CalculateHealth();
+                blocked = false;
+            }
         }
 
         if (otherObj.gameObject.tag == "Shield")
         {
             hitStatus = true;
+
+            if(gameObject.tag == "Cow Monster")
+            {
+                blocked = true;
+                hitStatus = true;
+            }
         }
 
         if (otherObj.gameObject.tag == "Rage Shield")
@@ -144,7 +168,7 @@ public class AttackSystem : MonoBehaviour {
                     stomp = false;
                 }
 
-                enemy.velocity = new Vector3(0, 0, 1);
+                transform.position += Vector3.back * Time.deltaTime;
 
                 if (movementStamp <= Time.time)
                 {
@@ -229,7 +253,7 @@ public class AttackSystem : MonoBehaviour {
                     stomp = false;
                 }
 
-                enemy.velocity = new Vector3(0, 0, 1);
+                enemy.velocity = new Vector3(0, 0, 0);
 
                 if (movementStamp <= Time.time)
                 {
@@ -237,6 +261,7 @@ public class AttackSystem : MonoBehaviour {
                     stomp = true;
                     locationBoolean = false;
                     chargeBoolean = true;
+                    blocked = false;
                 }
             }
         }

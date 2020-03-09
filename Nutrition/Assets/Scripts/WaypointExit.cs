@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WaypointExit : MonoBehaviour {
-    public GameObject target;
 
+    public GameObject target;
     public GameObject Monsters;
     public GameObject Cow;
     public GameObject Portal;
@@ -14,27 +14,26 @@ public class WaypointExit : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             Destroy(target);
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
 
             if(gameObject.tag == "Slide 4")
             {
                 Destroy(target);
-                this.gameObject.SetActive(false);
+                gameObject.SetActive(false);
                 Monsters.SetActive(true);
             }
 
             if(gameObject.tag == "Slide 5")
             {
                 Destroy(target);
-                this.gameObject.SetActive(false);
+                gameObject.SetActive(false);
                 Cow.SetActive(true);
             }
 
             if(gameObject.tag == "Slide 6")
             {
                 Destroy(target);
-                this.gameObject.SetActive(false);
-                Portal.SetActive(true);
+                gameObject.SetActive(false);
             }
         }
 

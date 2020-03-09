@@ -17,7 +17,9 @@ public class HP : MonoBehaviour
     public Text garlicText;
     public Text beefText;
     public Text noodleText;
-  
+    public GameObject deathBox;
+    public float delay = 500;
+    public float deathCount;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,8 @@ public class HP : MonoBehaviour
         CurrentHealth = MaxHealth;
         healthbar.value = CalculateHealth();
         health.text = "HP:" + " " + CurrentHealth.ToString() + "/" + MaxHealth.ToString();
-    }
+        deathBox.SetActive(false);
+}
 
     // Update is called once per frame
     void Update()
@@ -38,6 +41,22 @@ public class HP : MonoBehaviour
         garlicText.text = Item.food["Garlic"].ToString();
         beefText.text = Item.food["Beef"].ToString();
         noodleText.text = Item.food["Noodles"].ToString();
+
+        if(CurrentHealth <= 0)
+        {
+            CurrentHealth = 0;
+            healthbar.value = CalculateHealth();
+            health.text = "HP:" + " " + CurrentHealth.ToString() + "/" + MaxHealth.ToString();
+            deathBox.SetActive(true);
+            deathCount += Time.deltaTime;
+
+            if (deathCount >= 3)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                deathCount = 0;
+            }
+        }
+
     }
 
     public void DealDamage(float damageValue)
@@ -54,9 +73,14 @@ public class HP : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Mushbro")
+        if(other.gameObject.tag == "Mushbro"  || other.gameObject.tag == "Noodle Snake")
         {
             DealDamage(5);
+        }
+
+        else if(other.gameObject.tag == "Cow Monster")
+        {
+            DealDamage(10);
         }
     }
 }

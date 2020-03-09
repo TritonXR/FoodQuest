@@ -35,6 +35,7 @@ public class Rage : Roles
         warriorShield.SetActive(true);
         rageShield.SetActive(false);
         pause = true;
+        Pause.SetActive(false);
     }
 
     //This controls the use of rage mode
