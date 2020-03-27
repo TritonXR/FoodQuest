@@ -10,6 +10,8 @@ public class Item : MonoBehaviour {
     public GameObject pepperPic;
     public GameObject mushroomPic;
     public GameObject garlicPic;
+    public GameObject beefPic;
+    public GameObject noodlePic;
 
     public static Dictionary<string, int> food;
 
@@ -21,13 +23,17 @@ public class Item : MonoBehaviour {
         pepperPic.SetActive(false);
         mushroomPic.SetActive(false);
         garlicPic.SetActive(false);
+        beefPic.SetActive(false);
+        noodlePic.SetActive(false);
         food = new Dictionary<string, int>
         {
             { "Tomato", 0 },
             { "Salt", 0 },
             { "Pepper", 0 },
             { "Mushroom", 0 },
-            { "Garlic", 0 }
+            { "Garlic", 0 },
+            { "Beef", 0 },
+            { "Noodles", 0 }
         };
     }
 
@@ -72,6 +78,20 @@ public class Item : MonoBehaviour {
             food["Garlic"] += 1;
             Destroy(otherObj.gameObject);
             garlicPic.SetActive(true);
+        }
+
+        if (otherObj.gameObject.tag == "Beef")
+        {
+            food["Beef"] += 1;
+            Destroy(otherObj.gameObject);
+            beefPic.SetActive(true);
+        }
+
+        if (otherObj.gameObject.tag == "Noodles")
+        {
+            food["Noodles"] += 1;
+            Destroy(otherObj.gameObject);
+            noodlePic.SetActive(true);
         }
     }
 }

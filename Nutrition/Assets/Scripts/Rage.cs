@@ -18,6 +18,8 @@ public class Rage : Roles
     private float rageStamp;
     public Slider magicbar;
     public Text magic;
+    public GameObject Pause;
+    private bool pause;
 
     // This will track the controller
     void Awake()
@@ -32,6 +34,8 @@ public class Rage : Roles
         rageSword.SetActive(false);
         warriorShield.SetActive(true);
         rageShield.SetActive(false);
+        pause = true;
+        Pause.SetActive(false);
     }
 
     //This controls the use of rage mode
@@ -66,6 +70,21 @@ public class Rage : Roles
             rageSword.SetActive(false);
             warriorShield.SetActive(true);
             rageShield.SetActive(false);
+        }
+
+        if (Device.GetTouchDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
+        {
+            if (pause)
+            {
+                Pause.SetActive(true);
+                pause = false;
+            }
+
+            else
+            {
+                Pause.SetActive(false);
+                pause = true;
+            }
         }
     }
 }

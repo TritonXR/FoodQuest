@@ -75,8 +75,6 @@ public class Mine : MonoBehaviour
             drop = Instantiate(food, newPosition, food.transform.rotation);
             drop.transform.localScale = new Vector3(25f, 25f, 25f);
             drop.tag = tag;
-            drop.AddComponent<Rigidbody>();
-            drop.AddComponent<BoxCollider>();
             /*component = drop.GetComponent<Mine>();
             Destroy(component);
             audioSource = drop.GetComponent<AudioSource>();
@@ -85,8 +83,6 @@ public class Mine : MonoBehaviour
             drop = Instantiate(food, newPosition, food.transform.rotation);
             drop.transform.localScale = new Vector3(25f, 25f, 25f);
             drop.tag = tag;
-            drop.AddComponent<Rigidbody>();
-            drop.AddComponent<BoxCollider>();
             /*component = drop.GetComponent<Mine>();
             Destroy(component);
             audioSource = drop.GetComponent<AudioSource>();
@@ -95,8 +91,6 @@ public class Mine : MonoBehaviour
             drop = Instantiate(food, newPosition, food.transform.rotation);
             drop.transform.localScale = new Vector3(25f, 25f, 25f);
             drop.tag = tag;
-            drop.AddComponent<Rigidbody>();
-            drop.AddComponent<BoxCollider>();
             /*component = drop.GetComponent<Mine>();
             Destroy(component);
             audioSource = drop.GetComponent<AudioSource>();

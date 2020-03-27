@@ -9,27 +9,27 @@ public class SceneManage : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player" && gameObject.tag == "warriorPortal")
         {
-            SceneManager.LoadScene("Warrior");
+            SceneManager.LoadScene(3);
         }
 
         if (other.gameObject.tag == "Player" && gameObject.tag == "magePortal")
         {
-            SceneManager.LoadScene("Mage");
+            SceneManager.LoadScene(2);
         }
 
         if (other.gameObject.tag == "Player" && gameObject.tag == "kitchenPortal")
         {
-            SceneManager.LoadScene("Kitchen");
+            SceneManager.LoadScene(5);
         }
 
         if (other.gameObject.tag == "Player" && gameObject.tag == "forestPortal")
         {
-            SceneManager.LoadScene("Forest");
+            SceneManager.LoadScene(0);
         }
     }
 
     public void ForestEscape()
     {
-        SceneManager.LoadScene("Forest");
+        SceneManager.LoadScene(0);
     }
 }

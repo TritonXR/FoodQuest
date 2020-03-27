@@ -9,10 +9,32 @@ public class meatballMix : MonoBehaviour
 	int count = 0;
 	public GameObject[] stuffInPlate = new GameObject[4];
 	public string[] stuffInPlateName = new string[4] ;
-	public GameObject meatball;
+	public GameObject meatball; public GameObject knife;
+    public GameObject Cutting1; public GameObject Cutting2;
+    public GameObject mushrooms; public GameObject garlic;
+    public GameObject spatula;
+    public Text instructions;
+    private bool mush; private bool gar;
+    public Transform Mixture;
+    private bool sound;
 
-	// Use this for initialization
-	void OnTriggerEnter(Collider other)
+    public AudioClip correct;
+    private AudioSource ears;
+
+    public GameObject pot; public GameObject noodlebowl;
+
+    void Start()
+    {
+        mush = false;
+        gar = false;
+        pot.SetActive(false);
+        noodlebowl.SetActive(false);
+        spatula.SetActive(false);
+        ears = GetComponent<AudioSource>();
+    }
+
+    // Use this for initialization
+    void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "Beef") {
 
@@ -44,22 +66,42 @@ public class meatballMix : MonoBehaviour
 			countt++;
 		}
        */
-
-
-		if (count == 3) {
-
-			if (CanMake ()) {
-
-                Instantiate(meatball, transform.position, transform.rotation);
-
-				count = 0;
+		if (count == 3)
+        {       
+			if (CanMake ())
+            {
+                GameObject mixture = Instantiate(meatball, transform.position, transform.rotation);
+                count = 4;
 
 				for (int i = 0; i < 3; i++) {
 
 					Destroy (stuffInPlate [i].gameObject);
 				}
-			}
-		}
+                Cutting1.SetActive(true);
+                Cutting2.SetActive(true);
+                knife.SetActive(true);
+                mixture.GetComponent<Transform>().SetParent(Mixture);
+                ears.PlayOneShot(correct);
+                instructions.text = "Next, cut the mushrooms and garlic. Once cut, pick up the plate using the trigger button and drop them into the bowl.";
+            }
+        }
+
+        else if (count >= 3)
+        {
+            if (other.gameObject.tag == "CutMushroom")
+            {
+                other.gameObject.SetActive(false);
+                mushrooms.SetActive(true);
+                mush = true;
+            }
+
+            if (other.gameObject.tag == "CutGarlic")
+            {
+                other.gameObject.SetActive(false);
+                garlic.SetActive(true);
+                gar = true;
+            }
+        }
 
 	}
 
@@ -109,4 +151,23 @@ public class meatballMix : MonoBehaviour
 	}
 
 
+    void Update()
+    {
+        if(gar && mush)
+        {
+            pot.SetActive(true);
+            noodlebowl.SetActive(true);
+            spatula.SetActive(true);         
+            instructions.text = "Now, fill up water using the faucet, put the noodles inside the pot, and set it to boil on the stove. Once boiled, stir the noodles until they are cooked.";
+            sound = true;
+            gar = false;
+            mush = false;
+        }
+
+        if (sound)
+        {
+            ears.PlayOneShot(correct);
+            sound = false;
+        }
+    }
 }

@@ -8,22 +8,28 @@ namespace TurnTheGameOn.ArrowWaypointer{
 		[HideInInspector] public int waypointNumber;
 
 		void Update(){
-			if (waypointController.player) {
+			if (waypointController.player)
+            {
 				if(Vector3.Distance(transform.position, waypointController.player.position) < radius){
-					waypointController.ChangeTarget ();
+                    Debug.Log("Update");
+					//waypointController.ChangeTarget();
 				}
 			}
 		}
 
-		void OnTriggerEnter (Collider col) {
-			if(col.gameObject.tag == "Player"){
-				waypointController.WaypointEvent (waypointNumber);
-				waypointController.ChangeTarget ();
+		void OnTriggerEnter (Collider col)
+        {
+			if(col.gameObject.tag == "Player")
+            {
+                waypointController.WaypointEvent(waypointNumber);
+                waypointController.ChangeTarget();
+                gameObject.GetComponent<MeshRenderer>().enabled = false;
+                enabled = false;
 			}
 		}
 
-		#if UNITY_EDITOR
-		void OnDrawGizmosSelected(){
+#if UNITY_EDITOR
+        void OnDrawGizmosSelected(){
 			waypointController.OnDrawGizmosSelected (radius);
 		}
 		#endif

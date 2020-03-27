@@ -31,6 +31,7 @@ namespace TurnTheGameOn.ArrowWaypointer{
 		private Transform waypointArrow;
 		//Transforms used to identify the Waypoint Arrow's target
 		private Transform currentWaypoint;
+        private Transform previousWaypoint;
 		private Transform arrowTarget;
 
 		void Start () {
@@ -76,7 +77,7 @@ namespace TurnTheGameOn.ArrowWaypointer{
 			if (check < TotalWaypoints) {
 				if (currentWaypoint == null)
 					currentWaypoint = waypointList [0].waypoint.transform;
-				currentWaypoint.gameObject.SetActive (false);
+				//currentWaypoint.gameObject.SetActive (false);
 				currentWaypoint = waypointList [nextWP].waypoint.transform;
 				currentWaypoint.gameObject.SetActive (true);
 				nextWP += 1;

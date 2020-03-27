@@ -14,12 +14,10 @@ TagManager:
   - Pepper
   - Salt
   - Food
-  - Class Decision
   - magePortal
   - warriorPortal
   - kitchenPortal
   - forestPortal
-  - Orange
   - Mushroom
   - Garlic
   - Tomato
@@ -30,10 +28,37 @@ TagManager:
   - Beef
   - leftHand
   - rightHand
-  - InPosition
-  - OutPosition
-  - Hand
   - Mushbro
+  - Water
+  - Knife
+  - Class Decision
+  - Noodles
+  - CutMushroom
+  - CutGarlic
+  - Pot
+  - Boiled Water
+  - Faucet
+  - Pan
+  - Spatula
+  - Boiled Noodles
+  - Cooked Noodles
+  - Finished Noodles
+  - Finished Sauce
+  - Slide 4
+  - Slide 5
+  - Slide 6
+  - Strainer
+  - Sauce
+  - Mixture
+  - Finished Mixture
+  - Sauced Noodles
+  - mixture2
+  - Done Noodles
+  - Sauce Pot
+  - shape
+  - Hand
+  - Noodle Snake
+  - Cow Monster
   layers:
   - Default
   - TransparentFX
@@ -43,8 +68,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Ground
+  - Weapons
   - 
   - 
   - 
