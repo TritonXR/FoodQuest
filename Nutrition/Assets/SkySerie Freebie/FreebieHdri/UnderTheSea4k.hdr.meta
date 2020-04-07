@@ -1,0 +1,124 @@
+fileFormatVersion: 2
+guid: 26cddb2a3a1bc804d8e9ca09b109793a
+<<<<<<< HEAD
+TextureImporter:
+  fileIDToRecycleName:
+    8900000: generatedCubemap
+  externalObjects: {}
+=======
+timeCreated: 1518833495
+licenseType: Store
+TextureImporter:
+  fileIDToRecycleName:
+    8900000: generatedCubemap
+>>>>>>> eb659bf99eef29c5572d3eb622023c0fc8ce5a3d
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+<<<<<<< HEAD
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+=======
+>>>>>>> eb659bf99eef29c5572d3eb622023c0fc8ce5a3d
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+<<<<<<< HEAD
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: -1
+    wrapV: -1
+    wrapW: -1
+=======
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: -1
+>>>>>>> eb659bf99eef29c5572d3eb622023c0fc8ce5a3d
+  nPOTScale: 1
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+=======
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+>>>>>>> eb659bf99eef29c5572d3eb622023c0fc8ce5a3d
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 2
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+<<<<<<< HEAD
+    resizeAlgorithm: 0
+=======
+>>>>>>> eb659bf99eef29c5572d3eb622023c0fc8ce5a3d
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+<<<<<<< HEAD
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+=======
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+>>>>>>> eb659bf99eef29c5572d3eb622023c0fc8ce5a3d
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+<<<<<<< HEAD
+    androidETC2FallbackOverride: 0
+=======
+>>>>>>> eb659bf99eef29c5572d3eb622023c0fc8ce5a3d
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+<<<<<<< HEAD
+    physicsShape: []
+=======
+>>>>>>> eb659bf99eef29c5572d3eb622023c0fc8ce5a3d
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
