@@ -6,19 +6,12 @@ TagManager:
   tags:
   - Pick Up
   - Fireball
-  - Bread
-  - Button
-  - Danish
-  - Big Bread
-  - Seed Roll
-  - Croissant
   - Enemy
-  - Weapon
-  - Hand
   - Shield
   - Iceball
   - Rage Shield
   - Rage Sword
+<<<<<<< HEAD
   - Floor
 <<<<<<< HEAD
   - Food
@@ -28,6 +21,56 @@ TagManager:
   - Pepper
   - Salt
 >>>>>>> 04381cac662fe57b892f2220f97eb9bd86a580e4
+=======
+  - Pepper
+  - Salt
+  - Food
+  - magePortal
+  - warriorPortal
+  - kitchenPortal
+  - forestPortal
+  - Mushroom
+  - Garlic
+  - Tomato
+  - Fire
+  - Sword
+  - Meatball
+  - Plate
+  - Beef
+  - leftHand
+  - rightHand
+  - Mushbro
+  - Water
+  - Knife
+  - Class Decision
+  - Noodles
+  - CutMushroom
+  - CutGarlic
+  - Pot
+  - Boiled Water
+  - Faucet
+  - Pan
+  - Spatula
+  - Boiled Noodles
+  - Cooked Noodles
+  - Finished Noodles
+  - Finished Sauce
+  - Slide 4
+  - Slide 5
+  - Slide 6
+  - Strainer
+  - Sauce
+  - Mixture
+  - Finished Mixture
+  - Sauced Noodles
+  - mixture2
+  - Done Noodles
+  - Sauce Pot
+  - shape
+  - Hand
+  - Noodle Snake
+  - Cow Monster
+>>>>>>> eb659bf99eef29c5572d3eb622023c0fc8ce5a3d
   layers:
   - Default
   - TransparentFX
@@ -37,8 +80,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Ground
+  - Weapons
   - 
   - 
   - 

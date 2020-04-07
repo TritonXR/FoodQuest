@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
-public class Mage : MonoBehaviour {
+public class Mage : Roles {
 
     private SteamVR_TrackedObject TrackedObject; //= null;
     public SteamVR_Controller.Device Device;
@@ -43,10 +43,10 @@ public class Mage : MonoBehaviour {
         {
             if (Device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
             {
-                GameObject fireball = Instantiate(Iceball, transform.position, transform.rotation) as GameObject;
-                Rigidbody rb = fireball.GetComponent<Rigidbody>();
+                GameObject iceball = Instantiate(Iceball, transform.position, transform.rotation) as GameObject;
+                Rigidbody rb = iceball.GetComponent<Rigidbody>();
                 rb.velocity = transform.TransformDirection(Vector3.forward * 15);
-                Destroy(fireball, 1);
+                Destroy(iceball, 1);
                 timeStamp = Time.time + cooldown;
             }
         }
