@@ -4,29 +4,29 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class RiceMix : MonoBehaviour {
+public class cookSushiRice : MonoBehaviour {
 
 	private int count = 0;
 	private bool zone1; private bool zone2; private bool mix;
-    public GameObject pan;
+	public GameObject sushiRiceN;
 	// Use this for initialization
 	void Start () 
 	{
 		zone1 = true;
 		zone2 = false;
 		mix = false;
-		
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{
-		
+
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
-		if(other.gameObject.tag == "SushiRice")
+		if(other.gameObject.tag == "SushiRiceN")
 		{
 			mix = true;
 		}
@@ -54,12 +54,11 @@ public class RiceMix : MonoBehaviour {
 					}
 				}
 			}
-		
+
 
 			else if(count >= 3)
 			{
-				gameObject.GetComponent<BoxCollider> ().enabled = false;
-
+				sushiRiceN.gameObject.tag = "SushiRice";
 			}
 		}
 	}

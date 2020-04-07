@@ -6,7 +6,7 @@ public class SushiRiceMix : MonoBehaviour {
 
 	private int count = 0;
 	private bool zone1; private bool zone2; private bool mix;
-	public GameObject pan;
+	public GameObject plainRice;
 
 	// Use this for initialization
 	void Start () 
@@ -24,7 +24,7 @@ public class SushiRiceMix : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if(other.gameObject.tag == "Vinegar")
+		if(other.gameObject.tag == "Vinegar" && other.gameObject.tag == "Rice" )
 		{
 			mix = true;
 		}
@@ -56,8 +56,7 @@ public class SushiRiceMix : MonoBehaviour {
 
 			else if(count >= 3)
 			{
-				gameObject.GetComponent<BoxCollider> ().enabled = false;
-
+				plainRice.gameObject.tag = "SushiRiceN";
 			}
 		}
 	}
