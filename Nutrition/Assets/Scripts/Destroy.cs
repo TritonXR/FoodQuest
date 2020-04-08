@@ -1,9 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Attack : MonoBehaviour {
+public class Destroy : MonoBehaviour
+{
 
     public int Enemy_Health;
     public int Fireball_Health;
@@ -11,37 +12,32 @@ public class Attack : MonoBehaviour {
     public GameObject food;
     Rigidbody enemy;
     private float timeStamp;
-    private bool destroyedAlready;
 
     // Use this to get Nav Mesh Agent of the enemy
     void Start()
     {
-        destroyedAlready = false;
         enemy = GetComponent<Rigidbody>();
         cooldown = 3;
 
         if (Enemy_Health == 0)
         {
-            Enemy_Health = 100;
+            Enemy_Health = 150;
         }
-        
+
     }
     // The amount of damage that certain weapons will deal
     void OnCollisionEnter(Collision otherObj)
     {
-
         if (otherObj.gameObject.tag == "Weapon")
         {
             Enemy_Health = Enemy_Health - 50;
             Debug.Log("Enemy has been damaged");
-
         }
 
         if (otherObj.gameObject.tag == "Rage Sword")
         {
-            Enemy_Health = Enemy_Health - 100;
+            Enemy_Health = Enemy_Health - 75;
             Debug.Log("Enemy has been damaged");
-      
         }
 
         if (otherObj.gameObject.tag == "Rage Shield")
@@ -66,14 +62,9 @@ public class Attack : MonoBehaviour {
 
         if (Enemy_Health <= 0)
         {
-
-            // Instantiate(food, transform.position, food.transform.rotation);
-
-            Debug.Log("Enemy has been slayed");
             Destroy(gameObject);
-
-            food.SetActive(true);
-            Debug.Log("food is " + food.activeSelf);
+            Instantiate(food, transform.position, food.transform.rotation);
+            Debug.Log("Enemy has been slayed");
         }
 
     }
