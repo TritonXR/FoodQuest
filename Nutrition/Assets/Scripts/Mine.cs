@@ -36,6 +36,12 @@ public class Mine : MonoBehaviour
     // The amount of damage that certain weapons will deal
     void OnCollisionEnter(Collision otherObj)
     {
+        if (otherObj.gameObject.tag == "PickAxe")
+        {
+            mineHealth = mineHealth - 1;
+            Debug.Log("Mine has been hited");
+        }
+
         if (otherObj.gameObject.tag == "Sword")
         {
             mineHealth = mineHealth - 1;
