@@ -66,7 +66,7 @@ public class Rage : Roles
         // This allows rage mode to be active for a couple seconds
         if((timeStamp <= Time.time))
         {
-            if (Device.GetPress(SteamVR_Controller.ButtonMask.Touchpad))
+            if (Device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
             {
                 Vector2 touchValue = Device.GetAxis(EVRButtonId.k_EButton_SteamVR_Touchpad);
                 if (touchValue.y > 0.8f && touchValue.y < 1.0f)
