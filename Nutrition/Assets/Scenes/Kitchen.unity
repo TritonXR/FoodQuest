@@ -7961,6 +7961,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &451553983
 Prefab:
   m_ObjectHideFlags: 0
@@ -8191,6 +8192,8 @@ Material:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 >>>>>>> parent of 33b9918... sushirice
+=======
+>>>>>>> parent of 393b273... town
 =======
 >>>>>>> parent of 393b273... town
 --- !u!1 &452532915
@@ -9796,6 +9799,7 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       objectReference: {fileID: 623738061}
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -9843,6 +9847,13 @@ Prefab:
       value: 
       objectReference: {fileID: 1393133096}
 >>>>>>> parent of 6a983bf... washRice
+=======
+      objectReference: {fileID: 2042048297}
+    - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 1221034406}
+>>>>>>> parent of 393b273... town
     - target: {fileID: 420908, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_LocalScale.x
       value: 3.5
@@ -27810,6 +27821,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1464818249
 GameObject:
   m_ObjectHideFlags: 0
@@ -28129,6 +28141,8 @@ Mesh:
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
 >>>>>>> parent of 33b9918... sushirice
+=======
+>>>>>>> parent of 393b273... town
 =======
 >>>>>>> parent of 393b273... town
 --- !u!1 &1468372875
@@ -40146,6 +40160,7 @@ Transform:
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!54 &2034045243
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40215,6 +40230,8 @@ MeshFilter:
   m_GameObject: {fileID: 2034045241}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 =======
+=======
+>>>>>>> parent of 393b273... town
 --- !u!43 &2042048297
 Mesh:
   m_ObjectHideFlags: 0
@@ -40345,6 +40362,9 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+<<<<<<< HEAD
+>>>>>>> parent of 393b273... town
+=======
 >>>>>>> parent of 393b273... town
 --- !u!1 &2049940261
 GameObject:
