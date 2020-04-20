@@ -38,6 +38,26 @@ public class Rage : Roles
         Pause.SetActive(false);
     }
 
+    void OnEnable()
+    {
+        warriorSword.SetActive(true);
+        rageSword.SetActive(false);
+        warriorShield.SetActive(true);
+        rageShield.SetActive(false);
+        pause = true;
+        Pause.SetActive(false);
+    }
+
+     void OnDisable()
+    {
+        warriorSword.SetActive(false);
+        rageSword.SetActive(false);
+        warriorShield.SetActive(false);
+        rageShield.SetActive(false);
+        pause = true;
+        Pause.SetActive(false);
+    }
+
     //This controls the use of rage mode
     void Update()
     {
@@ -46,19 +66,23 @@ public class Rage : Roles
         // This allows rage mode to be active for a couple seconds
         if((timeStamp <= Time.time))
         {
-            if (Device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
+            if (Device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
             {
-                timeStamp = Time.time + cooldown;             
-                warriorSword.SetActive(false);
-                rageSword.SetActive(true);
-                warriorShield.SetActive(false);
-                rageShield.SetActive(true);
-                rageStamp = Time.time + ragemode;
-                Magic.CurrentMagic -= 10;
-                magicbar.value = Magic.CalculateMagic();
-                Magic.magicRegen = true;
-                magic.text = "MP: " + Magic.CurrentMagic.ToString() + "/" + Magic.MaxMagic.ToString();
-                Debug.Log(magic.text);
+                Vector2 touchValue = Device.GetAxis(EVRButtonId.k_EButton_SteamVR_Touchpad);
+                if (touchValue.y > 0.8f && touchValue.y < 1.0f)
+                {
+                    timeStamp = Time.time + cooldown;
+                    warriorSword.SetActive(false);
+                    rageSword.SetActive(true);
+                    warriorShield.SetActive(false);
+                    rageShield.SetActive(true);
+                    rageStamp = Time.time + ragemode;
+                    Magic.CurrentMagic -= 10;
+                    magicbar.value = Magic.CalculateMagic();
+                    Magic.magicRegen = true;
+                    magic.text = "MP: " + Magic.CurrentMagic.ToString() + "/" + Magic.MaxMagic.ToString();
+                    Debug.Log(magic.text);
+                }
             }
         }
 

@@ -59,6 +59,7 @@ TagManager:
   - Hand
   - Noodle Snake
   - Cow Monster
+  - PickAxe
   layers:
   - Default
   - TransparentFX

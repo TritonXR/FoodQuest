@@ -8,9 +8,10 @@ public class SwitchClass : MonoBehaviour {
     private SteamVR_TrackedObject TrackedObject;
     public SteamVR_Controller.Device Device;
     public int pressCount;
-    public Roles class1;
-    public Roles class2;
-    //public Roles class3;
+    public float cooldown;
+    public Roles[] classes;
+
+    private float timeStamp;
 
     void Awake()
     {
@@ -25,44 +26,59 @@ public class SwitchClass : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Device = SteamVR_Controller.Input((int)TrackedObject.index);
-        if (Device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad))
+        if (timeStamp < Time.time)
         {
-            Vector2 touchValue = Device.GetAxis(EVRButtonId.k_EButton_SteamVR_Touchpad);
-            if (touchValue.x > 0.8f && touchValue.x < 1.0f)
+            if (Device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad))
             {
-                
-            }
-
-            if (touchValue.x > -1.0f && touchValue.x < -0.8f)
-            {
-                
-            }
-
-            if (touchValue.y > 0.8f && touchValue.y < 1.0f)
-            {
-                
-            }
-
-            if (touchValue.y > -1.0f && touchValue.y < -0.8f)
-            {
-                pressCount++;
-                switch (pressCount % 3)
+                Vector2 touchValue = Device.GetAxis(EVRButtonId.k_EButton_SteamVR_Touchpad);
+                if (touchValue.x > 0.8f && touchValue.x < 1.0f)
                 {
-                    case 0:
-                        class1.enabled = true;
-                        class2.enabled = false;
-                        //class3.enabled = false;
-                        break;
-                    case 1:
-                        class1.enabled = false;
-                        class2.enabled = true;
-                        //class3.enabled = false;
-                        break;
-                    case 2:
-                        class1.enabled = false;
-                        class2.enabled = false;
-                        //class3.enabled = true;
-                        break;
+
+                }
+
+                if (touchValue.x > -1.0f && touchValue.x < -0.8f)
+                {
+
+                }
+
+                if (touchValue.y > 0.8f && touchValue.y < 1.0f)
+                {
+
+                }
+
+                if (touchValue.y > -1.0f && touchValue.y < -0.8f)
+                {
+                    pressCount++;
+                    timeStamp = Time.time + cooldown;
+                    for(int i = 0; i < classes.Length; i++)
+                    {
+                        if(i == pressCount % classes.Length)
+                        {
+                            classes[i].enabled = true;
+                        }
+                        else
+                        {
+                            classes[i].enabled = false;
+                        }
+                    }
+                    /*switch (pressCount % classes.Length)
+                    {
+                        case 0:
+                            class1.enabled = true;
+                            class2.enabled = false;
+                            //class3.enabled = false;
+                            break;
+                        case 1:
+                            class1.enabled = false;
+                            class2.enabled = true;
+                            //class3.enabled = false;
+                            break;
+                        case 2:
+                            class1.enabled = false;
+                            class2.enabled = false;
+                            //class3.enabled = true;
+                            break;
+                    }*/
                 }
             }
         }
