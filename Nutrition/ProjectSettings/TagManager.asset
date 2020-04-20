@@ -59,12 +59,27 @@ TagManager:
   - Hand
   - Noodle Snake
   - Cow Monster
+<<<<<<< HEAD
   - ExcludeTeleport
   - TeleportIgnore
   - Sugar
   - Vinegar
   - Vinegar Mix
   - Vinegar Sauce
+=======
+  - FxTemporaire
+  - ExcludeTeleport
+  - projectile
+  - TeleportIgnore
+  - Orange
+  - SushiRice
+  - Rice
+  - Vinegar
+  - SushiRiceN
+  - RawRice
+  - RiceInWater
+  - RiceWashed
+>>>>>>> 6a983bf8a47377a8ab9f0751ba475da79f2000f5
   layers:
   - Default
   - TransparentFX
