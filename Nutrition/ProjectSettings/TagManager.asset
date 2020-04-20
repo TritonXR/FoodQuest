@@ -59,6 +59,12 @@ TagManager:
   - Hand
   - Noodle Snake
   - Cow Monster
+  - ExcludeTeleport
+  - TeleportIgnore
+  - Sugar
+  - Vinegar
+  - Vinegar Mix
+  - Vinegar Sauce
   layers:
   - Default
   - TransparentFX

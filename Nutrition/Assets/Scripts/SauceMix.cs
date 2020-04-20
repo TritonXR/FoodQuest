@@ -1,37 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class SushiRiceMix : MonoBehaviour {
+
+public class SauceMix : MonoBehaviour {
 
 	private int count = 0;
 	private bool zone1; private bool zone2; private bool mix;
-	public GameObject plate;
-    public Material sauced;
-    public GameObject sauce;
-    public Renderer rice;
-
+    public GameObject vinegar;
+    public GameObject mixedvinegar;
 	// Use this for initialization
 	void Start () 
 	{
 		zone1 = true;
 		zone2 = false;
-		mix = false;
+		mix = false;		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		
 	}
 
-
 	void OnTriggerEnter(Collider other)
 	{
-		if(other.gameObject.tag == "Vinegar Sauce")
+		if(other.gameObject.tag == "Vinegar Mix")
 		{
 			mix = true;
+            vinegar.SetActive(true);
             Destroy(other.gameObject);
-            sauce.SetActive(true);
 		}
 
 
@@ -39,30 +38,32 @@ public class SushiRiceMix : MonoBehaviour {
 		{
 			if (count < 3)
 			{
-				if(other.gameObject.tag == "Spatula")
+				if(other.gameObject.tag == "Spatula" && StoveSwitch.HeatOn)
 				{
 					if (zone1)
 					{
-						transform.localPosition = new Vector3(-0.4f, -0.1f, 1.6f);
+						transform.localPosition = new Vector3(-0.005f, 0f, 0.005f);
 						zone1 = false;
 						zone2 = true;
-					}
+					}	
 
 					else if (zone2)
 					{
-						transform.localPosition = new Vector3(-0.8f, -0.2f, 3.0f);
+						transform.localPosition = new Vector3(0.007f, 0f, 0.0026f);
 						zone1 = true;
 						zone2 = false;
 						count += 1;
 					}
 				}
 			}
+		
 
 			else if(count >= 3)
 			{
 				gameObject.GetComponent<BoxCollider> ().enabled = false;
-                Destroy(sauce);
-                rice.material = sauced;
+                Destroy(vinegar);
+                mixedvinegar.SetActive(true);
+                mixedvinegar.tag = "Vinegar Sauce";
 			}
 		}
 	}
