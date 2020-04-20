@@ -4,6 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - ExcludeTeleport
   - TeleportIgnore
 <<<<<<< HEAD
@@ -14,6 +15,63 @@ TagManager:
   - Vinegar
   - SushiRiceN
 >>>>>>> parent of 6a983bf... washRice
+=======
+  - Pick Up
+  - Fireball
+  - Enemy
+  - Shield
+  - Iceball
+  - Rage Shield
+  - Rage Sword
+  - Pepper
+  - Salt
+  - Food
+  - magePortal
+  - warriorPortal
+  - kitchenPortal
+  - forestPortal
+  - Mushroom
+  - Garlic
+  - Tomato
+  - Fire
+  - Sword
+  - Meatball
+  - Plate
+  - Beef
+  - leftHand
+  - rightHand
+  - Mushbro
+  - Water
+  - Knife
+  - Class Decision
+  - Noodles
+  - CutMushroom
+  - CutGarlic
+  - Pot
+  - Boiled Water
+  - Faucet
+  - Pan
+  - Spatula
+  - Boiled Noodles
+  - Cooked Noodles
+  - Finished Noodles
+  - Finished Sauce
+  - Slide 4
+  - Slide 5
+  - Slide 6
+  - Strainer
+  - Sauce
+  - Mixture
+  - Finished Mixture
+  - Sauced Noodles
+  - mixture2
+  - Done Noodles
+  - Sauce Pot
+  - shape
+  - Hand
+  - Noodle Snake
+  - Cow Monster
+>>>>>>> parent of 363e475... changes
   layers:
   - Default
   - TransparentFX

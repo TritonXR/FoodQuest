@@ -8,6 +8,7 @@ public class SushiRiceMix : MonoBehaviour {
 	private bool zone1; private bool zone2; private bool mix;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public GameObject plate;
     public Material sauced;
     public GameObject sauce;
@@ -18,6 +19,9 @@ public class SushiRiceMix : MonoBehaviour {
 =======
 	public GameObject pan;
 >>>>>>> parent of 33b9918... sushirice
+=======
+	public GameObject pan;
+>>>>>>> parent of 363e475... changes
 
 	// Use this for initialization
 	void Start () 
@@ -37,6 +41,7 @@ public class SushiRiceMix : MonoBehaviour {
 	{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if(other.gameObject.tag == "Vinegar Sauce")
 =======
 		if(other.gameObject.tag == "Vinegar" && other.gameObject.tag == "Rice" )
@@ -44,10 +49,11 @@ public class SushiRiceMix : MonoBehaviour {
 =======
 		if(other.gameObject.tag == "Vinegar")
 >>>>>>> parent of 33b9918... sushirice
+=======
+		if(other.gameObject.tag == "Vinegar")
+>>>>>>> parent of 363e475... changes
 		{
 			mix = true;
-            Destroy(other.gameObject);
-            sauce.SetActive(true);
 		}
 
 
@@ -74,11 +80,13 @@ public class SushiRiceMix : MonoBehaviour {
 				}
 			}
 
+
 			else if(count >= 3)
 			{
 <<<<<<< HEAD
 <<<<<<< HEAD
 				gameObject.GetComponent<BoxCollider> ().enabled = false;
+<<<<<<< HEAD
                 Destroy(sauce);
                 rice.material = sauced;
 =======
@@ -88,6 +96,9 @@ public class SushiRiceMix : MonoBehaviour {
 				gameObject.GetComponent<BoxCollider> ().enabled = false;
 
 >>>>>>> parent of 33b9918... sushirice
+=======
+
+>>>>>>> parent of 363e475... changes
 			}
 		}
 	}
