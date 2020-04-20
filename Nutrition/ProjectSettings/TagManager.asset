@@ -6,6 +6,14 @@ TagManager:
   tags:
   - ExcludeTeleport
   - TeleportIgnore
+<<<<<<< HEAD
+=======
+  - Orange
+  - SushiRice
+  - Rice
+  - Vinegar
+  - SushiRiceN
+>>>>>>> parent of 6a983bf... washRice
   layers:
   - Default
   - TransparentFX
