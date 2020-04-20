@@ -68,6 +68,9 @@ TagManager:
   - Rice
   - Vinegar
   - SushiRiceN
+  - RawRice
+  - RiceInWater
+  - RiceWashed
   layers:
   - Default
   - TransparentFX
