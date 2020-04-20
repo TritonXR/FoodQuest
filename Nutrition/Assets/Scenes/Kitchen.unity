@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.64906466, g: 0.6911986, b: 0.6836678, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -762,7 +762,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.54
+      value: 18.505
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -770,7 +770,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< HEAD
       value: -22.46
+=======
+      value: -13.024
+>>>>>>> parent of 33b9918... sushirice
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -822,7 +826,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
       propertyPath: m_TagString
@@ -965,14 +969,13 @@ GameObject:
   - component: {fileID: 50367093}
   - component: {fileID: 50367092}
   - component: {fileID: 50367096}
-  - component: {fileID: 50367097}
   m_Layer: 0
   m_Name: Pan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &50367089
 Transform:
   m_ObjectHideFlags: 0
@@ -1034,7 +1037,7 @@ MonoBehaviour:
   strengthOnTouch: 0
   durationOnTouch: 0
   intervalOnTouch: 0.05
-  cancelOnUntouch: 0
+  cancelOnUntouch: 1
   clipOnGrab: {fileID: 0}
   strengthOnGrab: 0
   durationOnGrab: 0
@@ -1113,23 +1116,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 50367088}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.025, z: 0.5}
   m_Center: {x: -1, y: -0.08, z: -0}
---- !u!114 &50367097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 50367088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d875e30889f04cfdb7712704c83940b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sushiRiceN: {fileID: 1846285746}
 --- !u!1001 &58014092
 Prefab:
   m_ObjectHideFlags: 0
@@ -7968,6 +7959,7 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &451553983
 Prefab:
   m_ObjectHideFlags: 0
@@ -8163,6 +8155,41 @@ Rigidbody:
   m_CollisionDetection: 0
 =======
 >>>>>>> 6a983bf8a47377a8ab9f0751ba475da79f2000f5
+=======
+--- !u!21 &451787113
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+>>>>>>> parent of 33b9918... sushirice
 --- !u!1 &452532915
 GameObject:
   m_ObjectHideFlags: 0
@@ -8516,6 +8543,7 @@ Transform:
   m_PrefabParentObject: {fileID: 4409792991918194, guid: 4542c2af84998fa4aad2078986774fde,
     type: 2}
   m_PrefabInternal: {fileID: 472733023}
+<<<<<<< HEAD
 --- !u!1001 &473738945
 Prefab:
   m_ObjectHideFlags: 0
@@ -8721,6 +8749,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+=======
+>>>>>>> parent of 33b9918... sushirice
 --- !u!1001 &477543785
 Prefab:
   m_ObjectHideFlags: 0
@@ -9630,6 +9660,7 @@ Prefab:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       objectReference: {fileID: 623738061}
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -9656,6 +9687,13 @@ Prefab:
       value: 
       objectReference: {fileID: 627590014}
 >>>>>>> parent of 7cc7898... riceRoll2.0
+=======
+      objectReference: {fileID: 1461963905}
+    - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 451787113}
+>>>>>>> parent of 33b9918... sushirice
     - target: {fileID: 420908, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_LocalScale.x
       value: 3.5
@@ -11122,10 +11160,6 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3abe5fd5dc82cd446be0aab14d3bbc07, type: 2}
-    - target: {fileID: 1594813209939402, guid: 4542c2af84998fa4aad2078986774fde, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114456068620802534, guid: 4542c2af84998fa4aad2078986774fde, type: 2}
     - {fileID: 114304274778051402, guid: 4542c2af84998fa4aad2078986774fde, type: 2}
@@ -17635,6 +17669,7 @@ Transform:
   m_Father: {fileID: 1174737180}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 =======
 --- !u!21 &957115487
 Material:
@@ -17737,6 +17772,11 @@ Transform:
 --- !u!1 &965107432
 GameObject:
   m_ObjectHideFlags: 0
+=======
+--- !u!1 &965107432
+GameObject:
+  m_ObjectHideFlags: 0
+>>>>>>> parent of 33b9918... sushirice
   m_PrefabParentObject: {fileID: 100002, guid: 39d34333ccabff44ba331789a6e53860, type: 3}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
@@ -19783,11 +19823,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400018, guid: c4caad3d41690af4f975d0db1d9adaa1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.808
+      value: 15.114
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: c4caad3d41690af4f975d0db1d9adaa1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.768
+      value: 4.96
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: c4caad3d41690af4f975d0db1d9adaa1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19839,7 +19879,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100018, guid: c4caad3d41690af4f975d0db1d9adaa1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: c4caad3d41690af4f975d0db1d9adaa1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21073,25 +21113,13 @@ MonoBehaviour:
   secondaryGrabActionScript: {fileID: 1173991234}
   isUsable: 0
   holdButtonToUse: 1
-  useOnlyIfGrabbed: 1
+  useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
   useOverrideButton: 0
   allowedUseControllers: 0
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
---- !u!114 &1173991237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1173991229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d921b3f5bf7524d96b1dbb416a8f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plainRice: {fileID: 1846285746}
 --- !u!1 &1174477260
 GameObject:
   m_ObjectHideFlags: 0
@@ -27447,6 +27475,7 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1464818249
 GameObject:
   m_ObjectHideFlags: 0
@@ -27634,6 +27663,138 @@ MeshFilter:
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 =======
 >>>>>>> 6a983bf8a47377a8ab9f0751ba475da79f2000f5
+=======
+--- !u!43 &1461963905
+Mesh:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  serializedVersion: 8
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0.01, z: 0}
+      m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
+  m_Skin: []
+  m_VertexData:
+    m_CurrentChannels: 13
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 288
+    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0.01, z: 0}
+    m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshOptimized: 0
+>>>>>>> parent of 33b9918... sushirice
 --- !u!1 &1468372875
 GameObject:
   m_ObjectHideFlags: 0
@@ -35612,211 +35773,6 @@ Transform:
   m_Father: {fileID: 394356179}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1846285745
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 15.519
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.621
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -21.452
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_RootOrder
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.050160695
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.05016068
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.05016068
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_TagString
-      value: shape
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_Name
-      value: rice
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_TagString
-      value: Rice
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-  m_IsPrefabParent: 0
---- !u!1 &1846285746 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 2acff852efccd2f4dbf1c9aea37f4bd1, type: 3}
-  m_PrefabInternal: {fileID: 1846285745}
---- !u!114 &1846285747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1846285746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disableWhenIdle: 1
-  allowedNearTouchControllers: 0
-  allowedTouchControllers: 0
-  ignoredColliders: []
-  isGrabbable: 1
-  holdButtonToGrab: 0
-  stayGrabbedOnTeleport: 1
-  validDrop: 1
-  grabOverrideButton: 0
-  allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 1846285748}
-  secondaryGrabActionScript: {fileID: 1846285749}
-  isUsable: 0
-  holdButtonToUse: 1
-  useOnlyIfGrabbed: 1
-  pointerActivatesUseAction: 0
-  useOverrideButton: 0
-  allowedUseControllers: 0
-  objectHighlighter: {fileID: 0}
-  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
-  usingState: 0
---- !u!114 &1846285748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1846285746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  precisionGrab: 0
-  rightSnapHandle: {fileID: 0}
-  leftSnapHandle: {fileID: 0}
-  throwVelocityWithAttachDistance: 0
-  throwMultiplier: 1
-  onGrabCollisionDelay: 0
---- !u!114 &1846285749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1846285746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1846285750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1846285746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 0}
-  strengthOnGrab: 0
-  durationOnGrab: 0
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
---- !u!65 &1846285751
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1846285746}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10, y: 1, z: 10}
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!54 &1846285752
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1846285746}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1848874592
 GameObject:
   m_ObjectHideFlags: 0
@@ -37880,6 +37836,7 @@ Transform:
   m_Father: {fileID: 1198425007}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1952709153
 GameObject:
   m_ObjectHideFlags: 0
@@ -38032,6 +37989,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1955994515}
   m_Mesh: {fileID: 4300004, guid: 39d34333ccabff44ba331789a6e53860, type: 3}
+=======
+>>>>>>> parent of 33b9918... sushirice
 --- !u!1 &1958940693
 GameObject:
   m_ObjectHideFlags: 0
