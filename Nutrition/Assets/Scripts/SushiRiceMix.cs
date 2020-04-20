@@ -6,23 +6,13 @@ public class SushiRiceMix : MonoBehaviour {
 
 	private int count = 0;
 	private bool zone1; private bool zone2; private bool mix;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 	public GameObject plate;
     public Material sauced;
     public GameObject sauce;
     public Renderer rice;
-=======
-	public GameObject plainRice;
->>>>>>> 6a983bf8a47377a8ab9f0751ba475da79f2000f5
-=======
-	public GameObject pan;
->>>>>>> parent of 33b9918... sushirice
-=======
-	public GameObject pan;
->>>>>>> parent of 363e475... changes
 
+	public GameObject plainRice;
+	public GameObject pan;
 	// Use this for initialization
 	void Start () 
 	{
@@ -39,19 +29,7 @@ public class SushiRiceMix : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		if(other.gameObject.tag == "Vinegar Sauce")
-=======
-		if(other.gameObject.tag == "Vinegar" && other.gameObject.tag == "Rice" )
->>>>>>> 6a983bf8a47377a8ab9f0751ba475da79f2000f5
-=======
 		if(other.gameObject.tag == "Vinegar")
->>>>>>> parent of 33b9918... sushirice
-=======
-		if(other.gameObject.tag == "Vinegar")
->>>>>>> parent of 363e475... changes
 		{
 			mix = true;
 		}
@@ -83,22 +61,10 @@ public class SushiRiceMix : MonoBehaviour {
 
 			else if(count >= 3)
 			{
-<<<<<<< HEAD
-<<<<<<< HEAD
 				gameObject.GetComponent<BoxCollider> ().enabled = false;
-<<<<<<< HEAD
                 Destroy(sauce);
                 rice.material = sauced;
-=======
 				plainRice.gameObject.tag = "SushiRiceN";
->>>>>>> 6a983bf8a47377a8ab9f0751ba475da79f2000f5
-=======
-				gameObject.GetComponent<BoxCollider> ().enabled = false;
-
->>>>>>> parent of 33b9918... sushirice
-=======
-
->>>>>>> parent of 363e475... changes
 			}
 		}
 	}
