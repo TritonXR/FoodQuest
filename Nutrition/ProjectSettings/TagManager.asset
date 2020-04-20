@@ -76,10 +76,13 @@ TagManager:
   - Rice
   - Vinegar
   - SushiRiceN
+<<<<<<< HEAD
   - RawRice
   - RiceInWater
   - RiceWashed
 >>>>>>> 6a983bf8a47377a8ab9f0751ba475da79f2000f5
+=======
+>>>>>>> parent of 6a983bf... washRice
   layers:
   - Default
   - TransparentFX
