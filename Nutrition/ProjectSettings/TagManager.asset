@@ -71,7 +71,19 @@ TagManager:
   - Hand
   - Noodle Snake
   - Cow Monster
+<<<<<<< HEAD
 >>>>>>> parent of 363e475... changes
+=======
+  - FxTemporaire
+  - ExcludeTeleport
+  - projectile
+  - TeleportIgnore
+  - Orange
+  - SushiRice
+  - Rice
+  - Vinegar
+  - SushiRiceN
+>>>>>>> parent of 6a983bf... washRice
   layers:
   - Default
   - TransparentFX
