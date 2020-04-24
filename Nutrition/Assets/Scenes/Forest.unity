@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.64906466, g: 0.6911986, b: 0.6836678, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1849,7 +1849,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 144949210}
-  m_Mesh: {fileID: 358272490}
+  m_Mesh: {fileID: 574390832}
 --- !u!23 &144949214
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1865,7 +1865,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 1644210785}
+  - {fileID: 1577297427}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3605,136 +3605,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ea71f643417d124d91e53eae7c666a6, type: 2}
   m_IsPrefabParent: 0
---- !u!43 &358272490
-Mesh:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  serializedVersion: 8
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 24
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0, y: 0.01, z: 0}
-      m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
-  m_Skin: []
-  m_VertexData:
-    m_CurrentChannels: 13
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 28
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 288
-    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0.01, z: 0}
-    m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshOptimized: 0
 --- !u!1 &361598264
 GameObject:
   m_ObjectHideFlags: 0
@@ -4082,6 +3952,7 @@ GameObject:
   - component: {fileID: 372441787}
   - component: {fileID: 372441786}
   - component: {fileID: 372441785}
+  - component: {fileID: 372441784}
   m_Layer: 0
   m_Name: Snake (3)
   m_TagString: Noodle Snake
@@ -4103,13 +3974,40 @@ Transform:
   m_Father: {fileID: 651226680}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &372441785
+--- !u!114 &372441784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 372441782}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e6dfd9aae42f5845b9d00f23fa391f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 1264804264705642, guid: 088feeddf10d42c4792e2fc633bdcc38, type: 2}
+  nameLabel: {fileID: 361598266}
+  healthStatus: {fileID: 366767566}
+  player: {fileID: 0}
+  speed: 0.02
+  angularSpeed: 5
+  singleStep: 0
+  cooldown: 1
+  freezeCooldown: 5
+  freezeStamp: 0
+  enemy: {fileID: 0}
+  hitStatus: 0
+  freezeStatus: 0
+  stomp: 1
+  movementStamp: 0
+  targetDirection: {x: 0, y: 0, z: 0}
+--- !u!114 &372441785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 372441782}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b19f681a67c924747befd8c091257fb6, type: 3}
   m_Name: 
@@ -5342,6 +5240,136 @@ Transform:
   m_PrefabParentObject: {fileID: 4466753665643056, guid: 1ea71f643417d124d91e53eae7c666a6,
     type: 2}
   m_PrefabInternal: {fileID: 568685571}
+--- !u!43 &574390832
+Mesh:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  serializedVersion: 8
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0.01, z: 0}
+      m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
+  m_Skin: []
+  m_VertexData:
+    m_CurrentChannels: 13
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 288
+    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0.01, z: 0}
+    m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshOptimized: 0
 --- !u!1 &578358919
 GameObject:
   m_ObjectHideFlags: 0
@@ -5707,7 +5735,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 603746062}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b19f681a67c924747befd8c091257fb6, type: 3}
   m_Name: 
@@ -5749,6 +5777,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &603746066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 603746062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0dadbabda82fe4aae7cb26ebd359a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 1415587375035144, guid: 6029d7d76b55743449271df863348a07, type: 2}
+  nameLabel: {fileID: 1685432890}
+  healthStatus: {fileID: 1211634722}
+  player: {fileID: 0}
+  speed: 0.02
+  angularSpeed: 5
+  singleStep: 0
+  cooldown: 1
+  freezeCooldown: 5
+  freezeStamp: 0
+  enemy: {fileID: 0}
+  hitStatus: 0
+  freezeStatus: 0
+  stomp: 1
+  movementStamp: 0
+  targetDirection: {x: 0, y: 0, z: 0}
 --- !u!4 &606102947 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4466753665643056, guid: 1ea71f643417d124d91e53eae7c666a6,
@@ -7275,7 +7330,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 846135199}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b19f681a67c924747befd8c091257fb6, type: 3}
   m_Name: 
@@ -7317,6 +7372,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &846135203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 846135199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0dadbabda82fe4aae7cb26ebd359a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 1415587375035144, guid: 6029d7d76b55743449271df863348a07, type: 2}
+  nameLabel: {fileID: 1439003285}
+  healthStatus: {fileID: 1542228119}
+  player: {fileID: 0}
+  speed: 0.02
+  angularSpeed: 5
+  singleStep: 0
+  cooldown: 1
+  freezeCooldown: 5
+  freezeStamp: 0
+  enemy: {fileID: 0}
+  hitStatus: 0
+  freezeStatus: 0
+  stomp: 1
+  movementStamp: 0
+  targetDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &849754578
 GameObject:
   m_ObjectHideFlags: 0
@@ -11628,6 +11710,7 @@ GameObject:
   - component: {fileID: 1021659167}
   - component: {fileID: 1021659166}
   - component: {fileID: 1021659165}
+  - component: {fileID: 1021659164}
   m_Layer: 0
   m_Name: Snake (2)
   m_TagString: Noodle Snake
@@ -11649,13 +11732,40 @@ Transform:
   m_Father: {fileID: 651226680}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &1021659165
+--- !u!114 &1021659164
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1021659162}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e6dfd9aae42f5845b9d00f23fa391f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 1264804264705642, guid: 088feeddf10d42c4792e2fc633bdcc38, type: 2}
+  nameLabel: {fileID: 31161125}
+  healthStatus: {fileID: 1544314150}
+  player: {fileID: 0}
+  speed: 0.02
+  angularSpeed: 5
+  singleStep: 0
+  cooldown: 1
+  freezeCooldown: 5
+  freezeStamp: 0
+  enemy: {fileID: 0}
+  hitStatus: 0
+  freezeStatus: 0
+  stomp: 1
+  movementStamp: 0
+  targetDirection: {x: 0, y: 0, z: 0}
+--- !u!114 &1021659165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1021659162}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b19f681a67c924747befd8c091257fb6, type: 3}
   m_Name: 
@@ -11797,6 +11907,33 @@ GameObject:
   m_PrefabParentObject: {fileID: 1040370334764374, guid: 761bf3a5491d7594680d3feae273380d,
     type: 2}
   m_PrefabInternal: {fileID: 1223152509}
+--- !u!114 &1057508107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1057508106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0dadbabda82fe4aae7cb26ebd359a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 1415587375035144, guid: 6029d7d76b55743449271df863348a07, type: 2}
+  nameLabel: {fileID: 404002486}
+  healthStatus: {fileID: 1316915708}
+  player: {fileID: 0}
+  speed: 0.02
+  angularSpeed: 5
+  singleStep: 0
+  cooldown: 1
+  freezeCooldown: 5
+  freezeStamp: 0
+  enemy: {fileID: 0}
+  hitStatus: 0
+  freezeStatus: 0
+  stomp: 1
+  movementStamp: 0
+  targetDirection: {x: 0, y: 0, z: 0}
 --- !u!4 &1057508108 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4400166789077164, guid: 761bf3a5491d7594680d3feae273380d,
@@ -11820,7 +11957,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1057508106}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b19f681a67c924747befd8c091257fb6, type: 3}
   m_Name: 
@@ -14367,7 +14504,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1323345986}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b19f681a67c924747befd8c091257fb6, type: 3}
   m_Name: 
@@ -14386,6 +14523,33 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 435260, guid: 54dd8ae60378d5143b14a2e5e6a8da1e, type: 2}
   m_PrefabInternal: {fileID: 266870125}
+--- !u!114 &1323345989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1323345986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c40be24d138cb4479ea043fe4e42a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 1807378201042210, guid: 9f798f14c60f5c64c881ff4cce271e05, type: 2}
+  nameLabel: {fileID: 1887034223}
+  healthStatus: {fileID: 1011909534}
+  player: {fileID: 0}
+  speed: 50
+  angularSpeed: 5
+  singleStep: 0
+  cooldown: 3
+  freezeCooldown: 5
+  freezeStamp: 0
+  enemy: {fileID: 0}
+  hitStatus: 0
+  freezeStatus: 0
+  stomp: 1
+  movementStamp: 0
+  targetDirection: {x: 0, y: 0, z: 0}
 --- !u!136 &1323345990
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15579,6 +15743,7 @@ GameObject:
   - component: {fileID: 1444995965}
   - component: {fileID: 1444995964}
   - component: {fileID: 1444995963}
+  - component: {fileID: 1444995962}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Noodle Snake
@@ -15586,13 +15751,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1444995963
+--- !u!114 &1444995962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1444995961}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e6dfd9aae42f5845b9d00f23fa391f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 1264804264705642, guid: 088feeddf10d42c4792e2fc633bdcc38, type: 2}
+  nameLabel: {fileID: 14877902}
+  healthStatus: {fileID: 628758329}
+  player: {fileID: 0}
+  speed: 0.02
+  angularSpeed: 5
+  singleStep: 0
+  cooldown: 1
+  freezeCooldown: 5
+  freezeStamp: 0
+  enemy: {fileID: 0}
+  hitStatus: 0
+  freezeStatus: 0
+  stomp: 1
+  movementStamp: 0
+  targetDirection: {x: 0, y: 0, z: 0}
+--- !u!114 &1444995963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1444995961}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b19f681a67c924747befd8c091257fb6, type: 3}
   m_Name: 
@@ -16528,6 +16720,39 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 29d06c673ff3f1948abb2e144ac73d66, type: 2}
   m_IsPrefabParent: 0
+--- !u!21 &1577297427
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1590242833
 Prefab:
   m_ObjectHideFlags: 0
@@ -17262,39 +17487,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4271728572718218, guid: bce0c9523691df448b83c8c972060b2c,
     type: 2}
   m_PrefabInternal: {fileID: 95056442}
---- !u!21 &1644210785
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1644843106
 Prefab:
   m_ObjectHideFlags: 0
@@ -19219,6 +19411,7 @@ GameObject:
   - component: {fileID: 1859067656}
   - component: {fileID: 1859067655}
   - component: {fileID: 1859067654}
+  - component: {fileID: 1859067653}
   m_Layer: 0
   m_Name: Snake (1)
   m_TagString: Noodle Snake
@@ -19240,13 +19433,40 @@ Transform:
   m_Father: {fileID: 651226680}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &1859067654
+--- !u!114 &1859067653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1859067651}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e6dfd9aae42f5845b9d00f23fa391f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 1264804264705642, guid: 088feeddf10d42c4792e2fc633bdcc38, type: 2}
+  nameLabel: {fileID: 115058343}
+  healthStatus: {fileID: 1924073234}
+  player: {fileID: 0}
+  speed: 0.02
+  angularSpeed: 5
+  singleStep: 0
+  cooldown: 1
+  freezeCooldown: 5
+  freezeStamp: 0
+  enemy: {fileID: 0}
+  hitStatus: 0
+  freezeStatus: 0
+  stomp: 1
+  movementStamp: 0
+  targetDirection: {x: 0, y: 0, z: 0}
+--- !u!114 &1859067654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1859067651}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b19f681a67c924747befd8c091257fb6, type: 3}
   m_Name: 
@@ -20343,7 +20563,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1974792447}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b19f681a67c924747befd8c091257fb6, type: 3}
   m_Name: 
@@ -20385,6 +20605,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1974792451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1974792447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0dadbabda82fe4aae7cb26ebd359a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 1415587375035144, guid: 6029d7d76b55743449271df863348a07, type: 2}
+  nameLabel: {fileID: 1853196810}
+  healthStatus: {fileID: 289802370}
+  player: {fileID: 0}
+  speed: 0.02
+  angularSpeed: 5
+  singleStep: 0
+  cooldown: 1
+  freezeCooldown: 5
+  freezeStamp: 0
+  enemy: {fileID: 0}
+  hitStatus: 0
+  freezeStatus: 0
+  stomp: 1
+  movementStamp: 0
+  targetDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &1984873452
 GameObject:
   m_ObjectHideFlags: 0
