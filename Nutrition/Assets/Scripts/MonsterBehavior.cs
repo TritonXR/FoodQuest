@@ -30,7 +30,8 @@ abstract public class MonsterBehavior : MonoBehaviour {
     [HideInInspector]
     public Vector3 targetDirection;
     // Use this for initialization
-    public void Start () {
+    public void Start ()
+    {
         enemy = GetComponent<Rigidbody>();
         nameLabel.text = gameObject.tag;
         MaxHealth = 150f;
@@ -42,12 +43,12 @@ abstract public class MonsterBehavior : MonoBehaviour {
 
     public void OnCollisionEnter(Collision otherObj)
     {
-        this.SwordCollision(otherObj);
-        this.RageSwordCollision(otherObj);
-        this.ShieldCollision(otherObj);
-        this.RageShieldCollision(otherObj);
-        this.FireballCollision(otherObj);
-        this.IceballCollision(otherObj);
+        SwordCollision(otherObj);
+        RageSwordCollision(otherObj);
+        ShieldCollision(otherObj);
+        RageShieldCollision(otherObj);
+        FireballCollision(otherObj);
+        IceballCollision(otherObj);
 
         if (CurrentHealth <= 0)
         {

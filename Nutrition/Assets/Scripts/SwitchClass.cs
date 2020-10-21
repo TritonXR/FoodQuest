@@ -50,9 +50,9 @@ public class SwitchClass : MonoBehaviour {
                 {
                     pressCount++;
                     timeStamp = Time.time + cooldown;
-                    for(int i = 0; i < classes.Length; i++)
+                    for(int i = 0; i < 3; i++)
                     {
-                        if(i == pressCount % classes.Length)
+                        if(i == pressCount % 3)
                         {
                             classes[i].enabled = true;
                         }
